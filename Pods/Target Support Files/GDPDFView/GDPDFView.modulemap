@@ -1,0 +1,6 @@
+framework module GDPDFView {
+  umbrella header "GDPDFView-umbrella.h"
+
+  export *
+  module * { export * }
+}

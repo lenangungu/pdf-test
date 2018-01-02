@@ -1,0 +1,6 @@
+framework module Pods_pdf_test {
+  umbrella header "Pods-pdf test-umbrella.h"
+
+  export *
+  module * { export * }
+}

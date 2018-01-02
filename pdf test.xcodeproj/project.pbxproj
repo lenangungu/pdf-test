@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1803600A34AFA1E85EE459D1 /* Pods_pdf_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37524F81F2AFFDE447B1DC14 /* Pods_pdf_test.framework */; };
+		8A0617161FF5F79800B7BD78 /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0617151FF5F79800B7BD78 /* secondViewController.swift */; };
+		8A0617181FFB750000B7BD78 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0617171FFB750000B7BD78 /* MainViewController.swift */; };
 		8A89BF3C1FE9B74E00BC9984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89BF3B1FE9B74E00BC9984 /* AppDelegate.swift */; };
-		8A89BF3E1FE9B74E00BC9984 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89BF3D1FE9B74E00BC9984 /* ViewController.swift */; };
 		8A89BF411FE9B74E00BC9984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A89BF3F1FE9B74E00BC9984 /* Main.storyboard */; };
 		8A89BF431FE9B74E00BC9984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A89BF421FE9B74E00BC9984 /* Assets.xcassets */; };
 		8A89BF461FE9B74E00BC9984 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A89BF441FE9B74E00BC9984 /* LaunchScreen.storyboard */; };
+		8A89BF4E1FE9BC8200BC9984 /* PDF.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8A89BF4D1FE9BC8200BC9984 /* PDF.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37524F81F2AFFDE447B1DC14 /* Pods_pdf_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pdf_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39560163CE07B4AA95FE7CA1 /* Pods-pdf test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pdf test.release.xcconfig"; path = "Pods/Target Support Files/Pods-pdf test/Pods-pdf test.release.xcconfig"; sourceTree = "<group>"; };
+		8A0617151FF5F79800B7BD78 /* secondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
+		8A0617171FFB750000B7BD78 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8A89BF381FE9B74E00BC9984 /* pdf test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pdf test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A89BF3B1FE9B74E00BC9984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8A89BF3D1FE9B74E00BC9984 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8A89BF401FE9B74E00BC9984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A89BF421FE9B74E00BC9984 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A89BF451FE9B74E00BC9984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A89BF471FE9B74E00BC9984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A89BF4D1FE9BC8200BC9984 /* PDF.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = PDF.pdf; path = "../../My Apps/Kingdom Songs/Kingdom Songs/Assets.xcassets/songs.dataset/PDF.pdf"; sourceTree = "<group>"; };
+		AAB9C2989CDDBC54525C3D99 /* Pods-pdf test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pdf test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pdf test/Pods-pdf test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1803600A34AFA1E85EE459D1 /* Pods_pdf_test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CEF5A010B9A4ABD817F2D6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37524F81F2AFFDE447B1DC14 /* Pods_pdf_test.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8A89BF2F1FE9B74E00BC9984 = {
 			isa = PBXGroup;
 			children = (
 				8A89BF3A1FE9B74E00BC9984 /* pdf test */,
 				8A89BF391FE9B74E00BC9984 /* Products */,
+				F8E081EACFFEA37D36094EE6 /* Pods */,
+				3CEF5A010B9A4ABD817F2D6A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +73,25 @@
 		8A89BF3A1FE9B74E00BC9984 /* pdf test */ = {
 			isa = PBXGroup;
 			children = (
+				8A89BF4D1FE9BC8200BC9984 /* PDF.pdf */,
+				8A0617171FFB750000B7BD78 /* MainViewController.swift */,
+				8A0617151FF5F79800B7BD78 /* secondViewController.swift */,
 				8A89BF3B1FE9B74E00BC9984 /* AppDelegate.swift */,
-				8A89BF3D1FE9B74E00BC9984 /* ViewController.swift */,
 				8A89BF3F1FE9B74E00BC9984 /* Main.storyboard */,
 				8A89BF421FE9B74E00BC9984 /* Assets.xcassets */,
 				8A89BF441FE9B74E00BC9984 /* LaunchScreen.storyboard */,
 				8A89BF471FE9B74E00BC9984 /* Info.plist */,
 			);
 			path = "pdf test";
+			sourceTree = "<group>";
+		};
+		F8E081EACFFEA37D36094EE6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AAB9C2989CDDBC54525C3D99 /* Pods-pdf test.debug.xcconfig */,
+				39560163CE07B4AA95FE7CA1 /* Pods-pdf test.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A89BF4A1FE9B74E00BC9984 /* Build configuration list for PBXNativeTarget "pdf test" */;
 			buildPhases = (
+				C618FB529A571E65DCD07B20 /* [CP] Check Pods Manifest.lock */,
 				8A89BF341FE9B74E00BC9984 /* Sources */,
 				8A89BF351FE9B74E00BC9984 /* Frameworks */,
 				8A89BF361FE9B74E00BC9984 /* Resources */,
+				CD8E8B86CBA88362E4CAA3ED /* [CP] Embed Pods Frameworks */,
+				8AFED378BA7B4E806497CBF2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -90,6 +123,9 @@
 		8A89BF301FE9B74E00BC9984 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					1,
+				);
 				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Lena Ngungu";
@@ -124,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A89BF461FE9B74E00BC9984 /* LaunchScreen.storyboard in Resources */,
+				8A89BF4E1FE9BC8200BC9984 /* PDF.pdf in Resources */,
 				8A89BF431FE9B74E00BC9984 /* Assets.xcassets in Resources */,
 				8A89BF411FE9B74E00BC9984 /* Main.storyboard in Resources */,
 			);
@@ -131,12 +168,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8AFED378BA7B4E806497CBF2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pdf test/Pods-pdf test-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C618FB529A571E65DCD07B20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CD8E8B86CBA88362E4CAA3ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pdf test/Pods-pdf test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8A89BF341FE9B74E00BC9984 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A89BF3E1FE9B74E00BC9984 /* ViewController.swift in Sources */,
+				8A0617181FFB750000B7BD78 /* MainViewController.swift in Sources */,
+				8A0617161FF5F79800B7BD78 /* secondViewController.swift in Sources */,
 				8A89BF3C1FE9B74E00BC9984 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +358,7 @@
 		};
 		8A89BF4B1FE9B74E00BC9984 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAB9C2989CDDBC54525C3D99 /* Pods-pdf test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +373,7 @@
 		};
 		8A89BF4C1FE9B74E00BC9984 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39560163CE07B4AA95FE7CA1 /* Pods-pdf test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
