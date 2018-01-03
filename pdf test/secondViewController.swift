@@ -15,6 +15,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
     var pgNum: Int?
     var pgTitle: String?
     @IBOutlet var navBar: UINavigationBar!
+    
     var favorites = [""]
     
     
@@ -117,7 +118,12 @@ class secondViewController: UIViewController, PDFViewDelegate{
     
    
     @IBAction func addToFavAction(_ sender: Any) {
-      /*  var current = secondView.currentPage
+        var current = secondView.currentPage
+        if (current?.accessibilityValue != nil)
+        {
+        favorites.append((current?.accessibilityValue)!)
+        } 
+        /*
         if current?.accessibilityValue is not in array
         {
         favorites.append(current?.accessibilityValue)
@@ -131,6 +137,14 @@ class secondViewController: UIViewController, PDFViewDelegate{
   */
     }
  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinatiionVC = segue.destination as! FavoritesViewController
+        destinatiionVC.favorites = favorites
+    }
+    
+    @IBAction func unwindToSecondViewController(_ segue: UIStoryboardSegue) {
+        
+    }
     
 }
 

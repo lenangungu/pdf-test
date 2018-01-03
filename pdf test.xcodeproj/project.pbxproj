@@ -10,6 +10,8 @@
 		1803600A34AFA1E85EE459D1 /* Pods_pdf_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37524F81F2AFFDE447B1DC14 /* Pods_pdf_test.framework */; };
 		8A0617161FF5F79800B7BD78 /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0617151FF5F79800B7BD78 /* secondViewController.swift */; };
 		8A0617181FFB750000B7BD78 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0617171FFB750000B7BD78 /* MainViewController.swift */; };
+		8A06171A1FFC4AC300B7BD78 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0617191FFC4AC300B7BD78 /* FavoritesViewController.swift */; };
+		8A06171C1FFC540F00B7BD78 /* FavoritwCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06171B1FFC540F00B7BD78 /* FavoritwCellTableViewCell.swift */; };
 		8A89BF3C1FE9B74E00BC9984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89BF3B1FE9B74E00BC9984 /* AppDelegate.swift */; };
 		8A89BF411FE9B74E00BC9984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A89BF3F1FE9B74E00BC9984 /* Main.storyboard */; };
 		8A89BF431FE9B74E00BC9984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A89BF421FE9B74E00BC9984 /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 		39560163CE07B4AA95FE7CA1 /* Pods-pdf test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pdf test.release.xcconfig"; path = "Pods/Target Support Files/Pods-pdf test/Pods-pdf test.release.xcconfig"; sourceTree = "<group>"; };
 		8A0617151FF5F79800B7BD78 /* secondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
 		8A0617171FFB750000B7BD78 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8A0617191FFC4AC300B7BD78 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		8A06171B1FFC540F00B7BD78 /* FavoritwCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritwCellTableViewCell.swift; sourceTree = "<group>"; };
 		8A89BF381FE9B74E00BC9984 /* pdf test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pdf test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A89BF3B1FE9B74E00BC9984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A89BF401FE9B74E00BC9984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,11 +80,13 @@
 				8A89BF4D1FE9BC8200BC9984 /* PDF.pdf */,
 				8A0617171FFB750000B7BD78 /* MainViewController.swift */,
 				8A0617151FF5F79800B7BD78 /* secondViewController.swift */,
+				8A0617191FFC4AC300B7BD78 /* FavoritesViewController.swift */,
 				8A89BF3B1FE9B74E00BC9984 /* AppDelegate.swift */,
 				8A89BF3F1FE9B74E00BC9984 /* Main.storyboard */,
 				8A89BF421FE9B74E00BC9984 /* Assets.xcassets */,
 				8A89BF441FE9B74E00BC9984 /* LaunchScreen.storyboard */,
 				8A89BF471FE9B74E00BC9984 /* Info.plist */,
+				8A06171B1FFC540F00B7BD78 /* FavoritwCellTableViewCell.swift */,
 			);
 			path = "pdf test";
 			sourceTree = "<group>";
@@ -221,8 +227,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A06171C1FFC540F00B7BD78 /* FavoritwCellTableViewCell.swift in Sources */,
 				8A0617181FFB750000B7BD78 /* MainViewController.swift in Sources */,
 				8A0617161FF5F79800B7BD78 /* secondViewController.swift in Sources */,
+				8A06171A1FFC4AC300B7BD78 /* FavoritesViewController.swift in Sources */,
 				8A89BF3C1FE9B74E00BC9984 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
