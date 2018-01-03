@@ -36,6 +36,20 @@ extension FavoritesViewController: UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "favCell") as! FavoritwCellTableViewCell
         
             cell.title.text = favorites![indexPath.row]
+         
+//        if (indexPath.row >= 0 && indexPath.row <= 3)
+//        {
+//            cell.backgroundColor = UIColor.init(red: 204/255, green: 50/255, blue: 50/255, alpha: 1)
+//
+//        }
+//        else if (indexPath.row > 3 && indexPath.row <= 7)
+//        {
+//         cell.backgroundColor = UIColor.init(red: 154/255, green: 34/255, blue: 41/255, alpha: 1)
+//        }
+//        else
+//        {
+//        cell.backgroundColor = UIColor.init(red: 100/255 , green: 35/255, blue: 38/255, alpha: 1)
+//        }
         
         return cell
     }

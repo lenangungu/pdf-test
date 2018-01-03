@@ -22,7 +22,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dU4-Bd-4mG">
                                 <rect key="frame" x="155" y="232" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="All Songs"/>
+                                <state key="normal" title="All Songs">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="9AA-Pg-1kU" kind="show" id="qbc-wb-Qpq"/>
                                 </connections>
@@ -30,10 +32,12 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kad-3o-MMa">
                                 <rect key="frame" x="129" y="307" width="117" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Favorites"/>
+                                <state key="normal" title="Favorites">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.028157552083333332" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Iix-IG-CBE"/>
                     </view>
                 </viewController>
@@ -50,8 +54,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XrJ-Hy-cOc" customClass="PDFView">
-                                <rect key="frame" x="0.0" y="45" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="3" y="45" width="375" height="667"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="bmu-s5-Ruu" appends="YES" id="k7X-yn-X9z"/>
@@ -64,28 +67,37 @@
                                     <outlet property="delegate" destination="9AA-Pg-1kU" id="l54-Bd-AAX"/>
                                 </connections>
                             </searchBar>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzj-Uz-Dbr">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzj-Uz-Dbr">
                                 <rect key="frame" x="0.0" y="24" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.39215686274509803" green="0.13725490196078433" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="24"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Songs" id="wfh-l6-g9G">
                                         <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="5LD-PR-Vu2">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="DsL-zs-beM" kind="unwind" unwindAction="unwindToMainViewController:" id="LEe-sJ-OPk"/>
                                             </connections>
                                         </barButtonItem>
                                         <rightBarButtonItems>
                                             <barButtonItem systemItem="search" id="Lgx-OK-vk5">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="searchAction:" destination="9AA-Pg-1kU" id="yLX-D5-SG9"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem title="Item" image="icons8-star-500" id="LDd-SF-G00">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="addToFavAction:" destination="9AA-Pg-1kU" id="Aou-LJ-98I"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem systemItem="bookmarks" id="EXU-Fk-MHa">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <segue destination="c2d-rx-eYC" kind="show" identifier="toFav" id="6XL-Qa-Kzr"/>
                                                 </connections>
@@ -95,15 +107,16 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.3921568627" green="0.13725490200000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="XrJ-Hy-cOc" firstAttribute="centerX" secondItem="EBK-1K-LPy" secondAttribute="centerX" id="4VF-Cm-0N6"/>
+                            <constraint firstItem="XrJ-Hy-cOc" firstAttribute="leading" secondItem="EBK-1K-LPy" secondAttribute="leading" constant="3" id="MNJ-FL-CBq"/>
                             <constraint firstItem="EBK-1K-LPy" firstAttribute="trailing" secondItem="HkN-uw-Orn" secondAttribute="trailing" id="RCf-LO-X9e"/>
                             <constraint firstItem="HkN-uw-Orn" firstAttribute="leading" secondItem="EBK-1K-LPy" secondAttribute="leading" id="RfS-dF-Gep"/>
                             <constraint firstItem="XrJ-Hy-cOc" firstAttribute="height" secondItem="cPA-dC-MHv" secondAttribute="height" id="b9I-54-Vbt"/>
                             <constraint firstItem="HkN-uw-Orn" firstAttribute="top" secondItem="EBK-1K-LPy" secondAttribute="top" id="kQ1-09-bJD"/>
                             <constraint firstItem="XrJ-Hy-cOc" firstAttribute="width" secondItem="cPA-dC-MHv" secondAttribute="width" id="qYe-ju-pdg"/>
                             <constraint firstItem="EBK-1K-LPy" firstAttribute="top" secondItem="XrJ-Hy-cOc" secondAttribute="top" constant="-25" id="w2c-4a-izs"/>
+                            <constraint firstItem="XrJ-Hy-cOc" firstAttribute="trailing" secondItem="EBK-1K-LPy" secondAttribute="trailing" constant="3" id="zyo-rw-53D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EBK-1K-LPy"/>
                     </view>
@@ -133,12 +146,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TGX-mC-kEB">
-                                <rect key="frame" x="0.0" y="15" width="375" height="44"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGX-mC-kEB">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.39215686274509803" green="0.13725490196078433" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="24"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Favorites" id="o52-4M-H2l">
                                         <barButtonItem key="leftBarButtonItem" title="&lt; Songs" id="kCa-Qv-6nV">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="CES-Tz-BRo" kind="unwind" unwindAction="unwindToSecondViewController:" id="AV5-cw-YDl"/>
                                             </connections>
@@ -146,9 +165,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RI9-bL-Zru">
-                                <rect key="frame" x="0.0" y="59" width="375" height="608"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RI9-bL-Zru">
+                                <rect key="frame" x="0.0" y="70" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favCell" id="5BY-CF-tKf" customClass="FavoritwCellTableViewCell" customModule="pdf_test" customModuleProvider="target">
@@ -178,7 +196,13 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.39215686274509803" green="0.13725490196078433" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="RI9-bL-Zru" firstAttribute="centerX" secondItem="kp9-PX-pus" secondAttribute="centerX" id="LDP-tm-BYU"/>
+                            <constraint firstItem="RI9-bL-Zru" firstAttribute="width" secondItem="Ffp-B9-sRo" secondAttribute="width" id="OG3-Au-6Oh"/>
+                            <constraint firstItem="RI9-bL-Zru" firstAttribute="height" secondItem="Ffp-B9-sRo" secondAttribute="height" id="roB-gf-zRi"/>
+                            <constraint firstItem="RI9-bL-Zru" firstAttribute="top" secondItem="kp9-PX-pus" secondAttribute="top" constant="50" id="sub-Rb-Qwr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kp9-PX-pus"/>
                     </view>
                 </viewController>
