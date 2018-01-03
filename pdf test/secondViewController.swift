@@ -11,26 +11,38 @@ import PDFKit
 
 class secondViewController: UIViewController, PDFViewDelegate{
     @IBOutlet var secondView: PDFView!
+
     @IBOutlet var searchBar: UISearchBar!
     var pgNum: Int?
     var pgTitle: String?
     @IBOutlet var navBar: UINavigationBar!
     
+    @IBOutlet var addToFavButton: UIBarButtonItem!
+    
     var favorites = [""]
+    /*
+    var pageChange : PDFPage!
+    {
+        didSet
+            {
+                view.reloadInputViews()
+                print("page changed")
+        }
+    }
     
-    
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         searchBar.alpha = 0
         let path = URL(fileReferenceLiteralResourceName: "PDF.pdf")
-       secondView.document = PDFDocument(url: path)
-  //   print(secondView.currentPage.
-        let points = CGPoint(x: 5.0, y: 0.0)
-      secondView.page(for: points, nearest: true)
+        secondView.document = PDFDocument(url: path)
+        let points = CGPoint(x: 5.0, y: 0.0) // What's this!!? lol
+        secondView.page(for: points, nearest: true)
         
-     secondView.reloadInputViews()
-     secondView.go(to: secondView.document!.page(at: 18)!)
-    
+        secondView.reloadInputViews()
+        secondView.go(to: secondView.document!.page(at: 18)!)
+        
         
         secondView.document?.page(at: 18)?.accessibilityValue = "create in me a pure heart"
         secondView.document?.page(at: 19)?.accessibilityValue = "be still and know i am god"
@@ -95,16 +107,13 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 21)?.accessibilityValue = "have you not heard"
         secondView.document?.page(at: 21)?.accessibilityValue = "have you not heard"
         secondView.document?.page(at: 21)?.accessibilityValue = "have you not heard"
-        /*
-        var myPage = secondView.document?.page(at: 17)
-        myPage?.mutableSetValue(forKey: "create")
-        myPage?.accessibilityAttributedValue = NSAttributedString(string: "hiii")
-        print(myPage?.accessibilityAttributedValue)
-        */
-        
-        // Do any additional setup after loading the view.
-    }
+       
 
+    
+    }
+    
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -116,56 +125,79 @@ class secondViewController: UIViewController, PDFViewDelegate{
         // Make keyboard appear?? 
     }
     
-   
+    
     @IBAction func addToFavAction(_ sender: Any) {
         var current = secondView.currentPage
-        if (current?.accessibilityValue != nil)
+        if ((current?.accessibilityValue != nil) && (favorites.contains((current?.accessibilityValue)!) != true))
         {
-        favorites.append((current?.accessibilityValue)!)
-        } 
+            favorites.append((current?.accessibilityValue)!)
+        }
+        
+        else if ((current?.accessibilityValue != nil) && (favorites.contains((current?.accessibilityValue)!) == true))
+        {
+            var index = favorites.index(of: (current?.accessibilityValue)!)
+            favorites.remove(at: index!)
+        }
         /*
-        if current?.accessibilityValue is not in array
-        {
-        favorites.append(current?.accessibilityValue)
-            // change button to lit
-        }
-        else
-        { // get index in array and
-            favorites.remove(at: <#T##Int#>)
-            //chnage button to unlit
-        }
-  */
+         if current?.accessibilityValue is not in array
+         {
+         favorites.append(current?.accessibilityValue)
+         // change button to lit
+         }
+         else
+         { // get index in array and
+         favorites.remove(at: <#T##Int#>)
+         //chnage button to unlit
+         }
+         */
     }
- 
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toFav"
+        {
         let destinatiionVC = segue.destination as! FavoritesViewController
         destinatiionVC.favorites = favorites
+        }
     }
     
     @IBAction func unwindToSecondViewController(_ segue: UIStoryboardSegue) {
         
     }
     
+    func updatePage() // Updates the favorite icon of each page
+    {
+        
+    }
+    
+    @IBAction func swipeActionRecog(_ sender: Any) {
+        view.reloadInputViews()
+        print("page changed")
+    }
+    
+    
+ 
+    
 }
 
 
 extension secondViewController: UISearchBarDelegate{
-       // searchBarTextDidEndEditing
-
+    // searchBarTextDidEndEditing
     
-func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         var pages = 0
         let songTitle = searchBar.text!
-    
+        
         print(songTitle)
         let currentPage = secondView.currentPage
         var myPage = secondView.document?.page(at: 0)
         secondView.goToFirstPage(self)
-
-       // while ((myPage!.accessibilityValue?.range(of: songTitle.lowercased())) == nil) // Make sure it's the first part
-       // while (pageValue!.starts(with: songTitle.lowercased()) == false)
-    
-         while (((myPage!.accessibilityValue?.hasPrefix(songTitle.lowercased())) != true) && (pages != 339))
+        
+        // while ((myPage!.accessibilityValue?.range(of: songTitle.lowercased())) == nil) // Make sure it's the first part
+        // while (pageValue!.starts(with: songTitle.lowercased()) == false)
+        
+        while (((myPage!.accessibilityValue?.hasPrefix(songTitle.lowercased())) != true) && (pages != 339))
         {
             //add loading indicator !!
             secondView.goToNextPage(self)
@@ -179,13 +211,12 @@ func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         {
             secondView.go(to: currentPage!)
         }
-    searchBar.alpha = 0
-    navBar.alpha = 1
+        searchBar.alpha = 0
+        navBar.alpha = 1
     }
- 
     
     
-    }
-
+    
+}
 
 
