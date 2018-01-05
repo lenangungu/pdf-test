@@ -3,190 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07800A94636FA1AF3E90AB863A50B222 /* OHVectorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4996D2D8AE7ED2E434C81194180F10C8 /* OHVectorImage.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		0F785609AE479DD7397832FC3D88F9BC /* GDPDFImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = F4340E7BF609CD7AE3789C583D5F319A /* GDPDFImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		215AA77981374CEF60D131552ABF87EE /* GDPDFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F328430B61E9C873F73DFD0E6C1830B /* GDPDFScrollView.m */; };
-		24C86E86CDD0D6D7F2349FA83F96DA57 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6920738E4937880CDCC51D16C14CFA80 /* QuartzCore.framework */; };
-		332DEDB56DA566FD3EDBE1BF3A3B4914 /* OHPDFImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E212B0E6DDA933B7400D83AAEB221B /* OHPDFImage-dummy.m */; };
-		33B260B81B96C9FD15A2FB10C498B133 /* OHPDFImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE810F2FF9CAFFE368E1AA596726018 /* OHPDFImage.framework */; };
-		34CE554250AFBC6AFEBB40AEA0CC7D78 /* GDPDFContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A51AA2B69884CA623C4D99A1826EF20A /* GDPDFContainerView.m */; };
-		3BFF849B17114CFF228827A2CF61EAE0 /* GDPDFViewProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 42D79E023CD88A5D3342621B9E192F44 /* GDPDFViewProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		44241FAF12806024AD650EC867986AF1 /* OHPDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CB049F98E3539154C07203CDBCD67D60 /* OHPDFDocument.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		462B92733415334FD934F6F8AC78A90F /* OHPDFImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3477A9E7724AA9D71BE676BB5BA33285 /* OHPDFImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		53BC0FE51954C325D267C0A117A57236 /* GDPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62968AA2987126F5E2E0E66A993712D8 /* GDPDFView.m */; };
-		549EFD9615C3A6EACBF4A6F531254A88 /* GDPDFView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E77B92365C9B42D0ACE88535BF17748E /* GDPDFView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		55BBB62A88EA21D938D4A592ADAA9861 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AAA2E908CECDC9CCBD06EC18DDD5478 /* Foundation.framework */; };
-		5621971FE24B813A2A3B487459C6F379 /* GDPDFView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EACB6AF59AEBE4E2052E2A00F98482AF /* GDPDFView-dummy.m */; };
-		593995F4A6B46B311941F880ACF8E3D7 /* GDPDFImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2091CA4905760648A24BF2F83B0ED7DC /* GDPDFImageView.m */; };
-		6771C85899768335E231259A1C265F7C /* OHPDFPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE953436664C1A6D60932B3E0D50AC9 /* OHPDFPage.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		794C65B156ECCD8C0C38500328F20B2B /* GDPDFView.h in Headers */ = {isa = PBXBuildFile; fileRef = 985C9B11850BE39C483B91F3E5CEACB1 /* GDPDFView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7FC901AA2318775624B893213C46DDD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AAA2E908CECDC9CCBD06EC18DDD5478 /* Foundation.framework */; };
-		81CA970349874BFFFFDB07EC93782BB5 /* GDPDFScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = BEE56A2A5893FB4B36A4435FE76C7557 /* GDPDFScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		823B32718A660529FC9A2DDEB3E9A6E3 /* Pods-pdf test-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A55AB20A3548FD1748D51E0A1D20522 /* Pods-pdf test-dummy.m */; };
-		83F2347161548F9B7478115920C384E7 /* UIImage+OHPDF.h in Headers */ = {isa = PBXBuildFile; fileRef = 9834AE372F98C9199CAA295863304BA8 /* UIImage+OHPDF.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9E6A2B2B92184D876258CE629EB1C5A6 /* OHVectorImage.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1E0A6072C47033EC8AB2165C51C91B /* OHVectorImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A28E84A42877DAFAEFD9EBAB10E72FF5 /* Pods-pdf test-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1EE1540F314D1956238BCF51E0FF583 /* Pods-pdf test-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A93952C4F6BEB728C0C2593DE5E9749D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05AE57DDC1550E0156A694E6CBFBE63 /* UIKit.framework */; };
-		CD3E0FC969447458251F4C84174A2D66 /* OHPDFPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BBCBF009533E6DF99005E849F37D006 /* OHPDFPage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E3212A1E6DF4E87C4D1A48EF8621B8ED /* GDPDFContainerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7785166C9618115587AE6C5ECD676DDC /* GDPDFContainerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E4689179FAAC541EEC09C1953FA8E3BF /* GDPDFContainerViewProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = BD9BFBE3B8DC8559F06876061715F113 /* GDPDFContainerViewProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E7A4C55BC51023557E98E7E26D15FA10 /* OHPDFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C47B9480C22C379978C9DA357AF7926 /* OHPDFImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E7C9FFC9727F0EC3A07EB93A42ADC03A /* UIImage+OHPDF.m in Sources */ = {isa = PBXBuildFile; fileRef = 302B48D5C86248054BD94DF971F47F07 /* UIImage+OHPDF.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		EC482FB5CA3B387F12837BDD1F60C29C /* OHPDFDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = BE2AFB03BABE5674FE9C2C407BF7FCD2 /* OHPDFDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F6120CA1783EAE14A97E6BF7A445BB2F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05AE57DDC1550E0156A694E6CBFBE63 /* UIKit.framework */; };
-		F7EA96E5D882F8A58BC14A364B104C9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AAA2E908CECDC9CCBD06EC18DDD5478 /* Foundation.framework */; };
-		FAF18CBA6F00F737B4ACE28C5D21BBB6 /* GDPDFViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EC9797AD2D8AEB90607C8538F5D3900 /* GDPDFViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53DF9D6EBB4B288E312CCC105058FD87 /* Pods-pdf test-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A55AB20A3548FD1748D51E0A1D20522 /* Pods-pdf test-dummy.m */; };
+		621EE976E0ECADD9F53014F34093D5C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		6BA06057AFF4DFAE0C34518F9B795998 /* Pods-pdf test-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1EE1540F314D1956238BCF51E0FF583 /* Pods-pdf test-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		8D6177DBDD1394C2066E797A6645FDE8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7598D32220A560F03DBAFFD92F89027E;
-			remoteInfo = GDPDFView;
-		};
-		E8E9A1417C53946D12976E7EE8250AC5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AC952834DC7B218E18981258B07553E8;
-			remoteInfo = OHPDFImage;
-		};
-		F9E05A639D05886A520A06859C7D863A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AC952834DC7B218E18981258B07553E8;
-			remoteInfo = OHPDFImage;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		0F328430B61E9C873F73DFD0E6C1830B /* GDPDFScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GDPDFScrollView.m; path = GDPDFView/GDPDFScrollView.m; sourceTree = "<group>"; };
-		148697ACF71D5C1F2700C1CD0F9FCF00 /* GDPDFView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GDPDFView-prefix.pch"; sourceTree = "<group>"; };
-		158EB29F587ABC45D8AFAB6BD6DB7E1B /* Pods_pdf_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pdf_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F0BC098C389D72A3C038F98514D1047 /* OHPDFImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = OHPDFImage.modulemap; sourceTree = "<group>"; };
 		1F131ACF2FCED36DD309C36A1C22BBE7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2091CA4905760648A24BF2F83B0ED7DC /* GDPDFImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GDPDFImageView.m; path = GDPDFView/GDPDFImageView.m; sourceTree = "<group>"; };
-		302B48D5C86248054BD94DF971F47F07 /* UIImage+OHPDF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+OHPDF.m"; path = "OHPDFImage/UIImage+OHPDF.m"; sourceTree = "<group>"; };
-		3477A9E7724AA9D71BE676BB5BA33285 /* OHPDFImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OHPDFImage-umbrella.h"; sourceTree = "<group>"; };
-		3C47B9480C22C379978C9DA357AF7926 /* OHPDFImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHPDFImage.h; path = OHPDFImage/OHPDFImage.h; sourceTree = "<group>"; };
-		40E212B0E6DDA933B7400D83AAEB221B /* OHPDFImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OHPDFImage-dummy.m"; sourceTree = "<group>"; };
-		42D79E023CD88A5D3342621B9E192F44 /* GDPDFViewProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GDPDFViewProperties.h; path = GDPDFView/GDPDFViewProperties.h; sourceTree = "<group>"; };
-		486E96A21F9A639CD2F936FCCAAA635A /* GDPDFView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GDPDFView.modulemap; sourceTree = "<group>"; };
-		4996D2D8AE7ED2E434C81194180F10C8 /* OHVectorImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHVectorImage.m; path = OHPDFImage/OHVectorImage.m; sourceTree = "<group>"; };
-		4BD1B34B4DBE8A5A78131FE8DE5F2E64 /* OHPDFImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OHPDFImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA2E9440B87AC73CF2FCA03F19B1B84 /* Pods-pdf test-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-pdf test-frameworks.sh"; sourceTree = "<group>"; };
-		62968AA2987126F5E2E0E66A993712D8 /* GDPDFView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GDPDFView.m; path = GDPDFView/GDPDFView.m; sourceTree = "<group>"; };
 		63303F0E99839551037E150BB179A934 /* Pods-pdf test-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-pdf test-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6593467896DA93576B1AB7FB9E5DBD5F /* Pods-pdf test-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-pdf test-acknowledgements.plist"; sourceTree = "<group>"; };
-		6920738E4937880CDCC51D16C14CFA80 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		6BBCBF009533E6DF99005E849F37D006 /* OHPDFPage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHPDFPage.h; path = OHPDFImage/OHPDFPage.h; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7536CCFB371F8D8ADDF63C92AC9D6DD5 /* Pods-pdf test-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-pdf test-resources.sh"; sourceTree = "<group>"; };
-		7785166C9618115587AE6C5ECD676DDC /* GDPDFContainerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GDPDFContainerView.h; path = GDPDFView/GDPDFContainerView.h; sourceTree = "<group>"; };
-		86753DAC9F73B7B24B324B83E0CB8962 /* GDPDFView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GDPDFView.xcconfig; sourceTree = "<group>"; };
-		8AAA2E908CECDC9CCBD06EC18DDD5478 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		8BCCC4B77B3CD979FFAE25872E1F3405 /* Pods-pdf test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-pdf test.release.xcconfig"; sourceTree = "<group>"; };
-		8DD55BF9F1C749327845AB4DB9167B05 /* OHPDFImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OHPDFImage.xcconfig; sourceTree = "<group>"; };
-		8EC9797AD2D8AEB90607C8538F5D3900 /* GDPDFViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GDPDFViewDelegate.h; path = GDPDFView/GDPDFViewDelegate.h; sourceTree = "<group>"; };
-		8EE953436664C1A6D60932B3E0D50AC9 /* OHPDFPage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHPDFPage.m; path = OHPDFImage/OHPDFPage.m; sourceTree = "<group>"; };
 		927A28BC7431CC1C69A6E31ABA7CC336 /* Pods-pdf test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-pdf test.debug.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9834AE372F98C9199CAA295863304BA8 /* UIImage+OHPDF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+OHPDF.h"; path = "OHPDFImage/UIImage+OHPDF.h"; sourceTree = "<group>"; };
-		985C9B11850BE39C483B91F3E5CEACB1 /* GDPDFView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GDPDFView.h; path = GDPDFView/GDPDFView.h; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9A55AB20A3548FD1748D51E0A1D20522 /* Pods-pdf test-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-pdf test-dummy.m"; sourceTree = "<group>"; };
-		A51AA2B69884CA623C4D99A1826EF20A /* GDPDFContainerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GDPDFContainerView.m; path = GDPDFView/GDPDFContainerView.m; sourceTree = "<group>"; };
-		A6095A5DBBD80EACA1EB0BEC5C51D139 /* OHPDFImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OHPDFImage-prefix.pch"; sourceTree = "<group>"; };
-		BD9BFBE3B8DC8559F06876061715F113 /* GDPDFContainerViewProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GDPDFContainerViewProperties.h; path = GDPDFView/GDPDFContainerViewProperties.h; sourceTree = "<group>"; };
-		BE2AFB03BABE5674FE9C2C407BF7FCD2 /* OHPDFDocument.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHPDFDocument.h; path = OHPDFImage/OHPDFDocument.h; sourceTree = "<group>"; };
-		BEE56A2A5893FB4B36A4435FE76C7557 /* GDPDFScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GDPDFScrollView.h; path = GDPDFView/GDPDFScrollView.h; sourceTree = "<group>"; };
 		C1EE1540F314D1956238BCF51E0FF583 /* Pods-pdf test-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-pdf test-umbrella.h"; sourceTree = "<group>"; };
-		C2CF8F761267326B273587F3A2E59591 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB049F98E3539154C07203CDBCD67D60 /* OHPDFDocument.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHPDFDocument.m; path = OHPDFImage/OHPDFDocument.m; sourceTree = "<group>"; };
-		D05AE57DDC1550E0156A694E6CBFBE63 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		D25E54F4510833E39098CCE6C3B7FBD3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDE810F2FF9CAFFE368E1AA596726018 /* OHPDFImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OHPDFImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E77B92365C9B42D0ACE88535BF17748E /* GDPDFView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GDPDFView-umbrella.h"; sourceTree = "<group>"; };
-		EACB6AF59AEBE4E2052E2A00F98482AF /* GDPDFView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GDPDFView-dummy.m"; sourceTree = "<group>"; };
-		EB1E0A6072C47033EC8AB2165C51C91B /* OHVectorImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHVectorImage.h; path = OHPDFImage/OHVectorImage.h; sourceTree = "<group>"; };
-		F4340E7BF609CD7AE3789C583D5F319A /* GDPDFImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GDPDFImageView.h; path = GDPDFView/GDPDFImageView.h; sourceTree = "<group>"; };
-		F565BC728602803803309DC5A119D2BA /* Pods-pdf test.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-pdf test.modulemap"; sourceTree = "<group>"; };
-		FF0BB07B872B6E71AFD4BE2BE20DC011 /* GDPDFView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GDPDFView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C93E2DCF2A538F02A5616416DE2C45FC /* Pods_pdf_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_pdf_test.framework; path = "Pods-pdf test.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F565BC728602803803309DC5A119D2BA /* Pods-pdf test.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-pdf test.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		159ACD6AC20C59E273648BF8444B737B /* Frameworks */ = {
+		24F95518DE8C05A75B1B32B30EF43F28 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7EA96E5D882F8A58BC14A364B104C9A /* Foundation.framework in Frameworks */,
-				24C86E86CDD0D6D7F2349FA83F96DA57 /* QuartzCore.framework in Frameworks */,
-				A93952C4F6BEB728C0C2593DE5E9749D /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		48CED10C8E390DE3FAC1282B5CF1EC18 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7FC901AA2318775624B893213C46DDD1 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		82CBA40B675295F67F5133292CA98FDF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				55BBB62A88EA21D938D4A592ADAA9861 /* Foundation.framework in Frameworks */,
-				33B260B81B96C9FD15A2FB10C498B133 /* OHPDFImage.framework in Frameworks */,
-				F6120CA1783EAE14A97E6BF7A445BB2F /* UIKit.framework in Frameworks */,
+				621EE976E0ECADD9F53014F34093D5C8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B78F65B4C4D967A223EDBDDFA6561BE /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				8AAA2E908CECDC9CCBD06EC18DDD5478 /* Foundation.framework */,
-				6920738E4937880CDCC51D16C14CFA80 /* QuartzCore.framework */,
-				D05AE57DDC1550E0156A694E6CBFBE63 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		0B9FBE1F968ACA340173549E486EA55B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DDE810F2FF9CAFFE368E1AA596726018 /* OHPDFImage.framework */,
-				0B78F65B4C4D967A223EDBDDFA6561BE /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0F892E1680FD4427046A17F772866160 /* OHPDFImage */ = {
-			isa = PBXGroup;
-			children = (
-				BE2AFB03BABE5674FE9C2C407BF7FCD2 /* OHPDFDocument.h */,
-				CB049F98E3539154C07203CDBCD67D60 /* OHPDFDocument.m */,
-				3C47B9480C22C379978C9DA357AF7926 /* OHPDFImage.h */,
-				6BBCBF009533E6DF99005E849F37D006 /* OHPDFPage.h */,
-				8EE953436664C1A6D60932B3E0D50AC9 /* OHPDFPage.m */,
-				EB1E0A6072C47033EC8AB2165C51C91B /* OHVectorImage.h */,
-				4996D2D8AE7ED2E434C81194180F10C8 /* OHVectorImage.m */,
-				9834AE372F98C9199CAA295863304BA8 /* UIImage+OHPDF.h */,
-				302B48D5C86248054BD94DF971F47F07 /* UIImage+OHPDF.m */,
-				A8E85A70034FEE9E8A299B0228C9591F /* Support Files */,
-			);
-			path = OHPDFImage;
-			sourceTree = "<group>";
-		};
 		273F86C69E98E7460282CEB13D2AA7E6 /* Pods-pdf test */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,18 +58,12 @@
 			path = "Target Support Files/Pods-pdf test";
 			sourceTree = "<group>";
 		};
-		33FDBE694190002EF743520788626FF2 /* Support Files */ = {
+		325E10DD9E3A575CF03E7B9FFF63BFD7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				486E96A21F9A639CD2F936FCCAAA635A /* GDPDFView.modulemap */,
-				86753DAC9F73B7B24B324B83E0CB8962 /* GDPDFView.xcconfig */,
-				EACB6AF59AEBE4E2052E2A00F98482AF /* GDPDFView-dummy.m */,
-				148697ACF71D5C1F2700C1CD0F9FCF00 /* GDPDFView-prefix.pch */,
-				E77B92365C9B42D0ACE88535BF17748E /* GDPDFView-umbrella.h */,
-				D25E54F4510833E39098CCE6C3B7FBD3 /* Info.plist */,
+				C93E2DCF2A538F02A5616416DE2C45FC /* Pods_pdf_test.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/GDPDFView";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		50CE3878EA3C577FBF99AEF901136DA9 /* Targets Support Files */ = {
@@ -227,163 +74,61 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6A15B0653271AF378E2EF0E84FB35284 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FF0BB07B872B6E71AFD4BE2BE20DC011 /* GDPDFView.framework */,
-				4BD1B34B4DBE8A5A78131FE8DE5F2E64 /* OHPDFImage.framework */,
-				158EB29F587ABC45D8AFAB6BD6DB7E1B /* Pods_pdf_test.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				0B9FBE1F968ACA340173549E486EA55B /* Frameworks */,
-				A90875FAE4E793EC17EA668F9862DBD1 /* Pods */,
-				6A15B0653271AF378E2EF0E84FB35284 /* Products */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				325E10DD9E3A575CF03E7B9FFF63BFD7 /* Products */,
 				50CE3878EA3C577FBF99AEF901136DA9 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8EEC504D35FD8F3DDF7A85C599C0D9FE /* GDPDFView */ = {
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7785166C9618115587AE6C5ECD676DDC /* GDPDFContainerView.h */,
-				A51AA2B69884CA623C4D99A1826EF20A /* GDPDFContainerView.m */,
-				BD9BFBE3B8DC8559F06876061715F113 /* GDPDFContainerViewProperties.h */,
-				F4340E7BF609CD7AE3789C583D5F319A /* GDPDFImageView.h */,
-				2091CA4905760648A24BF2F83B0ED7DC /* GDPDFImageView.m */,
-				BEE56A2A5893FB4B36A4435FE76C7557 /* GDPDFScrollView.h */,
-				0F328430B61E9C873F73DFD0E6C1830B /* GDPDFScrollView.m */,
-				985C9B11850BE39C483B91F3E5CEACB1 /* GDPDFView.h */,
-				62968AA2987126F5E2E0E66A993712D8 /* GDPDFView.m */,
-				8EC9797AD2D8AEB90607C8538F5D3900 /* GDPDFViewDelegate.h */,
-				42D79E023CD88A5D3342621B9E192F44 /* GDPDFViewProperties.h */,
-				33FDBE694190002EF743520788626FF2 /* Support Files */,
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
-			path = GDPDFView;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A8E85A70034FEE9E8A299B0228C9591F /* Support Files */ = {
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				C2CF8F761267326B273587F3A2E59591 /* Info.plist */,
-				1F0BC098C389D72A3C038F98514D1047 /* OHPDFImage.modulemap */,
-				8DD55BF9F1C749327845AB4DB9167B05 /* OHPDFImage.xcconfig */,
-				40E212B0E6DDA933B7400D83AAEB221B /* OHPDFImage-dummy.m */,
-				A6095A5DBBD80EACA1EB0BEC5C51D139 /* OHPDFImage-prefix.pch */,
-				3477A9E7724AA9D71BE676BB5BA33285 /* OHPDFImage-umbrella.h */,
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/OHPDFImage";
-			sourceTree = "<group>";
-		};
-		A90875FAE4E793EC17EA668F9862DBD1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8EEC504D35FD8F3DDF7A85C599C0D9FE /* GDPDFView */,
-				0F892E1680FD4427046A17F772866160 /* OHPDFImage */,
-			);
-			name = Pods;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		30F78C29E3ECBFFBD1380571CCE48536 /* Headers */ = {
+		B773EB81A69FECE9EC312B40A534C908 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3212A1E6DF4E87C4D1A48EF8621B8ED /* GDPDFContainerView.h in Headers */,
-				E4689179FAAC541EEC09C1953FA8E3BF /* GDPDFContainerViewProperties.h in Headers */,
-				0F785609AE479DD7397832FC3D88F9BC /* GDPDFImageView.h in Headers */,
-				81CA970349874BFFFFDB07EC93782BB5 /* GDPDFScrollView.h in Headers */,
-				549EFD9615C3A6EACBF4A6F531254A88 /* GDPDFView-umbrella.h in Headers */,
-				794C65B156ECCD8C0C38500328F20B2B /* GDPDFView.h in Headers */,
-				FAF18CBA6F00F737B4ACE28C5D21BBB6 /* GDPDFViewDelegate.h in Headers */,
-				3BFF849B17114CFF228827A2CF61EAE0 /* GDPDFViewProperties.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5B50A4AE27972458E56817B3EC678280 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A28E84A42877DAFAEFD9EBAB10E72FF5 /* Pods-pdf test-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B406D37A5AB0DA6E67AC3AF34F520268 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EC482FB5CA3B387F12837BDD1F60C29C /* OHPDFDocument.h in Headers */,
-				462B92733415334FD934F6F8AC78A90F /* OHPDFImage-umbrella.h in Headers */,
-				E7A4C55BC51023557E98E7E26D15FA10 /* OHPDFImage.h in Headers */,
-				CD3E0FC969447458251F4C84174A2D66 /* OHPDFPage.h in Headers */,
-				9E6A2B2B92184D876258CE629EB1C5A6 /* OHVectorImage.h in Headers */,
-				83F2347161548F9B7478115920C384E7 /* UIImage+OHPDF.h in Headers */,
+				6BA06057AFF4DFAE0C34518F9B795998 /* Pods-pdf test-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1989C988ED840FD87C991CBB4BCD33B4 /* Pods-pdf test */ = {
+		FB31A519E1EA63DEC21E953CE1A9FF2A /* Pods-pdf test */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E27F00DB158A6556E6F00A30A66C2585 /* Build configuration list for PBXNativeTarget "Pods-pdf test" */;
+			buildConfigurationList = 1030947A622E5CCAAD3D976E9062C23A /* Build configuration list for PBXNativeTarget "Pods-pdf test" */;
 			buildPhases = (
-				D13056C9A6DB1891DC8675FB09BCD211 /* Sources */,
-				48CED10C8E390DE3FAC1282B5CF1EC18 /* Frameworks */,
-				5B50A4AE27972458E56817B3EC678280 /* Headers */,
+				7D061C8D4796B2448C9BD4E92824BDCE /* Sources */,
+				24F95518DE8C05A75B1B32B30EF43F28 /* Frameworks */,
+				B773EB81A69FECE9EC312B40A534C908 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0EDF03F113426637618AE707D1743AAE /* PBXTargetDependency */,
-				22F75B68134F592A3BC95301DCD162BC /* PBXTargetDependency */,
 			);
 			name = "Pods-pdf test";
 			productName = "Pods-pdf test";
-			productReference = 158EB29F587ABC45D8AFAB6BD6DB7E1B /* Pods_pdf_test.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7598D32220A560F03DBAFFD92F89027E /* GDPDFView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F6EE87568F907F6F09758F172EB50922 /* Build configuration list for PBXNativeTarget "GDPDFView" */;
-			buildPhases = (
-				85030D791D31C91B63C0F085512863D8 /* Sources */,
-				82CBA40B675295F67F5133292CA98FDF /* Frameworks */,
-				30F78C29E3ECBFFBD1380571CCE48536 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				16DACD87499B9CD4F167ED6325A65DEF /* PBXTargetDependency */,
-			);
-			name = GDPDFView;
-			productName = GDPDFView;
-			productReference = FF0BB07B872B6E71AFD4BE2BE20DC011 /* GDPDFView.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		AC952834DC7B218E18981258B07553E8 /* OHPDFImage */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 72012ADBF4959ADD4F599233EB2F99E9 /* Build configuration list for PBXNativeTarget "OHPDFImage" */;
-			buildPhases = (
-				9A66586A855C0CEE9A94816380011100 /* Sources */,
-				159ACD6AC20C59E273648BF8444B737B /* Frameworks */,
-				B406D37A5AB0DA6E67AC3AF34F520268 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = OHPDFImage;
-			productName = OHPDFImage;
-			productReference = 4BD1B34B4DBE8A5A78131FE8DE5F2E64 /* OHPDFImage.framework */;
+			productReference = C93E2DCF2A538F02A5616416DE2C45FC /* Pods_pdf_test.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -393,7 +138,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -403,72 +148,25 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 6A15B0653271AF378E2EF0E84FB35284 /* Products */;
+			productRefGroup = 325E10DD9E3A575CF03E7B9FFF63BFD7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7598D32220A560F03DBAFFD92F89027E /* GDPDFView */,
-				AC952834DC7B218E18981258B07553E8 /* OHPDFImage */,
-				1989C988ED840FD87C991CBB4BCD33B4 /* Pods-pdf test */,
+				FB31A519E1EA63DEC21E953CE1A9FF2A /* Pods-pdf test */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		85030D791D31C91B63C0F085512863D8 /* Sources */ = {
+		7D061C8D4796B2448C9BD4E92824BDCE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34CE554250AFBC6AFEBB40AEA0CC7D78 /* GDPDFContainerView.m in Sources */,
-				593995F4A6B46B311941F880ACF8E3D7 /* GDPDFImageView.m in Sources */,
-				215AA77981374CEF60D131552ABF87EE /* GDPDFScrollView.m in Sources */,
-				5621971FE24B813A2A3B487459C6F379 /* GDPDFView-dummy.m in Sources */,
-				53BC0FE51954C325D267C0A117A57236 /* GDPDFView.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9A66586A855C0CEE9A94816380011100 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				44241FAF12806024AD650EC867986AF1 /* OHPDFDocument.m in Sources */,
-				332DEDB56DA566FD3EDBE1BF3A3B4914 /* OHPDFImage-dummy.m in Sources */,
-				6771C85899768335E231259A1C265F7C /* OHPDFPage.m in Sources */,
-				07800A94636FA1AF3E90AB863A50B222 /* OHVectorImage.m in Sources */,
-				E7C9FFC9727F0EC3A07EB93A42ADC03A /* UIImage+OHPDF.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D13056C9A6DB1891DC8675FB09BCD211 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				823B32718A660529FC9A2DDEB3E9A6E3 /* Pods-pdf test-dummy.m in Sources */,
+				53DF9D6EBB4B288E312CCC105058FD87 /* Pods-pdf test-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0EDF03F113426637618AE707D1743AAE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GDPDFView;
-			target = 7598D32220A560F03DBAFFD92F89027E /* GDPDFView */;
-			targetProxy = 8D6177DBDD1394C2066E797A6645FDE8 /* PBXContainerItemProxy */;
-		};
-		16DACD87499B9CD4F167ED6325A65DEF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = OHPDFImage;
-			target = AC952834DC7B218E18981258B07553E8 /* OHPDFImage */;
-			targetProxy = F9E05A639D05886A520A06859C7D863A /* PBXContainerItemProxy */;
-		};
-		22F75B68134F592A3BC95301DCD162BC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = OHPDFImage;
-			target = AC952834DC7B218E18981258B07553E8 /* OHPDFImage */;
-			targetProxy = E8E9A1417C53946D12976E7EE8250AC5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		33F8F7AAAA85E50D89ADDD29179D4D1C /* Release */ = {
@@ -481,9 +179,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -491,20 +187,14 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -533,9 +223,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -543,21 +231,15 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
@@ -579,73 +261,7 @@
 			};
 			name = Debug;
 		};
-		3DD9E7DC2F5A5E1A62A4391785083205 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8DD55BF9F1C749327845AB4DB9167B05 /* OHPDFImage.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OHPDFImage/OHPDFImage-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OHPDFImage/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OHPDFImage/OHPDFImage.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = OHPDFImage;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		57CA632200929BDF4ACD85917D1DBEC1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8DD55BF9F1C749327845AB4DB9167B05 /* OHPDFImage.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OHPDFImage/OHPDFImage-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OHPDFImage/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OHPDFImage/OHPDFImage.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = OHPDFImage;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5D8294BC9D5A4C26A9AAEBEFD85998B7 /* Debug */ = {
+		48396118C232F22F392315C51C9D6BB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 927A28BC7431CC1C69A6E31ABA7CC336 /* Pods-pdf test.debug.xcconfig */;
 			buildSettings = {
@@ -681,40 +297,7 @@
 			};
 			name = Debug;
 		};
-		7368578B27815816F33FE69619C4B172 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86753DAC9F73B7B24B324B83E0CB8962 /* GDPDFView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GDPDFView/GDPDFView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GDPDFView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GDPDFView/GDPDFView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = GDPDFView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8B858280029C87BF43D28029821A26BE /* Release */ = {
+		EBEFAE7CC35D7EDBB8D68E1517BAC58F /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8BCCC4B77B3CD979FFAE25872E1F3405 /* Pods-pdf test.release.xcconfig */;
 			buildSettings = {
@@ -750,74 +333,23 @@
 			};
 			name = Release;
 		};
-		F37CC63363AAD46AF8C487658E547506 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86753DAC9F73B7B24B324B83E0CB8962 /* GDPDFView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GDPDFView/GDPDFView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GDPDFView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GDPDFView/GDPDFView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = GDPDFView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1030947A622E5CCAAD3D976E9062C23A /* Build configuration list for PBXNativeTarget "Pods-pdf test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48396118C232F22F392315C51C9D6BB7 /* Debug */,
+				EBEFAE7CC35D7EDBB8D68E1517BAC58F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3C7603FCA3FD3DD4760B85324A928D53 /* Debug */,
 				33F8F7AAAA85E50D89ADDD29179D4D1C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		72012ADBF4959ADD4F599233EB2F99E9 /* Build configuration list for PBXNativeTarget "OHPDFImage" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3DD9E7DC2F5A5E1A62A4391785083205 /* Debug */,
-				57CA632200929BDF4ACD85917D1DBEC1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E27F00DB158A6556E6F00A30A66C2585 /* Build configuration list for PBXNativeTarget "Pods-pdf test" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5D8294BC9D5A4C26A9AAEBEFD85998B7 /* Debug */,
-				8B858280029C87BF43D28029821A26BE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F6EE87568F907F6F09758F172EB50922 /* Build configuration list for PBXNativeTarget "GDPDFView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7368578B27815816F33FE69619C4B172 /* Debug */,
-				F37CC63363AAD46AF8C487658E547506 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

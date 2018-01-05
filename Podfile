@@ -6,6 +6,6 @@ target 'pdf test' do
   use_frameworks!
 
   # Pods for pdf test
-	pod ‘GDPDFView’
+	
 
 end

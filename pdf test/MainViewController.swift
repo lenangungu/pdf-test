@@ -9,7 +9,14 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    /*
+    // I need to:
+    - Check favorite function
+    - Implement favorite screen from home
+    - Handle keyboard after use taps on screes (search)
+    - Add load indicator while pg searching
+    - Chech rotation 
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
 
