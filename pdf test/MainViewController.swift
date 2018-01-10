@@ -11,11 +11,13 @@ import UIKit
 class MainViewController: UIViewController {
     /*
     // I need to:
+    - Check why apostrophes arent found in search!!!
     - Check favorite function
-    - Implement favorite screen from home
+    - Implement favorite screen from home ------- load the PDF in the main view (hide) and initialize in the main view that way segue will transfer to both screens
     - Handle keyboard after use taps on screes (search)
     - Add load indicator while pg searching
-    - Chech rotation 
+    - Chech rotation
+    - categorize: use range of identifier to strore them in different arrays.
     */
     override func viewDidLoad() {
         super.viewDidLoad()
