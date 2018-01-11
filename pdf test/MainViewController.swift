@@ -11,7 +11,6 @@ import UIKit
 class MainViewController: UIViewController {
     /*
     // I need to:
-    - Check why apostrophes arent found in search!!!
     - Check favorite function
     - Implement favorite screen from home ------- load the PDF in the main view (hide) and initialize in the main view that way segue will transfer to both screens
     - Handle keyboard after use taps on screes (search)
