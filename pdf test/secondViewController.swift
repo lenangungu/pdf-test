@@ -358,6 +358,12 @@ class secondViewController: UIViewController, PDFViewDelegate{
         let destinatiionVC = segue.destination as! FavoritesViewController
         destinatiionVC.favorites = favorites
         }
+        if segue.identifier == "backToMain"
+        {
+            let destinatiionVC = segue.destination as! MainViewController
+            destinatiionVC.favorites = favorites
+        }
+        
     }
     
     @IBAction func unwindToSecondViewController(_ segue: UIStoryboardSegue) {
@@ -374,6 +380,11 @@ class secondViewController: UIViewController, PDFViewDelegate{
         print("page changed")
     }
     
+    @IBAction func tapActionRecog(_ sender: Any) {
+    searchBar.endEditing(true)
+        searchBar.alpha = 0
+        navBar.alpha = 1
+    }
     
  
     

@@ -24,6 +24,13 @@ class FavoritesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "backToMain"
+        {
+            let destinatiionVC = segue.destination as! MainViewController
+            destinatiionVC.favorites = favorites!
+        }
+    }
 
 }
 extension FavoritesViewController: UITableViewDataSource

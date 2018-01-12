@@ -9,24 +9,44 @@
 import UIKit
 
 class MainViewController: UIViewController {
+   
+    var favorites = [""]
     /*
     // I need to:
     - Check favorite function
-    - Implement favorite screen from home ------- load the PDF in the main view (hide) and initialize in the main view that way segue will transfer to both screens
-    - Handle keyboard after use taps on screes (search)
+    - Send to pdf when fav cell clicked on
+
     - Add load indicator while pg searching
-    - Chech rotation
-    - categorize: use range of identifier to strore them in different arrays.
+    - Chech rotation (UI)
+     
+    - categorize: use range of identifier to strore them in different arrays. - as update maybe
     */
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        print(favorites)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toSecondVC"
+        {
+        let destinatiionVC = segue.destination as! secondViewController
+        destinatiionVC.favorites = favorites
+        }
+        
+        if segue.identifier == "toFavVC"
+        {
+            let destinatiionVC = segue.destination as! FavoritesViewController
+            destinatiionVC.favorites = favorites
+        }
+        
     }
     
     @IBAction func unwindToMainViewController(_ segue: UIStoryboardSegue) {

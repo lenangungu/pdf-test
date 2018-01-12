@@ -36,7 +36,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9AA-Pg-1kU" kind="show" id="qbc-wb-Qpq"/>
+                                    <segue destination="9AA-Pg-1kU" kind="show" identifier="toSecondVC" id="qbc-wb-Qpq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kad-3o-MMa">
@@ -46,6 +46,9 @@
                                 <state key="normal" title="Favorites">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="c2d-rx-eYC" kind="show" identifier="toFavVC" id="SKa-1p-CwV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.028157552083333332" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -69,6 +72,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="bmu-s5-Ruu" appends="YES" id="k7X-yn-X9z"/>
+                                    <outletCollection property="gestureRecognizers" destination="PF4-9C-Qqq" appends="YES" id="XfC-Xf-dxP"/>
                                 </connections>
                             </view>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HkN-uw-Orn">
@@ -91,7 +95,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="5LD-PR-Vu2">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
-                                                <segue destination="DsL-zs-beM" kind="unwind" unwindAction="unwindToMainViewController:" id="LEe-sJ-OPk"/>
+                                                <segue destination="DsL-zs-beM" kind="unwind" identifier="backToMain" unwindAction="unwindToMainViewController:" id="LEe-sJ-OPk"/>
                                             </connections>
                                         </barButtonItem>
                                         <rightBarButtonItems>
@@ -146,6 +150,11 @@
                         <outlet property="delegate" destination="9AA-Pg-1kU" id="DL6-cv-sJp"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <tapGestureRecognizer id="PF4-9C-Qqq">
+                    <connections>
+                        <action selector="tapActionRecog:" destination="9AA-Pg-1kU" id="nYY-Fc-gc1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1060" y="-43"/>
         </scene>
@@ -170,7 +179,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="&lt; Songs" id="kCa-Qv-6nV">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
-                                                <segue destination="CES-Tz-BRo" kind="unwind" unwindAction="unwindToSecondViewController:" id="AV5-cw-YDl"/>
+                                                <segue destination="CES-Tz-BRo" kind="unwind" identifier="backToMain" unwindAction="unwindToMainViewController:" id="aff-bm-rhh"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -232,4 +241,7 @@
         <image name="icons8-star-500" width="25" height="25"/>
         <image name="music-notes-15781-400x250" width="200" height="125"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="SKa-1p-CwV"/>
+    </inferredMetricsTieBreakers>
 </document>
