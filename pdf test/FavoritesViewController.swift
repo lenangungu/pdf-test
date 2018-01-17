@@ -10,10 +10,17 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
     
+    @IBOutlet var tableView: UITableView!
     var favorites : [String]? 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let defaults = UserDefaults.standard
+        if let favoritesDefaults : AnyObject = defaults.object(forKey: "favorites") as AnyObject {
+            favorites = favoritesDefaults as! [String]
+        }
+        self.tableView.reloadData()
         
         print("favorites are: \(favorites)")
         // Do any additional setup after loading the view.

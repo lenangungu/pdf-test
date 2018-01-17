@@ -231,6 +231,7 @@
                         <viewLayoutGuide key="safeArea" id="kp9-PX-pus"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="RI9-bL-Zru" id="JGH-2Z-h6J"/>
                         <segue destination="9AA-Pg-1kU" kind="show" identifier="toSecondVC" id="3SZ-Nt-A1s"/>
                     </connections>
                 </viewController>

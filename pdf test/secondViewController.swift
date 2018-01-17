@@ -328,6 +328,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
     
     @IBAction func addToFavAction(_ sender: Any) {
         let current = secondView.currentPage
+        
         if ((current?.accessibilityValue != nil) && (favorites.contains((current?.accessibilityValue)!) != true))
         {
             favorites.append((current?.accessibilityValue)!)
@@ -338,6 +339,16 @@ class secondViewController: UIViewController, PDFViewDelegate{
             let index = favorites.index(of: (current?.accessibilityValue)!)
             favorites.remove(at: index!)
         }
+       
+        let defaults = UserDefaults.standard // 1
+        
+            defaults.set(favorites, forKey: "favorites")
+            defaults.synchronize()
+        
+       
+        
+     
+        
         /*
          if current?.accessibilityValue is not in array
          {
