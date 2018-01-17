@@ -13,8 +13,10 @@ class MainViewController: UIViewController {
     var favorites = [""]
     /*
     // I need to:
+    - Go to different screens from Favorites
+    - Persist favorites
     - Check favorite function
-    - Send to pdf when fav cell clicked on
+    - Send to pdf when fav cell clicked on //!!!check for memory leak, might be creating too many VC instances 
 
     - Add load indicator while pg searching
     - Chech rotation (UI)

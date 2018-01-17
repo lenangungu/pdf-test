@@ -20,6 +20,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
     @IBOutlet var addToFavButton: UIBarButtonItem!
     
     var favorites = [""]
+    var favTitle : String? 
     /*
     var pageChange : PDFPage!
     {
@@ -351,6 +352,10 @@ class secondViewController: UIViewController, PDFViewDelegate{
          */
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        print("fav title is \(favTitle)")
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toFav"
@@ -363,6 +368,8 @@ class secondViewController: UIViewController, PDFViewDelegate{
             let destinatiionVC = segue.destination as! MainViewController
             destinatiionVC.favorites = favorites
         }
+    
+       
         
     }
     
@@ -370,10 +377,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         
     }
     
-    func updatePage() // Updates the favorite icon of each page
-    {
-        
-    }
+    
     
     @IBAction func swipeActionRecog(_ sender: Any) {
         view.reloadInputViews()
@@ -386,7 +390,11 @@ class secondViewController: UIViewController, PDFViewDelegate{
         navBar.alpha = 1
     }
     
- 
+ func navThroughPages()
+ {
+    
+    }
+    
     
 }
 

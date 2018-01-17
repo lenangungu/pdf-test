@@ -30,6 +30,14 @@ class FavoritesViewController: UIViewController {
             let destinatiionVC = segue.destination as! MainViewController
             destinatiionVC.favorites = favorites!
         }
+        
+        if segue.identifier == "toSecondVC"
+        {
+           // let sender = sender as! FavoritwCellTableViewCell
+            let destinatiionVC = segue.destination as! secondViewController
+            //destinatiionVC.favTitle = sender.title.text
+            destinatiionVC.favorites = favorites!
+        }
     }
 
 }
@@ -65,5 +73,8 @@ extension FavoritesViewController: UITableViewDataSource
 }
 extension FavoritesViewController: UITableViewDelegate
 {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let favTitle = favorites![indexPath.row]
+        performSegue(withIdentifier: "toSecondVC", sender: (Any).self)
+    }
 }
