@@ -13,14 +13,15 @@ class MainViewController: UIViewController {
     var favorites = [""]
     /*
     // I need to:
-    - Go to different screens from Favorites
-    - Persist favorites
-    - Check favorite function
-    - Send to pdf when fav cell clicked on //!!!check for memory leak, might be creating too many VC instances 
 
-    - Add load indicator while pg searching
+    - Implement delete favorite from tableview
+    - HAVE ANIMATION FOR ADDING FAVORITE
+    
+    -  Check for leaks when going to anf from favorite (check favorite fuction as well)
+
+   
     - Chech rotation (UI)
-     
+    - Add load indicator while pg searching
     - categorize: use range of identifier to strore them in different arrays. - as update maybe
     */
     override func viewDidLoad() {
@@ -47,6 +48,7 @@ class MainViewController: UIViewController {
         {
             let destinatiionVC = segue.destination as! FavoritesViewController
             destinatiionVC.favorites = favorites
+            destinatiionVC.segueFrom = "main"
         }
         
     }

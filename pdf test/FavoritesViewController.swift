@@ -9,10 +9,12 @@
 import UIKit
 
 class FavoritesViewController: UIViewController {
+    @IBOutlet var backToMainButton: UIBarButtonItem!
     
+    @IBOutlet var backToSongsButton: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
     var favorites : [String]? 
-    
+    var segueFrom : String? 
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,12 +42,16 @@ class FavoritesViewController: UIViewController {
         
         if segue.identifier == "toSecondVC"
         {
-           // let sender = sender as! FavoritwCellTableViewCell
             let destinatiionVC = segue.destination as! secondViewController
-            //destinatiionVC.favTitle = sender.title.text
+            let sender = sender as! FavoritwCellTableViewCell
+            
+            destinatiionVC.favTitle = sender.title.text
             destinatiionVC.favorites = favorites!
         }
     }
+    
+   
+    
 
 }
 extension FavoritesViewController: UITableViewDataSource
@@ -80,8 +86,10 @@ extension FavoritesViewController: UITableViewDataSource
 }
 extension FavoritesViewController: UITableViewDelegate
 {
+    /*
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let favTitle = favorites![indexPath.row]
         performSegue(withIdentifier: "toSecondVC", sender: (Any).self)
     }
+    */
 }

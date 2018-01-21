@@ -35,6 +35,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
       
+       
         searchBar.alpha = 0
         let path = URL(fileReferenceLiteralResourceName: "PDF.pdf")
         secondView.document = PDFDocument(url: path)
@@ -42,7 +43,6 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.page(for: points, nearest: true)
         
         secondView.reloadInputViews()
-        secondView.go(to: secondView.document!.page(at: 18)!)
         
         
         secondView.document?.page(at: 18)?.accessibilityValue = "create in me a pure heart"
@@ -309,6 +309,24 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 335)?.accessibilityValue = "king of the jungle"
         secondView.document?.page(at: 336)?.accessibilityValue = "i’m in the lord’s army building up the kingdom"
         secondView.document?.page(at: 337)?.accessibilityValue = "jesus is well and alive today"
+        
+        if (favTitle != nil)
+        {
+            var pages = 0
+            var myPage = secondView.document?.page(at: 0)
+            //while (((myPage!.accessibilityValue?.hasPrefix(title) != true) && (pages != 339))
+            while ((myPage!.accessibilityValue != favTitle) && (pages != 339)) {
+                //add loading indicator !!
+                secondView.goToNextPage(self)
+                myPage = secondView.currentPage
+                pages += 1
+            }
+        }
+        else
+        {
+            secondView.go(to: secondView.document!.page(at: 18)!)
+            
+        }
     
     }
     
@@ -362,17 +380,14 @@ class secondViewController: UIViewController, PDFViewDelegate{
          }
          */
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        print("fav title is \(favTitle)")
-    }
-    
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toFav"
         {
         let destinatiionVC = segue.destination as! FavoritesViewController
         destinatiionVC.favorites = favorites
+            destinatiionVC.segueFrom = "songs"
         }
         if segue.identifier == "backToMain"
         {
