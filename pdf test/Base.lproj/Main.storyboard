@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dz0-gq-Epq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9AA-Pg-1kU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,55 +10,7 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="GurmukhiMN.ttc">
-            <string>GurmukhiMN</string>
-        </array>
-    </customFonts>
     <scenes>
-        <!--Main View Controller-->
-        <scene sceneID="zBd-HD-wMK">
-            <objects>
-                <viewController id="Dz0-gq-Epq" customClass="MainViewController" customModule="pdf_test" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ocx-8Q-Hg0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="music-notes-15781-400x250" translatesAutoresizingMaskIntoConstraints="NO" id="yDp-pQ-tZl">
-                                <rect key="frame" x="0.0" y="409" width="375" height="327"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dU4-Bd-4mG">
-                                <rect key="frame" x="99" y="188" width="176" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="22"/>
-                                <state key="normal" title="All Songs">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="9AA-Pg-1kU" kind="show" identifier="toSecondVC" id="qbc-wb-Qpq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kad-3o-MMa">
-                                <rect key="frame" x="101" y="279" width="172" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="19"/>
-                                <state key="normal" title="Favorites">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="c2d-rx-eYC" kind="show" identifier="toFavVC" id="SKa-1p-CwV"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="0.028157552083333332" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Iix-IG-CBE"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1rO-qa-tPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="281" y="-44"/>
-        </scene>
         <!--Second View Controller-->
         <scene sceneID="bcG-at-7yC">
             <objects>
@@ -97,10 +49,10 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Songs" id="wfh-l6-g9G">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt; Main" id="5LD-PR-Vu2">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="EXU-Fk-MHa">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
-                                                <segue destination="DsL-zs-beM" kind="unwind" identifier="backToMain" unwindAction="unwindToMainViewController:" id="LEe-sJ-OPk"/>
+                                                <segue destination="c2d-rx-eYC" kind="show" identifier="toFav" id="6XL-Qa-Kzr"/>
                                             </connections>
                                         </barButtonItem>
                                         <rightBarButtonItems>
@@ -114,12 +66,6 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="addToFavAction:" destination="9AA-Pg-1kU" id="Aou-LJ-98I"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem systemItem="bookmarks" id="EXU-Fk-MHa">
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <connections>
-                                                    <segue destination="c2d-rx-eYC" kind="show" identifier="toFav" id="6XL-Qa-Kzr"/>
                                                 </connections>
                                             </barButtonItem>
                                         </rightBarButtonItems>
@@ -149,7 +95,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mb-IB-VOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="DsL-zs-beM" userLabel="Exit" sceneMemberID="exit"/>
                 <swipeGestureRecognizer direction="right" id="bmu-s5-Ruu">
                     <connections>
                         <action selector="swipeActionRecog:" destination="9AA-Pg-1kU" id="p88-te-rm4"/>
@@ -162,7 +107,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1191" y="499"/>
+            <point key="canvasLocation" x="1207" y="471"/>
         </scene>
         <!--Favorites View Controller-->
         <scene sceneID="VGK-50-E2G">
@@ -185,7 +130,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="&lt; Songs" id="kCa-Qv-6nV">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
-                                                <segue destination="9AA-Pg-1kU" kind="show" id="GJ1-tv-M6H"/>
+                                                <segue destination="LXN-M9-kZo" kind="unwind" unwindAction="unwindToSecondViewController:" id="s5c-pQ-Xev"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -243,16 +188,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LG2-fX-zok" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="LXN-M9-kZo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="502" y="936"/>
         </scene>
     </scenes>
     <resources>
         <image name="icons8-star-500" width="25" height="25"/>
-        <image name="music-notes-15781-400x250" width="200" height="125"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="6XL-Qa-Kzr"/>
-        <segue reference="9kG-AM-jhe"/>
-    </inferredMetricsTieBreakers>
 </document>

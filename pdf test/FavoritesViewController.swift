@@ -34,14 +34,10 @@ class FavoritesViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "backToMain"
-        {
-            let destinatiionVC = segue.destination as! MainViewController
-            destinatiionVC.favorites = favorites!
-        }
         
         if segue.identifier == "toSecondVC"
         {
+            //UNWIND INSTEAD 
             let destinatiionVC = segue.destination as! secondViewController
             let sender = sender as! FavoritwCellTableViewCell
             
