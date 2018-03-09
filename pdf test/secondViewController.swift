@@ -33,9 +33,20 @@ class secondViewController: UIViewController, PDFViewDelegate{
     }
     
     */
+    
+    
+    /*
+    @available(iOS 11.0, *)
+    public static let PDFViewVisiblePagesChanged: NSNotification.Name // Notification when the scroll view has scrolled into the bounds of a new page.
+}*/
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Adding Observer
+   
+        
+
         searchBar.alpha = 0
         let path = URL(fileReferenceLiteralResourceName: "PDF.pdf")
         secondView.document = PDFDocument(url: path)
@@ -328,10 +339,17 @@ class secondViewController: UIViewController, PDFViewDelegate{
             secondView.go(to: secondView.document!.page(at: 18)!)
             
         }
+    }
+ /*
+ NotificationCenter.default.addObserver(self, selector: Selector(favFunc()), name: Notification.Name.PDFViewPageChanged, object: (Any).self) // This goes in viewDidload 
     
     }
-    
-
+    func favFunc() -> String
+{
+    print(secondView.currentPage?.accessibilityValue as Any)
+    return ("true")
+    }
+    */
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -351,12 +369,14 @@ class secondViewController: UIViewController, PDFViewDelegate{
         if ((current?.accessibilityValue != nil) && (favorites.contains((current?.accessibilityValue)!) != true))
         {
             favorites.append((current?.accessibilityValue)!)
+            Toast(context: self, msg: "Added to favorites")
         }
         
         else if ((current?.accessibilityValue != nil) && (favorites.contains((current?.accessibilityValue)!) == true))
         {
             let index = favorites.index(of: (current?.accessibilityValue)!)
             favorites.remove(at: index!)
+            Toast(context: self, msg: "Removed from favorites")
         }
        
         let defaults = UserDefaults.standard // 1
@@ -381,7 +401,32 @@ class secondViewController: UIViewController, PDFViewDelegate{
          }
          */
     }
-   
+    func Toast(context ctx: UIViewController, msg: String) {
+        
+        let toast = UILabel(frame:
+            CGRect(x: 25, y: ctx.view.frame.size.height / 2,
+                   width: ctx.view.frame.size.width - 50, height: 50))
+        
+        toast.backgroundColor = UIColor.lightGray
+        toast.textColor = UIColor.white
+        toast.textAlignment = .center;
+        toast.numberOfLines = 1
+        toast.font = UIFont.systemFont(ofSize: 15)
+        toast.layer.cornerRadius = 20;
+        toast.clipsToBounds  =  true
+        
+        toast.text = msg
+        
+        ctx.view.addSubview(toast)
+        
+        UIView.animate(withDuration: 2.0, delay: 0.5,
+                       options: .curveEaseOut, animations: {
+                        toast.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toast.removeFromSuperview()
+        })
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toFav"

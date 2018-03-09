@@ -13,15 +13,17 @@ class MainViewController: UIViewController {
     var favorites = [""]
     /*
     // I need to:
-
+- go back to song you came from fav
+-activity indicator in fav screen
+     
     - Implement delete favorite from tableview
-    - HAVE ANIMATION FOR ADDING FAVORITE
-    
+ 
+    -Delete extra row in favorites
+     
     -  Check for leaks when going to anf from favorite (check favorite fuction as well)
-
-   
     - Chech rotation (UI)
-    - Add load indicator while pg searching
+     
+    -  FURTHER UPDATES -
     - categorize: use range of identifier to strore them in different arrays. - as update maybe
     */
     override func viewDidLoad() {
