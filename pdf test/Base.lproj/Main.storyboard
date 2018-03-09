@@ -130,7 +130,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="&lt; Songs" id="kCa-Qv-6nV">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
-                                                <segue destination="LXN-M9-kZo" kind="unwind" unwindAction="unwindToSecondViewController:" id="s5c-pQ-Xev"/>
+                                                <segue destination="LXN-M9-kZo" kind="unwind" identifier="unwindToSecond" unwindAction="unwindToSecondViewController:" id="s5c-pQ-Xev"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -190,7 +190,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LG2-fX-zok" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="LXN-M9-kZo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="502" y="936"/>
+            <point key="canvasLocation" x="406" y="952"/>
         </scene>
     </scenes>
     <resources>

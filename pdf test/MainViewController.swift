@@ -13,10 +13,10 @@ class MainViewController: UIViewController {
     var favorites = [""]
     /*
     // I need to:
-- Implement delete favorite from tableview
+
 - Delete extra row in favorites
--activity indicator in fav screen (MAYBE lol)
-          
+- activity indicator in fav screen (MAYBE lol)
+     
     - Check for leaks when going to anf from favorite (check favorite fuction as well)
     - Chech rotation (UI)
      

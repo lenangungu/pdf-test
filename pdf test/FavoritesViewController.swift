@@ -24,7 +24,7 @@ class FavoritesViewController: UIViewController {
         }
         self.tableView.reloadData()
         
-        print("favorites are: \(favorites)")
+       // print("favorites are: \(favorites)")
         // Do any additional setup after loading the view.
     }
 
@@ -35,13 +35,13 @@ class FavoritesViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "toSecondVC"
+        if segue.identifier == "toSecondVC" || segue.identifier == "unwindToSecond"
         {
             //UNWIND INSTEAD 
             let destinatiionVC = segue.destination as! secondViewController
-            let sender = sender as! FavoritwCellTableViewCell
-            
-            destinatiionVC.favTitle = sender.title.text
+           // let sender = sender as! FavoritwCellTableViewCell
+          //  let sender = segue.source
+        //    destinatiionVC.favTitle = sender.title.text
             destinatiionVC.favorites = favorites!
         }
     }
@@ -88,4 +88,19 @@ extension FavoritesViewController: UITableViewDelegate
         performSegue(withIdentifier: "toSecondVC", sender: (Any).self)
     }
     */
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete)
+        {
+           // print(indexPath.row)
+           
+            favorites!.remove(at: indexPath.row)
+            tableView.reloadData()
+            let defaults = UserDefaults.standard // 1
+            
+           // defaults.removeObject(forKey: "favorites")
+            defaults.set(favorites, forKey: "favorites")
+            defaults.synchronize()
+            
+        }
+    }
 }
