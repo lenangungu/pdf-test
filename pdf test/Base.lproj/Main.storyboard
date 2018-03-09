@@ -67,6 +67,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="NZs-fj-ocz">
+                                <rect key="frame" x="170" y="316" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.60392156860000001" green="0.1333333333" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XrJ-Hy-cOc" customClass="PDFView">
                                 <rect key="frame" x="3" y="45" width="375" height="667"/>
                                 <gestureRecognizers/>
@@ -136,6 +141,7 @@
                         <viewLayoutGuide key="safeArea" id="EBK-1K-LPy"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndic" destination="NZs-fj-ocz" id="Pic-qs-g7J"/>
                         <outlet property="addToFavButton" destination="LDd-SF-G00" id="Br1-Sn-TMz"/>
                         <outlet property="navBar" destination="wzj-Uz-Dbr" id="Rgq-nX-JQL"/>
                         <outlet property="searchBar" destination="HkN-uw-Orn" id="h09-SP-IsL"/>

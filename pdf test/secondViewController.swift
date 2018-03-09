@@ -12,6 +12,7 @@ import PDFKit
 class secondViewController: UIViewController, PDFViewDelegate{
     @IBOutlet var secondView: PDFView!
 
+    @IBOutlet var activityIndic: UIActivityIndicatorView!
     @IBOutlet var searchBar: UISearchBar!
     var pgNum: Int?
     var pgTitle: String?
@@ -34,8 +35,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
     */
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-       
+        
         searchBar.alpha = 0
         let path = URL(fileReferenceLiteralResourceName: "PDF.pdf")
         secondView.document = PDFDocument(url: path)
@@ -312,6 +312,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         
         if (favTitle != nil)
         {
+            
             var pages = 0
             var myPage = secondView.document?.page(at: 0)
             //while (((myPage!.accessibilityValue?.hasPrefix(title) != true) && (pages != 339))
@@ -427,38 +428,62 @@ class secondViewController: UIViewController, PDFViewDelegate{
 
 extension secondViewController: UISearchBarDelegate{
     // searchBarTextDidEndEditing
-    
+  
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+       
         var pages = 0
         let songTitle = searchBar.text!
-        
+       
         print(songTitle)
         let currentPage = secondView.currentPage
         var myPage = secondView.document?.page(at: 0)
-        secondView.goToFirstPage(self)
         
+        activityIndic.center = self.view.center
+        activityIndic.hidesWhenStopped = true
+        self.view.addSubview(activityIndic)
+        activityIndic.startAnimating()
+       
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+        //sleep(2)
+        
+        
+       
         // while ((myPage!.accessibilityValue?.range(of: songTitle.lowercased())) == nil) // Make sure it's the first part
         // while (pageValue!.starts(with: songTitle.lowercased()) == false)
         
+     
+       // activityIndic.startAnimating()
         while (((myPage!.accessibilityValue?.hasPrefix(songTitle.lowercased())) != true) && (pages != 339))
         {
+   
+           
             //add loading indicator !!
-            secondView.goToNextPage(self)
-            myPage = secondView.currentPage
+            self.secondView.goToNextPage(self)
+            myPage = self.secondView.currentPage
             pages += 1
             
             // dismiss keyboard
-            //Tap recognition to dismiss search bar and keyboard !! 
+            //Tap recognition to dismiss search bar and keyboard !!
+            
+            
         }
+      
         if (pages == 339)
         {
-            secondView.go(to: currentPage!)
+            self.secondView.go(to: currentPage!)
+            self.activityIndic.stopAnimating()
         }
         searchBar.alpha = 0
-        navBar.alpha = 1
+            self.navBar.alpha = 1
+            
+            
+    }
+ 
     }
     
+
     
     
 }
