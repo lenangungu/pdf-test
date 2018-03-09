@@ -441,13 +441,14 @@ extension secondViewController: UISearchBarDelegate{
         
         activityIndic.center = self.view.center
         activityIndic.hidesWhenStopped = true
+        
         self.view.addSubview(activityIndic)
         activityIndic.startAnimating()
        
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05 ){
         //sleep(2)
-        
+            self.secondView.goToFirstPage(self)
         
        
         // while ((myPage!.accessibilityValue?.range(of: songTitle.lowercased())) == nil) // Make sure it's the first part
@@ -473,11 +474,11 @@ extension secondViewController: UISearchBarDelegate{
         if (pages == 339)
         {
             self.secondView.go(to: currentPage!)
-            self.activityIndic.stopAnimating()
+            
         }
         searchBar.alpha = 0
             self.navBar.alpha = 1
-            
+            self.activityIndic.stopAnimating()
             
     }
  
