@@ -9,26 +9,26 @@
 import UIKit
 
 class MainViewController: UIViewController {
-   
+    
     var favorites = [""]
     /*
-    // I need to:
-
-
-- activity indicator in fav screen (MAYBE lol)
+     // I need to:
      
-    - Check for leaks when going to anf from favorite (check favorite fuction as well)
-    - Chech rotation (UI)
+     
+     - activity indicator in fav screen (MAYBE lol)
+     
+     - Check for leaks when going to anf from favorite (check favorite fuction as well)
+     - Chech rotation (UI)
      -Test logic with first cell deleted in Fav
      
-    -  FURTHER UPDATES -
-    - categorize: use range of identifier to strore them in different arrays. - as update maybe
-    */
+     -  FURTHER UPDATES -
+     - categorize: use range of identifier to strore them in different arrays. - as update maybe
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,8 +40,8 @@ class MainViewController: UIViewController {
         
         if segue.identifier == "toSecondVC"
         {
-        let destinatiionVC = segue.destination as! secondViewController
-        destinatiionVC.favorites = favorites
+            let destinatiionVC = segue.destination as! secondViewController
+            destinatiionVC.favorites = favorites
         }
         
         if segue.identifier == "toFavVC"
@@ -56,5 +56,5 @@ class MainViewController: UIViewController {
     @IBAction func unwindToMainViewController(_ segue: UIStoryboardSegue) {
         
     }
-
+    
 }

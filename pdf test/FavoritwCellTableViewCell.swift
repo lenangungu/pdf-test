@@ -11,6 +11,7 @@ import UIKit
 class FavoritwCellTableViewCell: UITableViewCell {
 
     @IBOutlet var title: UILabel!
+   
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -11,7 +11,7 @@ import PDFKit
 
 class secondViewController: UIViewController, PDFViewDelegate{
     @IBOutlet var secondView: PDFView!
-
+    
     @IBOutlet var activityIndic: UIActivityIndicatorView!
     @IBOutlet var searchBar: UISearchBar!
     var pgNum: Int?
@@ -21,33 +21,50 @@ class secondViewController: UIViewController, PDFViewDelegate{
     @IBOutlet var addToFavButton: UIBarButtonItem!
     
     var favorites = [""]
+    var checked = [""]
     var favTitle : String? 
     /*
-    var pageChange : PDFPage!
-    {
-        didSet
-            {
-                view.reloadInputViews()
-                print("page changed")
-        }
-    }
-    
-    */
+     var pageChange : PDFPage!
+     {
+     didSet
+     {
+     view.reloadInputViews()
+     print("page changed")
+     }
+     }
+     
+     */
     
     
     /*
-    @available(iOS 11.0, *)
-    public static let PDFViewVisiblePagesChanged: NSNotification.Name // Notification when the scroll view has scrolled into the bounds of a new page.
-}*/
-   
+     @available(iOS 11.0, *)
+     public static let PDFViewVisiblePagesChanged: NSNotification.Name // Notification when the scroll view has scrolled into the bounds of a new page.
+     }*/
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Adding Observer
-   
+        let defaults = UserDefaults.standard
+        /*
+         if let favoritesDefaults : AnyObject = defaults.object(forKey: "favorites") as AnyObject {
+         favorites = (favoritesDefaults as? [String])!
+         }
+         */
+        if let favoritesDefaults : [String] = defaults.object(forKey: "favorites") as? [String]  {
+            favorites = favoritesDefaults
+        }
         
+        /*
+         if let checkedDefaults : AnyObject = defaults.object(forKey: "checked") as AnyObject {
+         checked = (checkedDefaults as? [String])!
+         }
+         */
+        if let checkedDefaults  : [String] = defaults.object(forKey: "checked") as? [String]  {
+            checked = checkedDefaults
+        }
 
+        
         searchBar.alpha = 0
         let path = URL(fileReferenceLiteralResourceName: "PDF.pdf")
         secondView.document = PDFDocument(url: path)
@@ -74,7 +91,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 37)?.accessibilityValue = "o lord our lord"
         secondView.document?.page(at: 39)?.accessibilityValue = "rejoice in the lord always i am not afraid" // two songs!!!! - HANDLE!!
         
-       
+        
         secondView.document?.page(at: 40)?.accessibilityValue = "how majestic is your name"
         secondView.document?.page(at: 41)?.accessibilityValue = "the lord’s my shepherd"
         secondView.document?.page(at: 44)?.accessibilityValue = "o increase my love"
@@ -97,7 +114,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 77)?.accessibilityValue = "i hear god singing to me"
         secondView.document?.page(at: 81)?.accessibilityValue = "i need your love"
         
-      
+        
         secondView.document?.page(at: 83)?.accessibilityValue = "pray for the peace of jerusalem"
         secondView.document?.page(at: 85)?.accessibilityValue = "be strong take heart"
         secondView.document?.page(at: 86)?.accessibilityValue = "there’s power in the blood"
@@ -341,16 +358,16 @@ class secondViewController: UIViewController, PDFViewDelegate{
             
         }
     }
- /*
- NotificationCenter.default.addObserver(self, selector: Selector(favFunc()), name: Notification.Name.PDFViewPageChanged, object: (Any).self) // This goes in viewDidload 
-    
-    }
-    func favFunc() -> String
-{
-    print(secondView.currentPage?.accessibilityValue as Any)
-    return ("true")
-    }
-    */
+    /*
+     NotificationCenter.default.addObserver(self, selector: Selector(favFunc()), name: Notification.Name.PDFViewPageChanged, object: (Any).self) // This goes in viewDidload
+     
+     }
+     func favFunc() -> String
+     {
+     print(secondView.currentPage?.accessibilityValue as Any)
+     return ("true")
+     }
+     */
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -370,24 +387,27 @@ class secondViewController: UIViewController, PDFViewDelegate{
         if ((current?.accessibilityValue != nil) && (favorites.contains((current?.accessibilityValue)!) != true))
         {
             favorites.append((current?.accessibilityValue)!)
+            checked.append("false")
             Toast(context: self, msg: "Added to favorites")
         }
-        
+            
         else if ((current?.accessibilityValue != nil) && (favorites.contains((current?.accessibilityValue)!) == true))
         {
             let index = favorites.index(of: (current?.accessibilityValue)!)
             favorites.remove(at: index!)
+            checked.remove(at: index!)
             Toast(context: self, msg: "Removed from favorites")
         }
-       
+        
         let defaults = UserDefaults.standard // 1
         
-            defaults.set(favorites, forKey: "favorites")
-            defaults.synchronize()
+        defaults.set(favorites, forKey: "favorites")
+        defaults.set(checked, forKey: "checked")
+        defaults.synchronize()
         
-       
         
-     
+        
+        
         
         /*
          if current?.accessibilityValue is not in array
@@ -432,17 +452,12 @@ class secondViewController: UIViewController, PDFViewDelegate{
         
         if segue.identifier == "toFav"
         {
-        let destinatiionVC = segue.destination as! FavoritesViewController
-        destinatiionVC.favorites = favorites
+            let destinatiionVC = segue.destination as! FavoritesViewController
+            destinatiionVC.favorites = favorites
+            destinatiionVC.checked = checked
             destinatiionVC.segueFrom = "songs"
         }
-        if segue.identifier == "backToMain"
-        {
-            let destinatiionVC = segue.destination as! MainViewController
-            destinatiionVC.favorites = favorites
-        }
-    
-       
+      
         
     }
     
@@ -458,14 +473,14 @@ class secondViewController: UIViewController, PDFViewDelegate{
     }
     
     @IBAction func tapActionRecog(_ sender: Any) {
-    searchBar.endEditing(true)
+        searchBar.endEditing(true)
         searchBar.alpha = 0
         navBar.alpha = 1
     }
     
- func navThroughPages()
- {
-    
+    func navThroughPages()
+    {
+        
     }
     
     
@@ -474,13 +489,13 @@ class secondViewController: UIViewController, PDFViewDelegate{
 
 extension secondViewController: UISearchBarDelegate{
     // searchBarTextDidEndEditing
-  
+    
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-       
+        
         var pages = 0
         let songTitle = searchBar.text!
-       
+        
         print(songTitle)
         let currentPage = secondView.currentPage
         var myPage = secondView.document?.page(at: 0)
@@ -490,47 +505,47 @@ extension secondViewController: UISearchBarDelegate{
         
         self.view.addSubview(activityIndic)
         activityIndic.startAnimating()
-       
+        
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05 ){
-        //sleep(2)
+            //sleep(2)
             self.secondView.goToFirstPage(self)
-        
-       
-        // while ((myPage!.accessibilityValue?.range(of: songTitle.lowercased())) == nil) // Make sure it's the first part
-        // while (pageValue!.starts(with: songTitle.lowercased()) == false)
-        
-     
-       // activityIndic.startAnimating()
-        while (((myPage!.accessibilityValue?.hasPrefix(songTitle.lowercased())) != true) && (pages != 339))
-        {
-   
-           
-            //add loading indicator !!
-            self.secondView.goToNextPage(self)
-            myPage = self.secondView.currentPage
-            pages += 1
-            
-            // dismiss keyboard
-            //Tap recognition to dismiss search bar and keyboard !!
             
             
-        }
-      
-        if (pages == 339)
-        {
-            self.secondView.go(to: currentPage!)
+            // while ((myPage!.accessibilityValue?.range(of: songTitle.lowercased())) == nil) // Make sure it's the first part
+            // while (pageValue!.starts(with: songTitle.lowercased()) == false)
             
-        }
-        searchBar.alpha = 0
+            
+            // activityIndic.startAnimating()
+            while (((myPage!.accessibilityValue?.hasPrefix(songTitle.lowercased())) != true) && (pages != 339))
+            {
+                
+                
+                //add loading indicator !!
+                self.secondView.goToNextPage(self)
+                myPage = self.secondView.currentPage
+                pages += 1
+                
+                // dismiss keyboard
+                //Tap recognition to dismiss search bar and keyboard !!
+                
+                
+            }
+            
+            if (pages == 339)
+            {
+                self.secondView.go(to: currentPage!)
+                
+            }
+            searchBar.alpha = 0
             self.navBar.alpha = 1
             self.activityIndic.stopAnimating()
             
-    }
- 
+        }
+        
     }
     
-
+    
     
     
 }
