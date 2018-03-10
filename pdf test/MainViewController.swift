@@ -14,11 +14,12 @@ class MainViewController: UIViewController {
     /*
     // I need to:
 
-- Delete extra row in favorites
+
 - activity indicator in fav screen (MAYBE lol)
      
     - Check for leaks when going to anf from favorite (check favorite fuction as well)
     - Chech rotation (UI)
+     -Test logic with first cell deleted in Fav
      
     -  FURTHER UPDATES -
     - categorize: use range of identifier to strore them in different arrays. - as update maybe

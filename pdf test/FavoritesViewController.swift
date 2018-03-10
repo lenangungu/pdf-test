@@ -35,13 +35,17 @@ class FavoritesViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "toSecondVC" || segue.identifier == "unwindToSecond"
+        if segue.identifier == "toSecondVC"
         {
             //UNWIND INSTEAD 
             let destinatiionVC = segue.destination as! secondViewController
-           // let sender = sender as! FavoritwCellTableViewCell
-          //  let sender = segue.source
-        //    destinatiionVC.favTitle = sender.title.text
+            let sender = sender as! FavoritwCellTableViewCell
+            destinatiionVC.favTitle = sender.title.text
+            destinatiionVC.favorites = favorites!
+        }
+         if segue.identifier == "unwindToSecond"
+         {
+            let destinatiionVC = segue.destination as! secondViewController
             destinatiionVC.favorites = favorites!
         }
     }
@@ -53,13 +57,13 @@ class FavoritesViewController: UIViewController {
 extension FavoritesViewController: UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (favorites?.count)!
+        return ((favorites?.count)! - 1)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favCell") as! FavoritwCellTableViewCell
         
-            cell.title.text = favorites![indexPath.row]
+            cell.title.text = favorites![indexPath.row + 1]
          
 //        if (indexPath.row >= 0 && indexPath.row <= 3)
 //        {
