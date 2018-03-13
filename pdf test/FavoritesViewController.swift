@@ -16,10 +16,14 @@ class FavoritesViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     //var favorites : [String]?
     //var checked : [String]?
-    var favorites : [String]?
-    var checked : [String]?
+    var favorites = [""]
+    var checked = [""]
     
-    var segueFrom : String? 
+    var segueFrom : String?
+    override func viewWillAppear(_ animated: Bool) {
+        print("in Fav Screen favs are: \(favorites)")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,16 +49,16 @@ class FavoritesViewController: UIViewController {
             let sender = sender as! FavoritwCellTableViewCell
             destinatiionVC.favTitle = sender.title.text
             
-            destinatiionVC.favorites = self.favorites!
-            destinatiionVC.checked = checked!
+            destinatiionVC.favorites = self.favorites
+            destinatiionVC.checked = checked
     
         }
         if segue.identifier == "unwindToSecond"
         {
             let destinatiionVC = segue.destination as! secondViewController
             
-            destinatiionVC.favorites = self.favorites!
-            destinatiionVC.checked = checked!
+            destinatiionVC.favorites = self.favorites
+            destinatiionVC.checked = checked
         }
         
     }
@@ -67,15 +71,19 @@ extension FavoritesViewController: UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
      
-        return ((favorites?.count)! )
+        if ((favorites.count) > 1){
+            return ((favorites.count) - 1)
+        }
+        else {return 0}
+            
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favCell") as! FavoritwCellTableViewCell
         
-        cell.title.text = favorites?[indexPath.row ]
+        cell.title.text = (favorites[indexPath.row + 1]).capitalized // first lettes caps
    
-            if (checked?[indexPath.row] == "true")
+        if (checked[indexPath.row + 1] == "true")
         {
             cell.accessoryType = .checkmark
         }
@@ -118,7 +126,7 @@ extension FavoritesViewController: UITableViewDelegate
          let cell = tableView.cellForRow(at: index) as! FavoritwCellTableViewCell
         //tableView.cellForRow(at: index)?.accessoryType = .checkmark
        
-        checked?[index.row] = "true"
+        checked[index.row + 1] = "true"
         cell.accessoryType = .checkmark
         let defaults = UserDefaults.standard // 1
         
@@ -129,8 +137,8 @@ extension FavoritesViewController: UITableViewDelegate
     
     func delete(action: UITableViewRowAction, index: IndexPath)
     {
-        favorites?.remove(at: index.row)
-        checked?.remove(at: index.row)
+        favorites.remove(at: index.row + 1)
+        checked.remove(at: index.row + 1)
         tableView.reloadData()
         let defaults = UserDefaults.standard // 1
         

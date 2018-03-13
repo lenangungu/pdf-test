@@ -19,7 +19,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
     @IBOutlet var navBar: UINavigationBar!
     
     @IBOutlet var addToFavButton: UIBarButtonItem!
-    
+   
     var favorites = [""]
     var checked = [""]
     var favTitle : String? 
@@ -40,7 +40,9 @@ class secondViewController: UIViewController, PDFViewDelegate{
      @available(iOS 11.0, *)
      public static let PDFViewVisiblePagesChanged: NSNotification.Name // Notification when the scroll view has scrolled into the bounds of a new page.
      }*/
-    
+    override func viewWillAppear(_ animated: Bool) {
+         print("in Second Screen favs are: \(favorites)")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

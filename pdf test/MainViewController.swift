@@ -13,7 +13,8 @@ class MainViewController: UIViewController {
     var favorites = [""]
     /*
      // I need to:
-     
+     - Launch screen
+     - check favorites 
      - Check for leaks when going to anf from favorite (check favorite fuction as well)
      - Chech rotation (UI)
      -Test logic with first cell deleted in Fav
