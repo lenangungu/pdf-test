@@ -102,7 +102,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mb-IB-VOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="bmu-s5-Ruu">
                     <connections>
-                        <action selector="swipeActionRecog:" destination="9AA-Pg-1kU" id="p88-te-rm4"/>
                         <outlet property="delegate" destination="9AA-Pg-1kU" id="DL6-cv-sJp"/>
                     </connections>
                 </swipeGestureRecognizer>

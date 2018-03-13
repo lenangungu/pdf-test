@@ -476,6 +476,8 @@ class secondViewController: UIViewController, PDFViewDelegate{
         searchBar.endEditing(true)
         searchBar.alpha = 0
         navBar.alpha = 1
+        
+        secondView.clearSelection()
     }
     
     func navThroughPages()
