@@ -8,6 +8,8 @@
 
 import UIKit
 import PDFKit
+import AudioToolbox
+import AVFoundation
 
 class secondViewController: UIViewController, PDFViewDelegate{
     @IBOutlet var secondView: PDFView!
@@ -19,7 +21,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
     @IBOutlet var navBar: UINavigationBar!
     
     @IBOutlet var addToFavButton: UIBarButtonItem!
-   
+    var player : AVAudioPlayer?
     var favorites = [""]
     var checked = [""]
     var favTitle : String? 
@@ -40,12 +42,18 @@ class secondViewController: UIViewController, PDFViewDelegate{
      @available(iOS 11.0, *)
      public static let PDFViewVisiblePagesChanged: NSNotification.Name // Notification when the scroll view has scrolled into the bounds of a new page.
      }*/
-    override func viewWillAppear(_ animated: Bool) {
-         print("in Second Screen favs are: \(favorites)")
+    
+    @IBAction func longPressAction(_ sender: Any) {
+     
+        //player?.play()
+        //player?.play(atTime: .now())
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         let defaults = UserDefaults.standard
         /*
@@ -57,11 +65,10 @@ class secondViewController: UIViewController, PDFViewDelegate{
             favorites = favoritesDefaults
         }
         
-        /*
-         if let checkedDefaults : AnyObject = defaults.object(forKey: "checked") as AnyObject {
-         checked = (checkedDefaults as? [String])!
-         }
-         */
+        //let path1 = URL(fileReferenceLiteralResourceName: "ANatural.mp3")
+        //player = try! AVAudioPlayer(contentsOf: path1)
+        
+       
         if let checkedDefaults  : [String] = defaults.object(forKey: "checked") as? [String]  {
             checked = checkedDefaults
         }
@@ -480,6 +487,8 @@ class secondViewController: UIViewController, PDFViewDelegate{
         navBar.alpha = 1
         
         secondView.clearSelection()
+      //  player?.stop()
+        
     }
     
     func navThroughPages()

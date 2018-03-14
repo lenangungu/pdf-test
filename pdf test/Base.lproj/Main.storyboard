@@ -33,8 +33,8 @@
                                 <rect key="frame" x="3" y="45" width="375" height="667"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="bmu-s5-Ruu" appends="YES" id="k7X-yn-X9z"/>
                                     <outletCollection property="gestureRecognizers" destination="PF4-9C-Qqq" appends="YES" id="XfC-Xf-dxP"/>
+                                    <outletCollection property="gestureRecognizers" destination="W5T-OY-tCs" appends="YES" id="QKY-36-Db9"/>
                                 </connections>
                             </view>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HkN-uw-Orn">
@@ -100,16 +100,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mb-IB-VOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="bmu-s5-Ruu">
-                    <connections>
-                        <outlet property="delegate" destination="9AA-Pg-1kU" id="DL6-cv-sJp"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <tapGestureRecognizer id="PF4-9C-Qqq">
                     <connections>
                         <action selector="tapActionRecog:" destination="9AA-Pg-1kU" id="nYY-Fc-gc1"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="W5T-OY-tCs">
+                    <connections>
+                        <action selector="longPressAction:" destination="9AA-Pg-1kU" id="NZ5-dY-DKF"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1207" y="471"/>
         </scene>
@@ -151,18 +151,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KO0-c0-vkU">
-                                                    <rect key="frame" x="15" y="0.0" width="233" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Buj-6f-Ca3">
                                                     <rect key="frame" x="0.0" y="-23" width="10" height="67"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.60392156860000001" green="0.1333333333" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KO0-c0-vkU">
+                                                    <rect key="frame" x="15" y="15" width="233" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
