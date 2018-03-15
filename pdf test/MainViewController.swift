@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     var favorites = [""]
     /*
      // I need to:
-   
+     - Pitch pie: "http://www.harmonize.com/metropolis/online_pitch_pipe.htm" "
      - check favorites 
      - Check for leaks when going to anf from favorite (check favorite fuction as well)
      - Chech rotation (UI)

@@ -350,7 +350,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         
         if (favTitle != nil)
         {
-            
+            favTitle = favTitle?.lowercased()
             var pages = 0
             var myPage = secondView.document?.page(at: 0)
             //while (((myPage!.accessibilityValue?.hasPrefix(title) != true) && (pages != 339))
