@@ -10,29 +10,25 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
     @IBOutlet var backToMainButton: UIBarButtonItem!
- 
+    
     
     @IBOutlet var backToSongsButton: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
-    //var favorites : [String]?
-    //var checked : [String]?
+    
     var favorites = [""]
     var checked = [""]
     
     var segueFrom : String?
     override func viewWillAppear(_ animated: Bool) {
-        print("in Fav Screen favs are: \(favorites)")
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // INEFFICIENT, DO THIS ONCE IN FIRST VIEW
         
         self.tableView.reloadData()
         
-        // print("favorites are: \(favorites)")
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,7 +37,7 @@ class FavoritesViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-  
+        
         if segue.identifier == "toSecondVC"
         {
             
@@ -51,7 +47,9 @@ class FavoritesViewController: UIViewController {
             
             destinatiionVC.favorites = self.favorites
             destinatiionVC.checked = checked
-    
+            
+            
+            
         }
         if segue.identifier == "unwindToSecond"
         {
@@ -59,6 +57,7 @@ class FavoritesViewController: UIViewController {
             
             destinatiionVC.favorites = self.favorites
             destinatiionVC.checked = checked
+            self.navigationController?.popViewController(animated: true)
         }
         
     }
@@ -70,43 +69,27 @@ class FavoritesViewController: UIViewController {
 extension FavoritesViewController: UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     
+        
         if ((favorites.count) > 1){
             return ((favorites.count) - 1)
         }
         else {return 0}
-            
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favCell") as! FavoritwCellTableViewCell
         
         cell.title.text = (favorites[indexPath.row + 1]).capitalized // first lettes caps
-   
+        
         if (checked[indexPath.row + 1] == "true")
         {
             cell.accessoryType = .checkmark
         }
         else {
             cell.accessoryType = .none
- 
+            
         }
-       
-        
-        
-        //        if (indexPath.row >= 0 && indexPath.row <= 3)
-        //        {
-        //            cell.backgroundColor = UIColor.init(red: 204/255, green: 50/255, blue: 50/255, alpha: 1)
-        //
-        //        }
-        //        else if (indexPath.row > 3 && indexPath.row <= 7)
-        //        {
-        //         cell.backgroundColor = UIColor.init(red: 154/255, green: 34/255, blue: 41/255, alpha: 1)
-        //        }
-        //        else
-        //        {
-        //        cell.backgroundColor = UIColor.init(red: 100/255 , green: 35/255, blue: 38/255, alpha: 1)
-        //        }
         
         return cell
     }
@@ -115,22 +98,15 @@ extension FavoritesViewController: UITableViewDataSource
 }
 extension FavoritesViewController: UITableViewDelegate
 {
-    /*
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     let favTitle = favorites![indexPath.row]
-     performSegue(withIdentifier: "toSecondVC", sender: (Any).self)
-     }
-     */
+    
     func done (action: UITableViewRowAction, index: IndexPath){
-        //tableView.cellForRow(at: index) ->> change image to blue tick
-         let cell = tableView.cellForRow(at: index) as! FavoritwCellTableViewCell
-        //tableView.cellForRow(at: index)?.accessoryType = .checkmark
-       
+        
+        let cell = tableView.cellForRow(at: index) as! FavoritwCellTableViewCell
+        
         checked[index.row + 1] = "true"
         cell.accessoryType = .checkmark
-        let defaults = UserDefaults.standard // 1
+        let defaults = UserDefaults.standard 
         
-        // defaults.removeObject(forKey: "favorites")
         defaults.set(checked, forKey: "checked")
         defaults.synchronize()
     }
@@ -140,9 +116,8 @@ extension FavoritesViewController: UITableViewDelegate
         favorites.remove(at: index.row + 1)
         checked.remove(at: index.row + 1)
         tableView.reloadData()
-        let defaults = UserDefaults.standard // 1
+        let defaults = UserDefaults.standard
         
-        // defaults.removeObject(forKey: "favorites")
         defaults.set(favorites, forKey: "favorites")
         defaults.set(checked, forKey: "checked")
         defaults.synchronize()
@@ -156,22 +131,9 @@ extension FavoritesViewController: UITableViewDelegate
         
         let deletAction = UITableViewRowAction(style: .normal, title: "Delete", handler: delete)
         deletAction.backgroundColor = UIColor.red
-       
+        
         
         return [deletAction,doneAction]
     }
-   /*
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
-        
-        if (editingStyle == .delete)
-        {
-            // print(indexPath.row)
-            
-           
-            
-        }
-      
-    }
- */
+    
 }

@@ -12,6 +12,7 @@ import AudioToolbox
 import AVFoundation
 
 class secondViewController: UIViewController, PDFViewDelegate{
+    
     @IBOutlet var secondView: PDFView!
     
     @IBOutlet var activityIndic: UIActivityIndicatorView!
@@ -21,33 +22,10 @@ class secondViewController: UIViewController, PDFViewDelegate{
     @IBOutlet var navBar: UINavigationBar!
     
     @IBOutlet var addToFavButton: UIBarButtonItem!
-    var player : AVAudioPlayer?
+    //var player : AVAudioPlayer?
     var favorites = [""]
     var checked = [""]
     var favTitle : String? 
-    /*
-     var pageChange : PDFPage!
-     {
-     didSet
-     {
-     view.reloadInputViews()
-     print("page changed")
-     }
-     }
-     
-     */
-    
-    
-    /*
-     @available(iOS 11.0, *)
-     public static let PDFViewVisiblePagesChanged: NSNotification.Name // Notification when the scroll view has scrolled into the bounds of a new page.
-     }*/
-    
-    @IBAction func longPressAction(_ sender: Any) {
-     
-        //player?.play()
-        //player?.play(atTime: .now())
-    }
     
     
     override func viewDidLoad() {
@@ -56,11 +34,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         
         
         let defaults = UserDefaults.standard
-        /*
-         if let favoritesDefaults : AnyObject = defaults.object(forKey: "favorites") as AnyObject {
-         favorites = (favoritesDefaults as? [String])!
-         }
-         */
+        
         if let favoritesDefaults : [String] = defaults.object(forKey: "favorites") as? [String]  {
             favorites = favoritesDefaults
         }
@@ -68,20 +42,24 @@ class secondViewController: UIViewController, PDFViewDelegate{
         //let path1 = URL(fileReferenceLiteralResourceName: "ANatural.mp3")
         //player = try! AVAudioPlayer(contentsOf: path1)
         
-       
         if let checkedDefaults  : [String] = defaults.object(forKey: "checked") as? [String]  {
             checked = checkedDefaults
         }
-
-        
         searchBar.alpha = 0
+        setPages()
+        
+        // UIGraphicsEndImageContext()
+        //  UIGraphicsPopContext()
+    }
+    
+    
+    func setPages()
+    {
+        
         let path = URL(fileReferenceLiteralResourceName: "PDF.pdf")
         secondView.document = PDFDocument(url: path)
-        let points = CGPoint(x: 5.0, y: 0.0) // What's this!!? lol
+        let points = CGPoint(x: 5.0, y: 0.0)
         secondView.page(for: points, nearest: true)
-        
-        secondView.reloadInputViews()
-        
         
         secondView.document?.page(at: 18)?.accessibilityValue = "create in me a pure heart"
         secondView.document?.page(at: 19)?.accessibilityValue = "be still and know i am god"
@@ -348,45 +326,54 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 336)?.accessibilityValue = "i’m in the lord’s army building up the kingdom"
         secondView.document?.page(at: 337)?.accessibilityValue = "jesus is well and alive today"
         
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setPages()
+        
         if (favTitle != nil)
         {
             favTitle = favTitle?.lowercased()
+            
             var pages = 0
             var myPage = secondView.document?.page(at: 0)
-            //while (((myPage!.accessibilityValue?.hasPrefix(title) != true) && (pages != 339))
+            
+            
+            
             while ((myPage!.accessibilityValue != favTitle) && (pages != 339)) {
-                //add loading indicator !!
+                
                 secondView.goToNextPage(self)
                 myPage = secondView.currentPage
                 pages += 1
             }
+            
         }
         else
         {
             secondView.go(to: secondView.document!.page(at: 18)!)
             
         }
+        UIGraphicsEndImageContext()
     }
-    /*
-     NotificationCenter.default.addObserver(self, selector: Selector(favFunc()), name: Notification.Name.PDFViewPageChanged, object: (Any).self) // This goes in viewDidload
-     
-     }
-     func favFunc() -> String
-     {
-     print(secondView.currentPage?.accessibilityValue as Any)
-     return ("true")
-     }
-     */
+    
+    
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        // UIGraphicsEndImageContext()
+        
     }
+    
+    
     
     @IBAction func searchAction(_ sender: Any) {
         navBar.alpha = 0
         searchBar.alpha = 1
-        // Make keyboard appear?? 
     }
     
     
@@ -414,23 +401,8 @@ class secondViewController: UIViewController, PDFViewDelegate{
         defaults.set(checked, forKey: "checked")
         defaults.synchronize()
         
-        
-        
-        
-        
-        /*
-         if current?.accessibilityValue is not in array
-         {
-         favorites.append(current?.accessibilityValue)
-         // change button to lit
-         }
-         else
-         { // get index in array and
-         favorites.remove(at: <#T##Int#>)
-         //chnage button to unlit
-         }
-         */
     }
+    
     func Toast(context ctx: UIViewController, msg: String) {
         
         let toast = UILabel(frame:
@@ -455,6 +427,8 @@ class secondViewController: UIViewController, PDFViewDelegate{
         }, completion: {(isCompleted) in
             toast.removeFromSuperview()
         })
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -466,7 +440,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
             destinatiionVC.checked = checked
             destinatiionVC.segueFrom = "songs"
         }
-      
+        
         
     }
     
@@ -478,7 +452,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
     
     @IBAction func swipeActionRecog(_ sender: Any) {
         view.reloadInputViews()
-        print("page changed")
+  
     }
     
     @IBAction func tapActionRecog(_ sender: Any) {
@@ -487,29 +461,22 @@ class secondViewController: UIViewController, PDFViewDelegate{
         navBar.alpha = 1
         
         secondView.clearSelection()
-      //  player?.stop()
+        //  player?.stop()
         
     }
     
-    func navThroughPages()
-    {
-        
-    }
     
     
 }
 
 
 extension secondViewController: UISearchBarDelegate{
-    // searchBarTextDidEndEditing
-    
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         var pages = 0
         let songTitle = searchBar.text!
         
-        print(songTitle)
         let currentPage = secondView.currentPage
         var myPage = secondView.document?.page(at: 0)
         
@@ -525,11 +492,6 @@ extension secondViewController: UISearchBarDelegate{
             self.secondView.goToFirstPage(self)
             
             
-            // while ((myPage!.accessibilityValue?.range(of: songTitle.lowercased())) == nil) // Make sure it's the first part
-            // while (pageValue!.starts(with: songTitle.lowercased()) == false)
-            
-            
-            // activityIndic.startAnimating()
             while (((myPage!.accessibilityValue?.hasPrefix(songTitle.lowercased())) != true) && (pages != 339))
             {
                 
@@ -538,10 +500,6 @@ extension secondViewController: UISearchBarDelegate{
                 self.secondView.goToNextPage(self)
                 myPage = self.secondView.currentPage
                 pages += 1
-                
-                // dismiss keyboard
-                //Tap recognition to dismiss search bar and keyboard !!
-                
                 
             }
             
@@ -555,6 +513,7 @@ extension secondViewController: UISearchBarDelegate{
             self.activityIndic.stopAnimating()
             
         }
+        UIGraphicsEndImageContext()
         
     }
     

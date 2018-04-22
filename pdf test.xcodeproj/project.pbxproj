@@ -17,7 +17,6 @@
 		8A89BF431FE9B74E00BC9984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A89BF421FE9B74E00BC9984 /* Assets.xcassets */; };
 		8A89BF461FE9B74E00BC9984 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A89BF441FE9B74E00BC9984 /* LaunchScreen.storyboard */; };
 		8A89BF4E1FE9BC8200BC9984 /* PDF.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8A89BF4D1FE9BC8200BC9984 /* PDF.pdf */; };
-		8AC724A02058A764008E6963 /* ANatural.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8AC7249F2058A763008E6963 /* ANatural.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +33,6 @@
 		8A89BF451FE9B74E00BC9984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A89BF471FE9B74E00BC9984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A89BF4D1FE9BC8200BC9984 /* PDF.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = PDF.pdf; path = "../../My Apps/Kingdom Songs/Kingdom Songs/Assets.xcassets/songs.dataset/PDF.pdf"; sourceTree = "<group>"; };
-		8AC7249F2058A763008E6963 /* ANatural.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ANatural.mp3; path = ../../../Downloads/ANatural.mp3; sourceTree = "<group>"; };
 		AAB9C2989CDDBC54525C3D99 /* Pods-pdf test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pdf test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pdf test/Pods-pdf test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +85,6 @@
 				8A89BF3F1FE9B74E00BC9984 /* Main.storyboard */,
 				8A89BF421FE9B74E00BC9984 /* Assets.xcassets */,
 				8A89BF441FE9B74E00BC9984 /* LaunchScreen.storyboard */,
-				8AC7249F2058A763008E6963 /* ANatural.mp3 */,
 				8A89BF471FE9B74E00BC9984 /* Info.plist */,
 				8A06171B1FFC540F00B7BD78 /* FavoritwCellTableViewCell.swift */,
 			);
@@ -136,7 +133,7 @@
 					1,
 				);
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Lena Ngungu";
 				TargetAttributes = {
 					8A89BF371FE9B74E00BC9984 = {
@@ -170,7 +167,6 @@
 			files = (
 				8A89BF461FE9B74E00BC9984 /* LaunchScreen.storyboard in Resources */,
 				8A89BF4E1FE9BC8200BC9984 /* PDF.pdf in Resources */,
-				8AC724A02058A764008E6963 /* ANatural.mp3 in Resources */,
 				8A89BF431FE9B74E00BC9984 /* Assets.xcassets in Resources */,
 				8A89BF411FE9B74E00BC9984 /* Main.storyboard in Resources */,
 			);
@@ -275,6 +271,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -282,6 +279,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -332,6 +330,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -339,6 +338,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

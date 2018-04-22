@@ -34,7 +34,6 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="PF4-9C-Qqq" appends="YES" id="XfC-Xf-dxP"/>
-                                    <outletCollection property="gestureRecognizers" destination="W5T-OY-tCs" appends="YES" id="QKY-36-Db9"/>
                                 </connections>
                             </view>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HkN-uw-Orn">
@@ -67,7 +66,7 @@
                                                     <action selector="searchAction:" destination="9AA-Pg-1kU" id="yLX-D5-SG9"/>
                                                 </connections>
                                             </barButtonItem>
-                                            <barButtonItem title="Item" image="icons8-star-500" id="LDd-SF-G00">
+                                            <barButtonItem image="icons8-star-500" id="LDd-SF-G00">
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="addToFavAction:" destination="9AA-Pg-1kU" id="Aou-LJ-98I"/>
@@ -105,11 +104,6 @@
                         <action selector="tapActionRecog:" destination="9AA-Pg-1kU" id="nYY-Fc-gc1"/>
                     </connections>
                 </tapGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="W5T-OY-tCs">
-                    <connections>
-                        <action selector="longPressAction:" destination="9AA-Pg-1kU" id="NZ5-dY-DKF"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1207" y="471"/>
         </scene>
@@ -141,7 +135,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RI9-bL-Zru">
-                                <rect key="frame" x="0.0" y="70" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favCell" editingAccessoryType="checkmark" id="5BY-CF-tKf" customClass="FavoritwCellTableViewCell" customModule="pdf_test" customModuleProvider="target">
@@ -157,7 +151,7 @@
                                                     <color key="backgroundColor" red="0.60392156860000001" green="0.1333333333" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KO0-c0-vkU">
-                                                    <rect key="frame" x="15" y="15" width="233" height="21"/>
+                                                    <rect key="frame" x="15" y="15" width="360" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -167,7 +161,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="title" destination="KO0-c0-vkU" id="Jvb-of-64U"/>
-                                            <segue destination="9AA-Pg-1kU" kind="show" identifier="toSecondVC" id="9kG-AM-jhe"/>
+                                            <segue destination="LXN-M9-kZo" kind="unwind" identifier="toSecondVC" unwindAction="unwindToSecondViewController:" id="yJT-Sy-jvJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -182,7 +176,7 @@
                             <constraint firstItem="RI9-bL-Zru" firstAttribute="centerX" secondItem="kp9-PX-pus" secondAttribute="centerX" id="LDP-tm-BYU"/>
                             <constraint firstItem="RI9-bL-Zru" firstAttribute="width" secondItem="Ffp-B9-sRo" secondAttribute="width" id="OG3-Au-6Oh"/>
                             <constraint firstItem="RI9-bL-Zru" firstAttribute="height" secondItem="Ffp-B9-sRo" secondAttribute="height" id="roB-gf-zRi"/>
-                            <constraint firstItem="RI9-bL-Zru" firstAttribute="top" secondItem="kp9-PX-pus" secondAttribute="top" constant="50" id="sub-Rb-Qwr"/>
+                            <constraint firstItem="RI9-bL-Zru" firstAttribute="top" secondItem="kp9-PX-pus" secondAttribute="top" constant="70" id="sub-Rb-Qwr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kp9-PX-pus"/>
                     </view>
@@ -194,7 +188,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LG2-fX-zok" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="LXN-M9-kZo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="406" y="952"/>
+            <point key="canvasLocation" x="405.60000000000002" y="951.27436281859082"/>
         </scene>
     </scenes>
     <resources>
