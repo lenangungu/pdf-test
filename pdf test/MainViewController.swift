@@ -14,10 +14,6 @@ class MainViewController: UIViewController {
     /*
      // I need to:
      - Pitch pie: "http://www.harmonize.com/metropolis/online_pitch_pipe.htm" "
-     - check favorites 
-     - Check for leaks when going to anf from favorite (check favorite fuction as well)
-     - Chech rotation (UI)
-     -Test logic with first cell deleted in Fav
      
      -  FURTHER UPDATES -
      - categorize: use range of identifier to strore them in different arrays. - as update maybe
