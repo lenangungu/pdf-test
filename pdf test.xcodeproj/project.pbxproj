@@ -12,6 +12,20 @@
 		8A0617181FFB750000B7BD78 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0617171FFB750000B7BD78 /* MainViewController.swift */; };
 		8A06171A1FFC4AC300B7BD78 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0617191FFC4AC300B7BD78 /* FavoritesViewController.swift */; };
 		8A06171C1FFC540F00B7BD78 /* FavoritwCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06171B1FFC540F00B7BD78 /* FavoritwCellTableViewCell.swift */; };
+		8A4B545522E4E1B000279440 /* PitchPipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B545422E4E1AF00279440 /* PitchPipeViewController.swift */; };
+		8A4B546222E5321100279440 /* BNatural.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B545722E5321000279440 /* BNatural.mp3 */; };
+		8A4B546322E5321100279440 /* ENaturalLow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B545822E5321000279440 /* ENaturalLow.mp3 */; };
+		8A4B546422E5321100279440 /* GNatural.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B545922E5321000279440 /* GNatural.mp3 */; };
+		8A4B546522E5321100279440 /* CNatural.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B545A22E5321000279440 /* CNatural.mp3 */; };
+		8A4B546622E5321100279440 /* BFlat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B545B22E5321000279440 /* BFlat.mp3 */; };
+		8A4B546722E5321100279440 /* DNatural.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B545C22E5321000279440 /* DNatural.mp3 */; };
+		8A4B546822E5321100279440 /* FNatural.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B545D22E5321000279440 /* FNatural.mp3 */; };
+		8A4B546922E5321100279440 /* ANatural (1).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B545E22E5321100279440 /* ANatural (1).mp3 */; };
+		8A4B546A22E5321100279440 /* FSharp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B545F22E5321100279440 /* FSharp.mp3 */; };
+		8A4B546B22E5321100279440 /* AFlat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B546022E5321100279440 /* AFlat.mp3 */; };
+		8A4B546C22E5321100279440 /* CSharp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A4B546122E5321100279440 /* CSharp.mp3 */; };
+		8A73FC4624DCF35800D9791F /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A73FC4524DCF35800D9791F /* iOSDropDown.framework */; };
+		8A73FC4824EB75CA00D9791F /* FilteredSongsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A73FC4724EB75CA00D9791F /* FilteredSongsTableViewCell.swift */; };
 		8A89BF3C1FE9B74E00BC9984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89BF3B1FE9B74E00BC9984 /* AppDelegate.swift */; };
 		8A89BF411FE9B74E00BC9984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A89BF3F1FE9B74E00BC9984 /* Main.storyboard */; };
 		8A89BF431FE9B74E00BC9984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A89BF421FE9B74E00BC9984 /* Assets.xcassets */; };
@@ -26,6 +40,20 @@
 		8A0617171FFB750000B7BD78 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8A0617191FFC4AC300B7BD78 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		8A06171B1FFC540F00B7BD78 /* FavoritwCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritwCellTableViewCell.swift; sourceTree = "<group>"; };
+		8A4B545422E4E1AF00279440 /* PitchPipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchPipeViewController.swift; sourceTree = "<group>"; };
+		8A4B545722E5321000279440 /* BNatural.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BNatural.mp3; sourceTree = "<group>"; };
+		8A4B545822E5321000279440 /* ENaturalLow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ENaturalLow.mp3; sourceTree = "<group>"; };
+		8A4B545922E5321000279440 /* GNatural.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GNatural.mp3; sourceTree = "<group>"; };
+		8A4B545A22E5321000279440 /* CNatural.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CNatural.mp3; sourceTree = "<group>"; };
+		8A4B545B22E5321000279440 /* BFlat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BFlat.mp3; sourceTree = "<group>"; };
+		8A4B545C22E5321000279440 /* DNatural.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DNatural.mp3; sourceTree = "<group>"; };
+		8A4B545D22E5321000279440 /* FNatural.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FNatural.mp3; sourceTree = "<group>"; };
+		8A4B545E22E5321100279440 /* ANatural (1).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ANatural (1).mp3"; sourceTree = "<group>"; };
+		8A4B545F22E5321100279440 /* FSharp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FSharp.mp3; sourceTree = "<group>"; };
+		8A4B546022E5321100279440 /* AFlat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AFlat.mp3; sourceTree = "<group>"; };
+		8A4B546122E5321100279440 /* CSharp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CSharp.mp3; sourceTree = "<group>"; };
+		8A73FC4524DCF35800D9791F /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A73FC4724EB75CA00D9791F /* FilteredSongsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredSongsTableViewCell.swift; sourceTree = "<group>"; };
 		8A89BF381FE9B74E00BC9984 /* pdf test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pdf test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A89BF3B1FE9B74E00BC9984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A89BF401FE9B74E00BC9984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A73FC4624DCF35800D9791F /* iOSDropDown.framework in Frameworks */,
 				1803600A34AFA1E85EE459D1 /* Pods_pdf_test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +80,7 @@
 		3CEF5A010B9A4ABD817F2D6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A73FC4524DCF35800D9791F /* iOSDropDown.framework */,
 				37524F81F2AFFDE447B1DC14 /* Pods_pdf_test.framework */,
 			);
 			name = Frameworks;
@@ -87,6 +117,19 @@
 				8A89BF441FE9B74E00BC9984 /* LaunchScreen.storyboard */,
 				8A89BF471FE9B74E00BC9984 /* Info.plist */,
 				8A06171B1FFC540F00B7BD78 /* FavoritwCellTableViewCell.swift */,
+				8A4B545422E4E1AF00279440 /* PitchPipeViewController.swift */,
+				8A4B546022E5321100279440 /* AFlat.mp3 */,
+				8A4B545E22E5321100279440 /* ANatural (1).mp3 */,
+				8A4B545B22E5321000279440 /* BFlat.mp3 */,
+				8A4B545722E5321000279440 /* BNatural.mp3 */,
+				8A4B545A22E5321000279440 /* CNatural.mp3 */,
+				8A4B546122E5321100279440 /* CSharp.mp3 */,
+				8A4B545C22E5321000279440 /* DNatural.mp3 */,
+				8A4B545822E5321000279440 /* ENaturalLow.mp3 */,
+				8A4B545D22E5321000279440 /* FNatural.mp3 */,
+				8A4B545F22E5321100279440 /* FSharp.mp3 */,
+				8A4B545922E5321000279440 /* GNatural.mp3 */,
+				8A73FC4724EB75CA00D9791F /* FilteredSongsTableViewCell.swift */,
 			);
 			path = "pdf test";
 			sourceTree = "<group>";
@@ -112,7 +155,6 @@
 				8A89BF351FE9B74E00BC9984 /* Frameworks */,
 				8A89BF361FE9B74E00BC9984 /* Resources */,
 				CD8E8B86CBA88362E4CAA3ED /* [CP] Embed Pods Frameworks */,
-				8AFED378BA7B4E806497CBF2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -138,6 +180,7 @@
 				TargetAttributes = {
 					8A89BF371FE9B74E00BC9984 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -165,8 +208,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A4B546A22E5321100279440 /* FSharp.mp3 in Resources */,
+				8A4B546B22E5321100279440 /* AFlat.mp3 in Resources */,
 				8A89BF461FE9B74E00BC9984 /* LaunchScreen.storyboard in Resources */,
+				8A4B546222E5321100279440 /* BNatural.mp3 in Resources */,
+				8A4B546822E5321100279440 /* FNatural.mp3 in Resources */,
 				8A89BF4E1FE9BC8200BC9984 /* PDF.pdf in Resources */,
+				8A4B546922E5321100279440 /* ANatural (1).mp3 in Resources */,
+				8A4B546722E5321100279440 /* DNatural.mp3 in Resources */,
+				8A4B546322E5321100279440 /* ENaturalLow.mp3 in Resources */,
+				8A4B546522E5321100279440 /* CNatural.mp3 in Resources */,
+				8A4B546622E5321100279440 /* BFlat.mp3 in Resources */,
+				8A4B546C22E5321100279440 /* CSharp.mp3 in Resources */,
+				8A4B546422E5321100279440 /* GNatural.mp3 in Resources */,
 				8A89BF431FE9B74E00BC9984 /* Assets.xcassets in Resources */,
 				8A89BF411FE9B74E00BC9984 /* Main.storyboard in Resources */,
 			);
@@ -175,34 +229,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8AFED378BA7B4E806497CBF2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pdf test/Pods-pdf test-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C618FB529A571E65DCD07B20 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pdf test-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CD8E8B86CBA88362E4CAA3ED /* [CP] Embed Pods Frameworks */ = {
@@ -211,13 +253,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-pdf test/Pods-pdf test-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDropDown.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pdf test/Pods-pdf test-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-pdf test/Pods-pdf test-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -228,8 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A06171C1FFC540F00B7BD78 /* FavoritwCellTableViewCell.swift in Sources */,
+				8A73FC4824EB75CA00D9791F /* FilteredSongsTableViewCell.swift in Sources */,
 				8A0617181FFB750000B7BD78 /* MainViewController.swift in Sources */,
 				8A0617161FF5F79800B7BD78 /* secondViewController.swift in Sources */,
+				8A4B545522E4E1B000279440 /* PitchPipeViewController.swift in Sources */,
 				8A06171A1FFC4AC300B7BD78 /* FavoritesViewController.swift in Sources */,
 				8A89BF3C1FE9B74E00BC9984 /* AppDelegate.swift in Sources */,
 			);
@@ -376,10 +423,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8TM9YHUFEP;
 				INFOPLIST_FILE = "pdf test/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lenangungu.pdf-test";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lenangungu.pdf-test1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -392,10 +440,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8TM9YHUFEP;
 				INFOPLIST_FILE = "pdf test/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lenangungu.pdf-test";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lenangungu.pdf-test1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

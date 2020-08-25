@@ -10,6 +10,7 @@ import UIKit
 import PDFKit
 import AudioToolbox
 import AVFoundation
+import iOSDropDown
 
 class secondViewController: UIViewController, PDFViewDelegate{
     
@@ -22,16 +23,22 @@ class secondViewController: UIViewController, PDFViewDelegate{
     @IBOutlet var navBar: UINavigationBar!
     
     @IBOutlet var addToFavButton: UIBarButtonItem!
+    @IBOutlet var searchSongTableView: UITableView!
     //var player : AVAudioPlayer?
     var favorites = [""]
     var checked = [""]
-    var favTitle : String? 
+    var allSongs = ["be still and know i am god",    "have you not heard",    "his love endures forever",    "unto thee o lord",    "the law of the lord",    "the steadfast love of the lord",    "i will call upon the lord",    "humble yourself in the sight of the lord",    "praise god",    "shout for joy",    "praise the lord",    "o praise the lord",    "rejoice in the law of the lord",    "o lord our lord",    "rejoice in the lord always i am not afraid ",    "how majestic is your name",    "the lord’s my shepherd",    "o increase my love",    "kyrie eleison",    "hallelujah",    "lord of all",    "men who dream",    "o holy god",    "great among the nations",    "take a look at the mountain",    "remember me",    "be with me lord",    "prayer for boldness",    "always triumphant",    "thank you lord",    "stand in awe",    "go and make disciples",    "a stream in the desert",    "god almighty reigns",    "i hear god singing to me",    "i need your love",    "pray for the peace of jerusalem",    "be strong take heart",    "there’s power in the blood",    "our god he is alive",    "glorious things of thee are spoken",    "sweet sweet spirit",    "take my life and let it be",    "standing on the promises",    "where could i go",    "victory in jesus",    "the old rugged cross",    "amazing grace",    "a mighty fortress",    "god moves in a mysterious way",    "for those tears i died",    "there is a habitation",    "precious lord",    "when the roll is called",    "glory be to jesus",    "hold to god’s unchanging hand",    "god of our fathers",    "send the light",    "how sweet how heavenly",    "my jesus i love thee",    "i am resolved",    "shall we gather at the river",    "peace perfect peace",    "to god be the glory",    "i know that my redeemer lives",    "ten thousand angels",    "we will glorify",    "praise him praise him",    "what can wash away my sin",    "there is much to do",    "when i survey the wondrous cross",    "this world is not my home",    "rise up o men of god",    "what a fellowship",    "years i spent in vanity and pride",    "how great thou art",    "make me a channel of your peace",    "we’ll work till jesus comes",    "what a friend we have in jesus",    "this is my father’s world",    "to cannan’s land i’m on my way",    "there is a place of quiet rest",    "the spacious firmamen on high",    "holy father the lord bless you and keep you ",    "when we all get to heaven",    "why did my savior come to earth",    "the glory land way",    "stand up stand up for jesus",    "redeemed",    "spirit of the living god",    "ring out the message",    "nearer still nearer",    "purer in heart",    "onward christian soldires",    "immortal invisible god only wise",    "no tears in heaven",    "o scared head",    "when the morning comes",    "tis midnight and on olive’s brow",    "on zion’s glorious summit",    "o master let me walk with thee",    "love lifted me",    "lord we come before thee now",    "lo what a glorious sight",    "lamb of god",    "i love to tell the story",    "jesus keep me near",    "i’ll be a friend to jesus",    "lead me to some soul today",    "i’ll fly away",    "jesus is lord",    "jesus loves me",    "i know whom i have believed",    "i walk with the king",    "trust and obey",    "heavenly sunlight",    "lead me to calvary",    "i need thee every hour",    "alas and did my savior bleed",    "have thine own way",    "hallelujah oraise jehovah",    "faith is the victory",    "there’s not a friend ",    "great is thy faithfulness",    "crown him with many crowns",    "o worship the king",    "follow me",    "sanctuary",    "sing hallelujah to the lord",    "holy holy holy",    "how firm a foundation",    "soldiers of christ arise",    "awesome god",    "seek ye first",    "there’s a fountain free",    "just a little talk with jesus",    "i will sing the wondrous story",    "hallelujah what a savior",    "blessed assurance",    "christ the lord is risen today",    "fairest lord jesus",    "beneath the cross of jesus",    "teach me lord to wait",    "it is well with my soul",    "when my love to christ",    "glory glory halleleujah",    "we’re marching to zion",    "i’m not ashamed to own my lord",    "we praise thee o god",    "i know that my redeemer lives",    "my hope is built",    "joyful joyful we adore thee",    "be still my soul",    "i will speak",    "my god and i",    "breathe on me breath of god",    "low in the grave he lay",    "for the beauty of the earth",    "just as i am",    "just a closer walk with thee",    "arise my sould arise",    "all to jesus i surrender",    "christ we do all adore thee",    "all hail the power",    "lord speak to me",    "abide with me",    "o come all ye faithful",    "o come o come emmanuel",    "joy to the world",    "it came upon the midnight clear",    "angels we have heard on high ",    "what child is this",    "silent night",    "hark the herald angels sing",    "lord i thank you",    "lord god almighty",    "run to the fight",    "siku rin wana",    "the glory song",    "in the kingdom",    "thank you lord",    "amen",    "crossing over",    "e khaya e-khaya",    "encourage my soul",    "don’t you wanna go",    "god is so good",    "he gave her water",    "hard fighting soldier",    "he is lord",    "i am a poor wayfaring stranger",    "glory glory",    "i can’t keep it to myself",    "his eye is on the sparrow",    "i feel good",    "i want jesus to walk with me",    "i have decided to follow jesus",    "i’ll be listening",    "i’m coming up lord",    "jesus will fix it",    "let your living water flow",    "let us break bread together",    "i love to praise his holy name",    "love love love",    "there is a balm in gilead",    "i’ve been redeemed",    "oh how i love jesus",    "sing amen amen",    "sign me up",    "jordan river",    "someday",    "soon and very soon",    "swing low sweet chariot",    "take the lord with you",    "wade in the water",    "where you there",    "we shall overcome",    "i tried and i tried would you be poured out like wine ",    "walking on the heaven road",    "amazing grace",    "as many as possible",    "glory glory hallelujah",    "god alone",    "create in me a pure heart",    "jesus is lord",    "hallelujah chorus",    "all hail the power",    "ain’t no rock",    "we are soldiers in the army",    "halalalalelujah deep down in my heart ",    "give me oil in my lamp",    "his banner over me is love",    "i tried and i tried i’m happy today",    "this little light of mine i’m gonna view that holy city",    "jesus loves the little children in my father’s house",    "i’ve got the joy joy joy love love love ",    "the christian jubilee oh be careful",    "my god is so great roll the gospel chariot",    "rejoice in the lord always praise him praise him ",    "peace like a river whose side are you fighting on ",    "rise and shine",    "standing in the need of prayer",    "the new testament song",    "show me the way the sea of galilee ",    "this is the day this is my commandment ",    "the wise man",    "king of the jungle",    "i’m in the lord’s army building up the kingdom",    "jesus is well and alive today",    ]
+    
+    var filteredSongs = [String]()
+    var favTitle : String?
+    var isSearching = false
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        searchBar.returnKeyType = UIReturnKeyType.done
         
         let defaults = UserDefaults.standard
         
@@ -50,16 +57,20 @@ class secondViewController: UIViewController, PDFViewDelegate{
         
         // UIGraphicsEndImageContext()
         //  UIGraphicsPopContext()
+        
     }
+    
     
     
     func setPages()
     {
-        
-        let path = URL(fileReferenceLiteralResourceName: "PDF.pdf")
-        secondView.document = PDFDocument(url: path)
         let points = CGPoint(x: 5.0, y: 0.0)
+        let path = URL(fileReferenceLiteralResourceName: "PDF.pdf")
+      
+        secondView.document = PDFDocument(url: path)
         secondView.page(for: points, nearest: true)
+       
+        
         
         secondView.document?.page(at: 18)?.accessibilityValue = "create in me a pure heart"
         secondView.document?.page(at: 19)?.accessibilityValue = "be still and know i am god"
@@ -77,8 +88,8 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 36)?.accessibilityValue = "rejoice in the law of the lord"
         secondView.document?.page(at: 37)?.accessibilityValue = "o lord our lord"
         secondView.document?.page(at: 39)?.accessibilityValue = "rejoice in the lord always i am not afraid" // two songs!!!! - HANDLE!!
-        
-        
+
+
         secondView.document?.page(at: 40)?.accessibilityValue = "how majestic is your name"
         secondView.document?.page(at: 41)?.accessibilityValue = "the lord’s my shepherd"
         secondView.document?.page(at: 44)?.accessibilityValue = "o increase my love"
@@ -100,8 +111,8 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 75)?.accessibilityValue = "god almighty reigns"
         secondView.document?.page(at: 77)?.accessibilityValue = "i hear god singing to me"
         secondView.document?.page(at: 81)?.accessibilityValue = "i need your love"
-        
-        
+
+
         secondView.document?.page(at: 83)?.accessibilityValue = "pray for the peace of jerusalem"
         secondView.document?.page(at: 85)?.accessibilityValue = "be strong take heart"
         secondView.document?.page(at: 86)?.accessibilityValue = "there’s power in the blood"
@@ -126,7 +137,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 107)?.accessibilityValue = "send the light"
         secondView.document?.page(at: 108)?.accessibilityValue = "how sweet how heavenly"
         secondView.document?.page(at: 109)?.accessibilityValue = "my jesus i love thee"
-        
+
         //start here
         secondView.document?.page(at: 110)?.accessibilityValue = "i am resolved"
         secondView.document?.page(at: 111)?.accessibilityValue = "shall we gather at the river"
@@ -152,7 +163,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 131)?.accessibilityValue = "there is a place of quiet rest"
         secondView.document?.page(at: 132)?.accessibilityValue = "the spacious firmamen on high"
         secondView.document?.page(at: 133)?.accessibilityValue = "holy father the lord bless you and keep you" //TWO SONGS!!!
-        
+
         secondView.document?.page(at: 135)?.accessibilityValue = "when we all get to heaven"
         secondView.document?.page(at: 136)?.accessibilityValue = "why did my savior come to earth"
         secondView.document?.page(at: 137)?.accessibilityValue = "the glory land way"
@@ -200,7 +211,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 183)?.accessibilityValue = "sanctuary"
         secondView.document?.page(at: 184)?.accessibilityValue = "sing hallelujah to the lord"
         secondView.document?.page(at: 185)?.accessibilityValue = "holy holy holy"
-        
+
         secondView.document?.page(at: 186)?.accessibilityValue = "how firm a foundation"
         secondView.document?.page(at: 187)?.accessibilityValue = "soldiers of christ arise"
         secondView.document?.page(at: 188)?.accessibilityValue = "awesome god"
@@ -215,7 +226,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 198)?.accessibilityValue = "beneath the cross of jesus"
         secondView.document?.page(at: 199)?.accessibilityValue = "teach me lord to wait"
         secondView.document?.page(at: 201)?.accessibilityValue = "it is well with my soul"
-        
+
         secondView.document?.page(at: 202)?.accessibilityValue = "when my love to christ"
         secondView.document?.page(at: 203)?.accessibilityValue = "glory glory halleleujah"
         secondView.document?.page(at: 205)?.accessibilityValue = "we’re marching to zion"
@@ -239,7 +250,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 223)?.accessibilityValue = "lord speak to me"
         secondView.document?.page(at: 224)?.accessibilityValue = "abide with me"
         secondView.document?.page(at: 225)?.accessibilityValue = "o come all ye faithful"
-        
+
         secondView.document?.page(at: 226)?.accessibilityValue = "o come o come emmanuel"
         secondView.document?.page(at: 227)?.accessibilityValue = "joy to the world"
         secondView.document?.page(at: 228)?.accessibilityValue = "it came upon the midnight clear"
@@ -263,7 +274,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 253)?.accessibilityValue = "he gave her water"
         secondView.document?.page(at: 257)?.accessibilityValue = "hard fighting soldier"
         secondView.document?.page(at: 258)?.accessibilityValue = "he is lord"
-        
+
         secondView.document?.page(at: 259)?.accessibilityValue = "i am a poor wayfaring stranger"
         secondView.document?.page(at: 260)?.accessibilityValue = "glory glory"
         secondView.document?.page(at: 261)?.accessibilityValue = "i can’t keep it to myself"
@@ -287,7 +298,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 282)?.accessibilityValue = "someday"
         secondView.document?.page(at: 283)?.accessibilityValue = "soon and very soon"
         secondView.document?.page(at: 284)?.accessibilityValue = "swing low sweet chariot"
-        
+
         secondView.document?.page(at: 285)?.accessibilityValue = "take the lord with you"
         secondView.document?.page(at: 287)?.accessibilityValue = "wade in the water"
         secondView.document?.page(at: 289)?.accessibilityValue = "where you there"
@@ -307,7 +318,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 318)?.accessibilityValue = "halalalalelujah deep down in my heart" // two songs
         secondView.document?.page(at: 319)?.accessibilityValue = "give me oil in my lamp"
         secondView.document?.page(at: 320)?.accessibilityValue = "his banner over me is love"
-        
+
         secondView.document?.page(at: 321)?.accessibilityValue = "i tried and i tried i’m happy today"
         secondView.document?.page(at: 322)?.accessibilityValue = "this little light of mine i’m gonna view that holy city" //two songs
         secondView.document?.page(at: 323)?.accessibilityValue = "jesus loves the little children in my father’s house"
@@ -325,7 +336,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 335)?.accessibilityValue = "king of the jungle"
         secondView.document?.page(at: 336)?.accessibilityValue = "i’m in the lord’s army building up the kingdom"
         secondView.document?.page(at: 337)?.accessibilityValue = "jesus is well and alive today"
-        
+
         
     }
     
@@ -357,8 +368,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         UIGraphicsEndImageContext()
     }
     
-    
-    
+ 
     
     
     
@@ -389,7 +399,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
             
         else if ((current?.accessibilityValue != nil) && (favorites.contains((current?.accessibilityValue)!) == true))
         {
-            let index = favorites.index(of: (current?.accessibilityValue)!)
+            let index = favorites.firstIndex(of: (current?.accessibilityValue)!)
             favorites.remove(at: index!)
             checked.remove(at: index!)
             Toast(context: self, msg: "Removed from favorites")
@@ -465,12 +475,15 @@ class secondViewController: UIViewController, PDFViewDelegate{
         
     }
     
+    @IBAction func pitchPipeAction(_ sender: Any) {
+    }
     
     
 }
 
 
-extension secondViewController: UISearchBarDelegate{
+extension secondViewController: UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource{
+    
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
@@ -515,11 +528,57 @@ extension secondViewController: UISearchBarDelegate{
         }
         UIGraphicsEndImageContext()
         
+        self.searchBar.alpha = 0
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == ""{
+            isSearching = false
+            view.endEditing(true)
+            
+            searchSongTableView.reloadData()
+        }
+        else{
+            isSearching = true
+            filteredSongs = allSongs.filter{item in return item.lowercased().hasPrefix(searchBar.text?.lowercased() ?? "")}
+            searchSongTableView.reloadData()
+        }
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchSongTableView.alpha = 0
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isSearching {
+            tableView.alpha = 1
+            return filteredSongs.count
+        }
+        else {
+            tableView.alpha = 0
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var text: String
+        let cell = tableView.dequeueReusableCell(withIdentifier: "filteredSongs", for: indexPath) as! FilteredSongsTableViewCell
+        if isSearching{
+            text = filteredSongs[indexPath.row]
+            cell.songTitle.text = text
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? FilteredSongsTableViewCell else {return}
+        let title = cell.songTitle.text
+        let searchBar: UISearchBar = UISearchBar()
+        searchBar.text = title
+        searchBarSearchButtonClicked(searchBar)
+        tableView.alpha = 0
     }
     
     
     
-    
 }
-
 

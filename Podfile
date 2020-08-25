@@ -7,5 +7,6 @@ target 'pdf test' do
 
   # Pods for pdf test
 	
+pod 'iOSDropDown'
 
 end
