@@ -233,7 +233,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1160;
 				TargetAttributes = {
 					3C76CE6CD60B1CE55A174F03CC59AE17 = {
 						LastSwiftMigration = 1160;
@@ -311,7 +311,6 @@
 			baseConfigurationReference = 9A2DBC16E7664C7666D9047BC86AB682 /* Pods-pdf test.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -406,7 +405,6 @@
 			baseConfigurationReference = 784592CF89A31C45D43CD917FC51F04C /* Pods-pdf test.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -504,7 +502,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C6A203E22246BADE78D1981895E516AA /* iOSDropDown.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -538,7 +535,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF58B08E2E4F30F24A42E1F63F109E96 /* iOSDropDown.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

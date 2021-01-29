@@ -87,6 +87,16 @@
                                                     <segue destination="c2d-rx-eYC" kind="show" identifier="toFav" id="6XL-Qa-Kzr"/>
                                                 </connections>
                                             </barButtonItem>
+                                            <barButtonItem style="plain" id="NnN-ew-bnK">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="R6f-nN-1NJ">
+                                                    <rect key="frame" x="61" y="7" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="P"/>
+                                                </button>
+                                                <connections>
+                                                    <action selector="partsButtonPressed:" destination="9AA-Pg-1kU" id="vTA-JL-F50"/>
+                                                </connections>
+                                            </barButtonItem>
                                             <barButtonItem title="Item" image="icons8-musical-50" id="3uN-Iv-MSi">
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
@@ -141,7 +151,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1448.8" y="339.58020989505252"/>
+            <point key="canvasLocation" x="809" y="340"/>
         </scene>
         <!--Pitch Pipe View Controller-->
         <scene sceneID="meg-Cv-dya">

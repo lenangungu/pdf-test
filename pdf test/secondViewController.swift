@@ -10,7 +10,7 @@ import UIKit
 import PDFKit
 import AudioToolbox
 import AVFoundation
-import iOSDropDown
+//import iOSDropDown
 
 class secondViewController: UIViewController, PDFViewDelegate{
     
@@ -27,7 +27,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
     //var player : AVAudioPlayer?
     var favorites = [""]
     var checked = [""]
-    var allSongs = ["create in me a pure heart (1)",    "be still and know i am god (2)",    "have you not heard (3)",    "his love endures forever (4)",    "unto thee o lord (100)",    "the law of the lord (101)",    "the steadfast love of the lord (102)",    "i will call upon the lord (103)",    "humble yourself in the sight of the lord (104)",    "praise God (105)",    "shout for joy (106)",    "praise the lord (107)",    "o praise the lord (108)",    "rejoice in the law of the lord (109)",    "o lord our lord (110)",    "rejoice in the lord always (111)" ,    "i am not afraid (112)",    "how majestic is your name (113)",    "the lord’s my shepherd (114)",    "o increase my love (200)",    "kyrie eleison (201)",    "hallelujah (202)",    "lord of all (203)",    "men who dream (204)",    "o holy God (205)",    "great among the nations (206)",    "take a look at the mountain (207)",    "remember me (208)",    "be with me lord (209)",    "prayer for boldness (210)",    "always triumphant (211)",    "thank you lord (212)",    "stand in awe (213)",    "go and make disciples (214)",    "a stream in the desert (215)",    "god almighty reigns (216)",    "i hear god singing to me (217)",    "i need your love (218)",    "pray for the peace of jerusalem (219)",    "be strong take heart (220)",    "there’s power in the blood (350)",    "our god he is alive (351)",    "glorious things of thee are spoken (352)",    "sweet sweet spirit (353)",    "take my life and let it be (354)",    "standing on the promises (355)",    "where could i go (356)",    "victory in jesus (357)",    "the old rugged cross (358)",    "amazing grace (359)",    "a mighty fortress (360)",    "God moves in a mysterious way (361)",    "for those tears i died (362)",     "there is a habitation (363)",     "precious lord (364)",     "when the roll is called (365)",     "glory be to Jesus (366)",     "hold to God’s unchanging hand (367)",     "God of our fathers (368)",     "send the light (369)",     "how sweet how heavenly (370)",     "my Jesus i love thee (371)",     "i am resolved (372)",     "shall we gather at the river (373)",     "peace perfect peace (374)",     "to God be the glory (375)",     "i know that my redeemer lives (376)",     "ten thousand angels (377)",     "we will glorify (378)",     "praise him praise him (379)",     "what can wash away my sin (380)",     "there is much to do (381)",     "when i survey the wondrous cross (382)",     "this world is not my home (383)",     "rise up o men of god (384)",     "what a fellowship (385)",     "years i spent in vanity and pride (386)",     "how great thou art (387)",     "make me a channel of your peace (388)",     "we’ll work till Jesus comes (389)",     "what a friend we have in jesus (390)",     "this is my father’s world (391)",     "to cannan’s land i’m on my way (392)",     "there is a place of quiet rest (393)",     "the spacious firmamen on high (394)",     "holy father (395)",     "the lord bless you and keep you (396)",     "when we all get to heaven (397)",     "why did my savior come to earth (398)",     "the glory land way (399)",     "stand up stand up for jesus (400)",     "redeemed (401)",     "spirit of the living God (402)",     "ring out the message (403)",     "nearer still nearer (404)",     "purer in heart (405)",     "onward christian soldires (406)",     "immortal invisible God only wise (407)",     "no tears in heaven (408)",     "o scared head (409)",     "when the morning comes (410)",     "tis midnight and on olive’s brow (411)",     "on zion’s glorious summit (412)",     "o master let me walk with thee (413)",     "love lifted me (414)",     "lord we come before thee now (415)",     "lo what a glorious sight (416)",     "lamb of god (417)",     "i love to tell the story (418)",     "Jesus keep me near (419)",     "i’ll be a friend to Jesus (420)",     "lead me to some soul today (421)",     "i’ll fly away (422)",     "jesus is lord (423)",     "jesus loves me (424)",     "i know whom i have believed (425)",     "i walk with the king (426)",     "trust and obey (427)",     "heavenly sunlight (428)",     "lead me to calvary (429)",     "i need thee every hour (430)",     "alas and did my savior bleed (431)",     "have thine own way (432)",     "hallelujah oraise Jehovah (433)",     "faith is the victory (434)",     "there’s not a friend (435)",     "great is thy faithfulness (436)",     "crown him with many crowns (437)",     "o worship the king (438)",     "follow me (439)",     "sanctuary (440)",     "sing hallelujah to the lord (441)",     "holy holy holy (442)",     "how firm a foundation (443)",     "soldiers of christ arise (444)",     "awesome God (445)",     "seek ye first (446)",     "there’s a fountain free (447)",     "just a little talk with Jesus (448)",     "i will sing the wondrous story (449)",     "hallelujah what a savior (450)",     "blessed assurance (451)",     "Christ the lord is risen today (452)",     "fairest lord Jesus (453)",     "beneath the cross of Jesus (454)",     "teach me lord to wait (455)",     "it is well with my soul (456)",     "when my love to Christ (457)",     "glory glory halleleujah (458)",     "we’re marching to zion (459)",     "i’m not ashamed to own my lord (460)",     "we praise thee o God (461)",     "i know that my redeemer lives (462)",     "my hope is built (463)",     "joyful joyful we adore thee (464)",     "be still my soul (465)",     "i will speak (466)",     "my God and i (467)",     "breathe on me breath of god (468)",     "low in the grave he lay (469)",     "for the beauty of the earth (470)",     "just as i am (471)",     "just a closer walk with thee (472)",     "arise my sould arise (473)",     "all to jesus i surrender (474)",     "christ we do all adore thee (475)",     "all hail the power (476)",     "lord speak to me (477)",     "abide with me (478)",     "o come all ye faithful (550)",     "o come o come emmanuel (551)",     "joy to the world (552)",     "it came upon the midnight clear (553)",     "angels we have heard on high (554)",     "what child is this (555)",     "silent night (556)",     "hark the herald angels sing (557)",     "lord i thank you (600)",     "lord God almighty (601)",     "run to the fight (602)",     "siku rin wana (603)",     "the glory song (604)",     "in the kingdom (605)",     "thank you lord (700)",     "amen (701)",     "crossing over (702)",     "e khaya e-khaya (703)",     "encourage my soul (704)",     "don’t you wanna go (705)",     "God is so good (706)",     "he gave her water (707)",     "hard fighting soldier (708)",     "he is lord (709)",     "i am a poor wayfaring stranger (710)",     "glory glory (711)",     "i can’t keep it to myself (712)",     "his eye is on the sparrow (713)",     "i feel good (714)",     "i want Jesus to walk with me (715)",     "i have decided to follow Jesus (716)",     "i’ll be listening (717)",     "i’m coming up lord (718)",     "jesus will fix it (719)",     "let your living water flow (720)",     "let us break bread together (721)",     "i love to praise his holy name (722)",     "love love love (723)",     "there is a balm in gilead (724)",     "i’ve been redeemed (725)",     "oh how i love Jesus (726)",     "sing amen amen (727)",     "sign me up (728)",     "jordan river (729)",     "someday (730)",     "soon and very soon (731)",     "swing low sweet chariot (732)",     "take the lord with you (733)",     "wade in the water (734)",     "where you there (735)",     "we shall overcome (736)",     "i tried and i tried (737)" ,     "would you be poured out like wine (738)",     "walking on the heaven road (739)",     "amazing grace (800)",     "as many as possible (801)",     "glory glory hallelujah (802)",     "God alone (803)",     "create in me a pure heart (804)",     "Jesus is lord (805)",     "hallelujah chorus (880)",     "all hail the power (881)",     "ain’t no rock (900)",     "we are soldiers in the army (901)",     "deep down in my heart (903)",     "halalalalelujah (902)",     "give me oil in my lamp (904)",     "his banner over me is love (905)",     "i tried and i tried (906)",     "i’m happy today (907)",     "this little light of mine (908)",     "i’m gonna view that holy city (909)",     "jesus loves the little children (910)",     "in my father’s house (911)",     "i’ve got the joy joy joy (912)",     "love love love (913)",     "the christian jubilee (914)",     "oh be careful (915)",     "my God is so great (916)",     "roll the gospel chariot (917)",     "rejoice in the lord always (918)" ,     "praise him praise him (919)",     "peace like a river (920)" ,     "whose side are you fighting on (921)",     "rise and shine (922)",     "standing in the need of prayer (923)",     "the new testament song (924)",     "show me the way (925)",     "the sea of galilee (926)",     "this is the day (927)" ,     "this is my commandment (928)",     "the wise man (929)",     "king of the jungle (930)",     "building up the kingdom (932)",     "i’m in the lord’s army (931)" ,     "jesus is well and alive today (933)",]
+    var allSongs = ["create in me a pure heart (1)",    "be still and know i am god (2)",    "have you not heard (3)",    "his love endures forever (4)",    "unto thee o lord (100)",    "the law of the lord (101)",    "the steadfast love of the lord (102)",    "i will call upon the lord (103)",    "humble yourself in the sight of the lord (104)",    "praise god (105)",    "shout for joy (106)",    "praise the lord (107)",    "o praise the lord (108)",    "rejoice in the law of the lord (109)",    "o lord our lord (110)",    "rejoice in the lord always (111)" ,    "i am not afraid (112)",    "how majestic is your name (113)",    "the lord’s my shepherd (114)",    "o increase my love (200)",    "kyrie eleison (201)",    "hallelujah (202)",    "lord of all (203)",    "men who dream (204)",    "o holy god (205)",    "great among the nations (206)",    "take a look at the mountain (207)",    "remember me (208)",    "be with me lord (209)",    "prayer for boldness (210)",    "always triumphant (211)",    "thank you lord (212)",    "stand in awe (213)",    "go and make disciples (214)",    "a stream in the desert (215)",    "god almighty reigns (216)",    "i hear god singing to me (217)",    "i need your love (218)",    "pray for the peace of jerusalem (219)",    "be strong take heart (220)",    "there’s power in the blood (350)",    "our god he is alive (351)",    "glorious things of thee are spoken (352)",    "sweet sweet spirit (353)",    "take my life and let it be (354)",    "standing on the promises (355)",    "where could i go (356)",    "victory in jesus (357)",    "the old rugged cross (358)",    "amazing grace (359)",    "a mighty fortress (360)",    "god moves in a mysterious way (361)",    "for those tears i died (362)",     "there is a habitation (363)",     "precious lord (364)",     "when the roll is called (365)",     "glory be to Jesus (366)",     "hold to god’s unchanging hand (367)",     "god of our fathers (368)",     "send the light (369)",     "how sweet how heavenly (370)",     "my Jesus i love thee (371)",     "i am resolved (372)",     "shall we gather at the river (373)",     "peace perfect peace (374)",     "to god be the glory (375)",     "i know that my redeemer lives (376)",     "ten thousand angels (377)",     "we will glorify (378)",     "praise him praise him (379)",     "what can wash away my sin (380)",     "there is much to do (381)",     "when i survey the wondrous cross (382)",     "this world is not my home (383)",     "rise up o men of god (384)",     "what a fellowship (385)",     "years i spent in vanity and pride (386)",     "how great thou art (387)",     "make me a channel of your peace (388)",     "we’ll work till Jesus comes (389)",     "what a friend we have in jesus (390)",     "this is my father’s world (391)",     "to cannan’s land i’m on my way (392)",     "there is a place of quiet rest (393)",     "the spacious firmamen on high (394)",     "holy father (395)",     "the lord bless you and keep you (396)",     "when we all get to heaven (397)",     "why did my savior come to earth (398)",     "the glory land way (399)",     "stand up stand up for jesus (400)",     "redeemed (401)",     "spirit of the living god (402)",     "ring out the message (403)",     "nearer still nearer (404)",     "purer in heart (405)",     "onward christian soldires (406)",     "immortal invisible god only wise (407)",     "no tears in heaven (408)",     "o scared head (409)",     "when the morning comes (410)",     "tis midnight and on olive’s brow (411)",     "on zion’s glorious summit (412)",     "o master let me walk with thee (413)",     "love lifted me (414)",     "lord we come before thee now (415)",     "lo what a glorious sight (416)",     "lamb of god (417)",     "i love to tell the story (418)",     "Jesus keep me near (419)",     "i’ll be a friend to Jesus (420)",     "lead me to some soul today (421)",     "i’ll fly away (422)",     "jesus is lord (423)",     "jesus loves me (424)",     "i know whom i have believed (425)",     "i walk with the king (426)",     "trust and obey (427)",     "heavenly sunlight (428)",     "lead me to calvary (429)",     "i need thee every hour (430)",     "alas and did my savior bleed (431)",     "have thine own way (432)",     "hallelujah oraise Jehovah (433)",     "faith is the victory (434)",     "there’s not a friend (435)",     "great is thy faithfulness (436)",     "crown him with many crowns (437)",     "o worship the king (438)",     "follow me (439)",     "sanctuary (440)",     "sing hallelujah to the lord (441)",     "holy holy holy (442)",     "how firm a foundation (443)",     "soldiers of christ arise (444)",     "awesome god (445)",     "seek ye first (446)",     "there’s a fountain free (447)",     "just a little talk with Jesus (448)",     "i will sing the wondrous story (449)",     "hallelujah what a savior (450)",     "blessed assurance (451)",     "Christ the lord is risen today (452)",     "fairest lord Jesus (453)",     "beneath the cross of Jesus (454)",     "teach me lord to wait (455)",     "it is well with my soul (456)",     "when my love to Christ (457)",     "glory glory halleleujah (458)",     "we’re marching to zion (459)",     "i’m not ashamed to own my lord (460)",     "we praise thee o god (461)",     "i know that my redeemer lives (462)",     "my hope is built (463)",     "joyful joyful we adore thee (464)",     "be still my soul (465)",     "i will speak (466)",     "my god and i (467)",     "breathe on me breath of god (468)",     "low in the grave he lay (469)",     "for the beauty of the earth (470)",     "just as i am (471)",     "just a closer walk with thee (472)",     "arise my sould arise (473)",     "all to jesus i surrender (474)",     "christ we do all adore thee (475)",     "all hail the power (476)",     "lord speak to me (477)",     "abide with me (478)",     "o come all ye faithful (550)",     "o come o come emmanuel (551)",     "joy to the world (552)",     "it came upon the midnight clear (553)",     "angels we have heard on high (554)",     "what child is this (555)",     "silent night (556)",     "hark the herald angels sing (557)",     "lord i thank you (600)",     "lord god almighty (601)",     "run to the fight (602)",     "siku rin wana (603)",     "the glory song (604)",     "in the kingdom (605)",     "thank you lord (700)",     "amen (701)",     "crossing over (702)",     "e khaya e-khaya (703)",     "encourage my soul (704)",     "don’t you wanna go (705)",     "god is so good (706)",     "he gave her water (707)",     "hard fighting soldier (708)",     "he is lord (709)",     "i am a poor wayfaring stranger (710)",     "glory glory (711)",     "i can’t keep it to myself (712)",     "his eye is on the sparrow (713)",     "i feel good (714)",     "i want Jesus to walk with me (715)",     "i have decided to follow Jesus (716)",     "i’ll be listening (717)",     "i’m coming up lord (718)",     "jesus will fix it (719)",     "let your living water flow (720)",     "let us break bread together (721)",     "i love to praise his holy name (722)",     "love love love (723)",     "there is a balm in gilead (724)",     "i’ve been redeemed (725)",     "oh how i love Jesus (726)",     "sing amen amen (727)",     "sign me up (728)",     "jordan river (729)",     "someday (730)",     "soon and very soon (731)",     "swing low sweet chariot (732)",     "take the lord with you (733)",     "wade in the water (734)",     "where you there (735)",     "we shall overcome (736)",     "i tried and i tried (737)" ,     "would you be poured out like wine (738)",     "walking on the heaven road (739)",     "amazing grace (800)",     "as many as possible (801)",     "glory glory hallelujah (802)",     "god alone (803)",     "create in me a pure heart (804)",     "Jesus is lord (805)",     "hallelujah chorus (880)",     "all hail the power (881)",     "ain’t no rock (900)",     "we are soldiers in the army (901)",     "deep down in my heart (903)",     "halalalalelujah (902)",     "give me oil in my lamp (904)",     "his banner over me is love (905)",     "i tried and i tried (906)",     "i’m happy today (907)",     "this little light of mine (908)",     "i’m gonna view that holy city (909)",     "jesus loves the little children (910)",     "in my father’s house (911)",     "i’ve got the joy joy joy (912)",     "love love love (913)",     "the christian jubilee (914)",     "oh be careful (915)",     "my god is so great (916)",     "roll the gospel chariot (917)",     "rejoice in the lord always (918)" ,     "praise him praise him (919)",     "peace like a river (920)" ,     "whose side are you fighting on (921)",     "rise and shine (922)",     "standing in the need of prayer (923)",     "the new testament song (924)",     "show me the way (925)",     "the sea of galilee (926)",     "this is the day (927)" ,     "this is my commandment (928)",     "the wise man (929)",     "king of the jungle (930)",     "building up the kingdom (932)",     "i’m in the lord’s army (931)" ,     "jesus is well and alive today (933)",]
     
     var filteredSongs = [String]()
     var favTitle : String?
@@ -55,8 +55,8 @@ class secondViewController: UIViewController, PDFViewDelegate{
         searchBar.alpha = 0
         setPages()
         
-        // UIGraphicsEndImageContext()
-        //  UIGraphicsPopContext()
+        // UIgraphicsEndImageContext()
+        //  UIgraphicsPopContext()
         
     }
     
@@ -81,7 +81,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 29)?.accessibilityValue = "the steadfast love of the lord (102)"
         secondView.document?.page(at: 30)?.accessibilityValue = "i will call upon the lord (103)"
         secondView.document?.page(at: 31)?.accessibilityValue = "humble yourself in the sight of the lord (104)"
-        secondView.document?.page(at: 32)?.accessibilityValue = "praise God (105)"
+        secondView.document?.page(at: 32)?.accessibilityValue = "praise god (105)"
         secondView.document?.page(at: 33)?.accessibilityValue = "shout for joy (106)"
         secondView.document?.page(at: 34)?.accessibilityValue = "praise the lord (107)"
         secondView.document?.page(at: 35)?.accessibilityValue = "o praise the lord (108)"
@@ -97,7 +97,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 47)?.accessibilityValue = "hallelujah (202)"
         secondView.document?.page(at: 48)?.accessibilityValue = "lord of all (203)"
         secondView.document?.page(at: 49)?.accessibilityValue = "men who dream (204)"
-        secondView.document?.page(at: 53)?.accessibilityValue = "o holy God (205)"
+        secondView.document?.page(at: 53)?.accessibilityValue = "o holy god (205)"
         secondView.document?.page(at: 55)?.accessibilityValue = "great among the nations (206)"
         secondView.document?.page(at: 57)?.accessibilityValue = "take a look at the mountain (207)"
         secondView.document?.page(at: 58)?.accessibilityValue = "remember me (208)"
@@ -126,14 +126,14 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 95)?.accessibilityValue = "the old rugged cross (358)"
         secondView.document?.page(at: 96)?.accessibilityValue = "amazing grace (359)"
         secondView.document?.page(at: 97)?.accessibilityValue = "a mighty fortress (360)"
-        secondView.document?.page(at: 98)?.accessibilityValue = "God moves in a mysterious way (361)"
+        secondView.document?.page(at: 98)?.accessibilityValue = "god moves in a mysterious way (361)"
         secondView.document?.page(at: 99)?.accessibilityValue = "for those tears i died (362)"
         secondView.document?.page(at: 101)?.accessibilityValue = "there is a habitation (363)"
         secondView.document?.page(at: 102)?.accessibilityValue = "precious lord (364)"
         secondView.document?.page(at: 103)?.accessibilityValue = "when the roll is called (365)"
         secondView.document?.page(at: 104)?.accessibilityValue = "glory be to Jesus (366)"
-        secondView.document?.page(at: 105)?.accessibilityValue = "hold to God’s unchanging hand (367)"
-        secondView.document?.page(at: 106)?.accessibilityValue = "God of our fathers (368)"
+        secondView.document?.page(at: 105)?.accessibilityValue = "hold to god’s unchanging hand (367)"
+        secondView.document?.page(at: 106)?.accessibilityValue = "god of our fathers (368)"
         secondView.document?.page(at: 107)?.accessibilityValue = "send the light (369)"
         secondView.document?.page(at: 108)?.accessibilityValue = "how sweet how heavenly (370)"
         secondView.document?.page(at: 109)?.accessibilityValue = "my Jesus i love thee (371)"
@@ -141,7 +141,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 110)?.accessibilityValue = "i am resolved (372)"
         secondView.document?.page(at: 111)?.accessibilityValue = "shall we gather at the river (373)"
         secondView.document?.page(at: 112)?.accessibilityValue = "peace perfect peace (374)"
-        secondView.document?.page(at: 113)?.accessibilityValue = "to God be the glory (375)"
+        secondView.document?.page(at: 113)?.accessibilityValue = "to god be the glory (375)"
         secondView.document?.page(at: 114)?.accessibilityValue = "i know that my redeemer lives (376)"
         secondView.document?.page(at: 115)?.accessibilityValue = "ten thousand angels (377)"
         secondView.document?.page(at: 116)?.accessibilityValue = "we will glorify (378)"
@@ -168,12 +168,12 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 137)?.accessibilityValue = "the glory land way (399)"
         secondView.document?.page(at: 138)?.accessibilityValue = "stand up stand up for jesus (400)"
         secondView.document?.page(at: 139)?.accessibilityValue = "redeemed (401)"
-        secondView.document?.page(at: 140)?.accessibilityValue = "spirit of the living God (402)"
+        secondView.document?.page(at: 140)?.accessibilityValue = "spirit of the living god (402)"
         secondView.document?.page(at: 141)?.accessibilityValue = "ring out the message (403)"
         secondView.document?.page(at: 143)?.accessibilityValue = "nearer still nearer (404)"
         secondView.document?.page(at: 144)?.accessibilityValue = "purer in heart (405)"
         secondView.document?.page(at: 145)?.accessibilityValue = "onward christian soldires (406)"
-        secondView.document?.page(at: 146)?.accessibilityValue = "immortal invisible God only wise (407)"
+        secondView.document?.page(at: 146)?.accessibilityValue = "immortal invisible god only wise (407)"
         secondView.document?.page(at: 147)?.accessibilityValue = "no tears in heaven (408)"
         secondView.document?.page(at: 148)?.accessibilityValue = "o scared head (409)"
         secondView.document?.page(at: 149)?.accessibilityValue = "when the morning comes (410)"
@@ -213,7 +213,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         
         secondView.document?.page(at: 186)?.accessibilityValue = "how firm a foundation (443)"
         secondView.document?.page(at: 187)?.accessibilityValue = "soldiers of christ arise (444)"
-        secondView.document?.page(at: 188)?.accessibilityValue = "awesome God (445)"
+        secondView.document?.page(at: 188)?.accessibilityValue = "awesome god (445)"
         secondView.document?.page(at: 189)?.accessibilityValue = "seek ye first (446)"
         secondView.document?.page(at: 190)?.accessibilityValue = "there’s a fountain free (447)"
         secondView.document?.page(at: 191)?.accessibilityValue = "just a little talk with Jesus (448)"
@@ -230,13 +230,13 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 203)?.accessibilityValue = "glory glory halleleujah (458)"
         secondView.document?.page(at: 205)?.accessibilityValue = "we’re marching to zion (459)"
         secondView.document?.page(at: 206)?.accessibilityValue = "i’m not ashamed to own my lord (460)"
-        secondView.document?.page(at: 207)?.accessibilityValue = "we praise thee o God (461)"
+        secondView.document?.page(at: 207)?.accessibilityValue = "we praise thee o god (461)"
         secondView.document?.page(at: 208)?.accessibilityValue = "i know that my redeemer lives (462)"
         secondView.document?.page(at: 209)?.accessibilityValue = "my hope is built (463)"
         secondView.document?.page(at: 210)?.accessibilityValue = "joyful joyful we adore thee (464)"
         secondView.document?.page(at: 211)?.accessibilityValue = "be still my soul (465)"
         secondView.document?.page(at: 212)?.accessibilityValue = "i will speak (466)"
-        secondView.document?.page(at: 213)?.accessibilityValue = "my God and i (467)"
+        secondView.document?.page(at: 213)?.accessibilityValue = "my god and i (467)"
         secondView.document?.page(at: 214)?.accessibilityValue = "breathe on me breath of god (468)"
         secondView.document?.page(at: 215)?.accessibilityValue = "low in the grave he lay (469)"
         secondView.document?.page(at: 216)?.accessibilityValue = "for the beauty of the earth (470)"
@@ -258,7 +258,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 232)?.accessibilityValue = "silent night (556)"
         secondView.document?.page(at: 233)?.accessibilityValue = "hark the herald angels sing (557)"
         secondView.document?.page(at: 236)?.accessibilityValue = "lord i thank you (600)"
-        secondView.document?.page(at: 237)?.accessibilityValue = "lord God almighty (601)"
+        secondView.document?.page(at: 237)?.accessibilityValue = "lord god almighty (601)"
         secondView.document?.page(at: 239)?.accessibilityValue = "run to the fight (602)"
         secondView.document?.page(at: 240)?.accessibilityValue = "siku rin wana (603)"
         secondView.document?.page(at: 241)?.accessibilityValue = "the glory song (604)"
@@ -269,7 +269,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 248)?.accessibilityValue = "e khaya e-khaya (703)"
         secondView.document?.page(at: 249)?.accessibilityValue = "encourage my soul (704)"
         secondView.document?.page(at: 251)?.accessibilityValue = "don’t you wanna go (705)"
-        secondView.document?.page(at: 252)?.accessibilityValue = "God is so good (706)"
+        secondView.document?.page(at: 252)?.accessibilityValue = "god is so good (706)"
         secondView.document?.page(at: 253)?.accessibilityValue = "he gave her water (707)"
         secondView.document?.page(at: 257)?.accessibilityValue = "hard fighting soldier (708)"
         secondView.document?.page(at: 258)?.accessibilityValue = "he is lord (709)"
@@ -307,7 +307,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 295)?.accessibilityValue = "amazing grace (800)"
         secondView.document?.page(at: 297)?.accessibilityValue = "as many as possible (801)"
         secondView.document?.page(at: 299)?.accessibilityValue = "glory glory hallelujah (802)"
-        secondView.document?.page(at: 301)?.accessibilityValue = "God alone (803)"
+        secondView.document?.page(at: 301)?.accessibilityValue = "god alone (803)"
         secondView.document?.page(at: 303)?.accessibilityValue = "create in me a pure heart (804)"
         secondView.document?.page(at: 305)?.accessibilityValue = "Jesus is lord (805)"
         secondView.document?.page(at: 306)?.accessibilityValue = "hallelujah chorus (880)"
@@ -323,7 +323,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 323)?.accessibilityValue = "jesus loves the little children (910); in my father’s house (911)"
         secondView.document?.page(at: 324)?.accessibilityValue = "i’ve got the joy joy joy (912); love love love (913)"
         secondView.document?.page(at: 325)?.accessibilityValue = "the christian jubilee (914); oh be careful (915)"
-        secondView.document?.page(at: 326)?.accessibilityValue = "my God is so great (916); roll the gospel chariot (917)"
+        secondView.document?.page(at: 326)?.accessibilityValue = "my god is so great (916); roll the gospel chariot (917)"
         secondView.document?.page(at: 327)?.accessibilityValue = "rejoice in the lord always (918) ; praise him praise him (919)"
         secondView.document?.page(at: 328)?.accessibilityValue = "peace like a river (920) ; whose side are you fighting on (921)"
         secondView.document?.page(at: 329)?.accessibilityValue = "rise and shine (922)"
@@ -375,7 +375,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        // UIGraphicsEndImageContext()
+        // UIgraphicsEndImageContext()
         
     }
     
@@ -421,7 +421,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
             CGRect(x: 25, y: ctx.view.frame.size.height / 2,
                    width: ctx.view.frame.size.width - 50, height: 50))
         
-        toast.backgroundColor = UIColor.lightGray
+        toast.backgroundColor = UIColor.lightGray 
         toast.textColor = UIColor.white
         toast.textAlignment = .center;
         toast.numberOfLines = 1
@@ -480,6 +480,11 @@ class secondViewController: UIViewController, PDFViewDelegate{
     @IBAction func pitchPipeAction(_ sender: Any) {
     }
     
+    @IBAction func partsButtonPressed(_ sender: Any) {
+        //get current song name, either have popup or new VC.
+        //Fetch corresponding song 
+        
+    }
     
 }
 
