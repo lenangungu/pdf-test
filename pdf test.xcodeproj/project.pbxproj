@@ -31,6 +31,7 @@
 		8A89BF431FE9B74E00BC9984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A89BF421FE9B74E00BC9984 /* Assets.xcassets */; };
 		8A89BF461FE9B74E00BC9984 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A89BF441FE9B74E00BC9984 /* LaunchScreen.storyboard */; };
 		8A89BF4E1FE9BC8200BC9984 /* PDF.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8A89BF4D1FE9BC8200BC9984 /* PDF.pdf */; };
+		8AC7B4F625C66CEF007B98D5 /* PartsAudios in Resources */ = {isa = PBXBuildFile; fileRef = 8AC7B4F525C66CEF007B98D5 /* PartsAudios */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		8A89BF451FE9B74E00BC9984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A89BF471FE9B74E00BC9984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A89BF4D1FE9BC8200BC9984 /* PDF.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = PDF.pdf; path = "../../My Apps/Kingdom Songs/Kingdom Songs/Assets.xcassets/songs.dataset/PDF.pdf"; sourceTree = "<group>"; };
+		8AC7B4F525C66CEF007B98D5 /* PartsAudios */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; path = PartsAudios; sourceTree = SOURCE_ROOT; };
 		AAB9C2989CDDBC54525C3D99 /* Pods-pdf test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pdf test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pdf test/Pods-pdf test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 		8A89BF3A1FE9B74E00BC9984 /* pdf test */ = {
 			isa = PBXGroup;
 			children = (
+				8AC7B4F525C66CEF007B98D5 /* PartsAudios */,
 				8A89BF4D1FE9BC8200BC9984 /* PDF.pdf */,
 				8A0617171FFB750000B7BD78 /* MainViewController.swift */,
 				8A0617151FF5F79800B7BD78 /* secondViewController.swift */,
@@ -219,6 +222,7 @@
 				8A4B546322E5321100279440 /* ENaturalLow.mp3 in Resources */,
 				8A4B546522E5321100279440 /* CNatural.mp3 in Resources */,
 				8A4B546622E5321100279440 /* BFlat.mp3 in Resources */,
+				8AC7B4F625C66CEF007B98D5 /* PartsAudios in Resources */,
 				8A4B546C22E5321100279440 /* CSharp.mp3 in Resources */,
 				8A4B546422E5321100279440 /* GNatural.mp3 in Resources */,
 				8A89BF431FE9B74E00BC9984 /* Assets.xcassets in Resources */,

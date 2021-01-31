@@ -24,7 +24,18 @@ class secondViewController: UIViewController, PDFViewDelegate{
     
     @IBOutlet var addToFavButton: UIBarButtonItem!
     @IBOutlet var searchSongTableView: UITableView!
-    //var player : AVAudioPlayer?
+    
+    @IBOutlet var grayView: UIView!
+    @IBOutlet var partsView: UIView!
+    @IBOutlet var TSPlayButton: UIButton!
+    @IBOutlet var BAPlayButton: UIButton!
+    @IBOutlet var partsDoneButton: UIButton!
+    @IBOutlet var TSSlider: UISlider!
+    @IBOutlet var BASlider: UISlider!
+    
+    var player : AVAudioPlayer?
+    var timer : Timer?
+    
     var favorites = [""]
     var checked = [""]
     var allSongs = ["create in me a pure heart (1)",    "be still and know i am god (2)",    "have you not heard (3)",    "his love endures forever (4)",    "unto thee o lord (100)",    "the law of the lord (101)",    "the steadfast love of the lord (102)",    "i will call upon the lord (103)",    "humble yourself in the sight of the lord (104)",    "praise god (105)",    "shout for joy (106)",    "praise the lord (107)",    "o praise the lord (108)",    "rejoice in the law of the lord (109)",    "o lord our lord (110)",    "rejoice in the lord always (111)" ,    "i am not afraid (112)",    "how majestic is your name (113)",    "the lord’s my shepherd (114)",    "o increase my love (200)",    "kyrie eleison (201)",    "hallelujah (202)",    "lord of all (203)",    "men who dream (204)",    "o holy god (205)",    "great among the nations (206)",    "take a look at the mountain (207)",    "remember me (208)",    "be with me lord (209)",    "prayer for boldness (210)",    "always triumphant (211)",    "thank you lord (212)",    "stand in awe (213)",    "go and make disciples (214)",    "a stream in the desert (215)",    "god almighty reigns (216)",    "i hear god singing to me (217)",    "i need your love (218)",    "pray for the peace of jerusalem (219)",    "be strong take heart (220)",    "there’s power in the blood (350)",    "our god he is alive (351)",    "glorious things of thee are spoken (352)",    "sweet sweet spirit (353)",    "take my life and let it be (354)",    "standing on the promises (355)",    "where could i go (356)",    "victory in jesus (357)",    "the old rugged cross (358)",    "amazing grace (359)",    "a mighty fortress (360)",    "god moves in a mysterious way (361)",    "for those tears i died (362)",     "there is a habitation (363)",     "precious lord (364)",     "when the roll is called (365)",     "glory be to Jesus (366)",     "hold to god’s unchanging hand (367)",     "god of our fathers (368)",     "send the light (369)",     "how sweet how heavenly (370)",     "my Jesus i love thee (371)",     "i am resolved (372)",     "shall we gather at the river (373)",     "peace perfect peace (374)",     "to god be the glory (375)",     "i know that my redeemer lives (376)",     "ten thousand angels (377)",     "we will glorify (378)",     "praise him praise him (379)",     "what can wash away my sin (380)",     "there is much to do (381)",     "when i survey the wondrous cross (382)",     "this world is not my home (383)",     "rise up o men of god (384)",     "what a fellowship (385)",     "years i spent in vanity and pride (386)",     "how great thou art (387)",     "make me a channel of your peace (388)",     "we’ll work till Jesus comes (389)",     "what a friend we have in jesus (390)",     "this is my father’s world (391)",     "to cannan’s land i’m on my way (392)",     "there is a place of quiet rest (393)",     "the spacious firmamen on high (394)",     "holy father (395)",     "the lord bless you and keep you (396)",     "when we all get to heaven (397)",     "why did my savior come to earth (398)",     "the glory land way (399)",     "stand up stand up for jesus (400)",     "redeemed (401)",     "spirit of the living god (402)",     "ring out the message (403)",     "nearer still nearer (404)",     "purer in heart (405)",     "onward christian soldires (406)",     "immortal invisible god only wise (407)",     "no tears in heaven (408)",     "o scared head (409)",     "when the morning comes (410)",     "tis midnight and on olive’s brow (411)",     "on zion’s glorious summit (412)",     "o master let me walk with thee (413)",     "love lifted me (414)",     "lord we come before thee now (415)",     "lo what a glorious sight (416)",     "lamb of god (417)",     "i love to tell the story (418)",     "Jesus keep me near (419)",     "i’ll be a friend to Jesus (420)",     "lead me to some soul today (421)",     "i’ll fly away (422)",     "jesus is lord (423)",     "jesus loves me (424)",     "i know whom i have believed (425)",     "i walk with the king (426)",     "trust and obey (427)",     "heavenly sunlight (428)",     "lead me to calvary (429)",     "i need thee every hour (430)",     "alas and did my savior bleed (431)",     "have thine own way (432)",     "hallelujah oraise Jehovah (433)",     "faith is the victory (434)",     "there’s not a friend (435)",     "great is thy faithfulness (436)",     "crown him with many crowns (437)",     "o worship the king (438)",     "follow me (439)",     "sanctuary (440)",     "sing hallelujah to the lord (441)",     "holy holy holy (442)",     "how firm a foundation (443)",     "soldiers of christ arise (444)",     "awesome god (445)",     "seek ye first (446)",     "there’s a fountain free (447)",     "just a little talk with Jesus (448)",     "i will sing the wondrous story (449)",     "hallelujah what a savior (450)",     "blessed assurance (451)",     "Christ the lord is risen today (452)",     "fairest lord Jesus (453)",     "beneath the cross of Jesus (454)",     "teach me lord to wait (455)",     "it is well with my soul (456)",     "when my love to Christ (457)",     "glory glory halleleujah (458)",     "we’re marching to zion (459)",     "i’m not ashamed to own my lord (460)",     "we praise thee o god (461)",     "i know that my redeemer lives (462)",     "my hope is built (463)",     "joyful joyful we adore thee (464)",     "be still my soul (465)",     "i will speak (466)",     "my god and i (467)",     "breathe on me breath of god (468)",     "low in the grave he lay (469)",     "for the beauty of the earth (470)",     "just as i am (471)",     "just a closer walk with thee (472)",     "arise my sould arise (473)",     "all to jesus i surrender (474)",     "christ we do all adore thee (475)",     "all hail the power (476)",     "lord speak to me (477)",     "abide with me (478)",     "o come all ye faithful (550)",     "o come o come emmanuel (551)",     "joy to the world (552)",     "it came upon the midnight clear (553)",     "angels we have heard on high (554)",     "what child is this (555)",     "silent night (556)",     "hark the herald angels sing (557)",     "lord i thank you (600)",     "lord god almighty (601)",     "run to the fight (602)",     "siku rin wana (603)",     "the glory song (604)",     "in the kingdom (605)",     "thank you lord (700)",     "amen (701)",     "crossing over (702)",     "e khaya e-khaya (703)",     "encourage my soul (704)",     "don’t you wanna go (705)",     "god is so good (706)",     "he gave her water (707)",     "hard fighting soldier (708)",     "he is lord (709)",     "i am a poor wayfaring stranger (710)",     "glory glory (711)",     "i can’t keep it to myself (712)",     "his eye is on the sparrow (713)",     "i feel good (714)",     "i want Jesus to walk with me (715)",     "i have decided to follow Jesus (716)",     "i’ll be listening (717)",     "i’m coming up lord (718)",     "jesus will fix it (719)",     "let your living water flow (720)",     "let us break bread together (721)",     "i love to praise his holy name (722)",     "love love love (723)",     "there is a balm in gilead (724)",     "i’ve been redeemed (725)",     "oh how i love Jesus (726)",     "sing amen amen (727)",     "sign me up (728)",     "jordan river (729)",     "someday (730)",     "soon and very soon (731)",     "swing low sweet chariot (732)",     "take the lord with you (733)",     "wade in the water (734)",     "where you there (735)",     "we shall overcome (736)",     "i tried and i tried (737)" ,     "would you be poured out like wine (738)",     "walking on the heaven road (739)",     "amazing grace (800)",     "as many as possible (801)",     "glory glory hallelujah (802)",     "god alone (803)",     "create in me a pure heart (804)",     "Jesus is lord (805)",     "hallelujah chorus (880)",     "all hail the power (881)",     "ain’t no rock (900)",     "we are soldiers in the army (901)",     "deep down in my heart (903)",     "halalalalelujah (902)",     "give me oil in my lamp (904)",     "his banner over me is love (905)",     "i tried and i tried (906)",     "i’m happy today (907)",     "this little light of mine (908)",     "i’m gonna view that holy city (909)",     "jesus loves the little children (910)",     "in my father’s house (911)",     "i’ve got the joy joy joy (912)",     "love love love (913)",     "the christian jubilee (914)",     "oh be careful (915)",     "my god is so great (916)",     "roll the gospel chariot (917)",     "rejoice in the lord always (918)" ,     "praise him praise him (919)",     "peace like a river (920)" ,     "whose side are you fighting on (921)",     "rise and shine (922)",     "standing in the need of prayer (923)",     "the new testament song (924)",     "show me the way (925)",     "the sea of galilee (926)",     "this is the day (927)" ,     "this is my commandment (928)",     "the wise man (929)",     "king of the jungle (930)",     "building up the kingdom (932)",     "i’m in the lord’s army (931)" ,     "jesus is well and alive today (933)",]
@@ -38,6 +49,10 @@ class secondViewController: UIViewController, PDFViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        TSPlayButton.accessibilityIdentifier = "play"
+        BAPlayButton.accessibilityIdentifier = "play"
+        partsView.alpha = 0
+        grayView.alpha = 0
         searchBar.returnKeyType = UIReturnKeyType.done
         
         let defaults = UserDefaults.standard
@@ -481,10 +496,122 @@ class secondViewController: UIViewController, PDFViewDelegate{
     }
     
     @IBAction func partsButtonPressed(_ sender: Any) {
-        //get current song name, either have popup or new VC.
-        //Fetch corresponding song 
+        //put this under longpress
+        if let timer = timer {
+            timer.invalidate()}
+        
+        partsView.alpha = 1
+        grayView.alpha = 1
+        grayView.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
+        
+        secondView.isUserInteractionEnabled = false
+        secondView.documentView?.isOpaque = false
+        
+        //initialize sliders
+        TSSlider.value = 0.0
+        player = AVAudioPlayer()
+      
+        
         
     }
+    
+    @IBAction func TSPlayButtonPressed(_ sender: Any) {
+        //check if other parts playing? also, are we allowing both parts to play at the same or one at a time??
+        //change image when song done
+    
+        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (Timer) in
+            self.updateSliders()
+        }
+      
+        
+        
+        if TSPlayButton.accessibilityIdentifier == "play"{
+            //play player at time ot slider
+            
+            TSPlayButton.accessibilityIdentifier = "pause"// .setTitle("pause", for: .normal)
+            let songTSPart = secondView.currentPage?.accessibilityValue ?? "" + "_TS"
+            if let path = Bundle.main.url(forResource: songTSPart, withExtension: "mp3", subdirectory: "PartsAudios") {
+                player = try! AVAudioPlayer(contentsOf: path)
+                
+                TSSlider.maximumValue = Float(player!.duration)
+                
+                player?.currentTime = TimeInterval(TSSlider.value)
+                player?.play()
+                if #available(iOS 13.0, *) {
+                    TSPlayButton.setImage(UIImage.init(systemName: "pause.circle.fill"), for: .normal)
+                } else {
+                    // Fallback on earlier versions
+                }
+            }
+            else{
+                //toast go to start of song page
+                print("go to start of song page")
+            }
+        }
+        else {
+            TSPlayButton.accessibilityIdentifier = "play"
+            player?.pause()
+            if #available(iOS 13.0, *) {
+                TSPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+        
+        
+    }
+    
+    @IBAction func TSSliderChanged(_ sender: Any) {
+        
+        //if it was on pause then move slider without playing
+        if (TSPlayButton.accessibilityIdentifier == "play"){
+            
+                   player?.currentTime = TimeInterval(TSSlider.value)
+                   player?.prepareToPlay()
+        }
+        
+        else{
+        player?.pause()
+        player?.currentTime = TimeInterval(TSSlider.value)
+        player?.prepareToPlay()
+        player?.play()
+        }
+        //TSPlayButton.accessibilityIdentifier = "play"
+
+       // if #available(iOS 13.0, *) {
+            //TSPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)}
+       
+    }
+    
+    func updateSliders(){
+        TSSlider.value = Float( player!.currentTime)
+    }
+    
+    
+    
+    
+    
+    @IBAction func partsDoneButtonPressed(_ sender: Any) {
+        partsView.alpha = 0
+        secondView.isUserInteractionEnabled = true
+        
+        grayView.alpha = 0
+        
+        //stop player & reset buttons identifiers to play
+        
+        TSPlayButton.accessibilityIdentifier = "play"
+        BAPlayButton.accessibilityIdentifier = "play"
+        player?.pause()
+        if #available(iOS 13.0, *) {
+            TSPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)}
+        
+        timer!.invalidate()
+        //reset slider and player
+      
+       
+        
+    }
+    
     
 }
 
@@ -579,6 +706,7 @@ extension secondViewController: UISearchBarDelegate, UITableViewDelegate, UITabl
             searchSongTableView.reloadData()
         }
     }
+    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchSongTableView.alpha = 0
     }
