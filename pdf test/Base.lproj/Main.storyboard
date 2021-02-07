@@ -123,7 +123,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" restorationIdentifier="partsView" translatesAutoresizingMaskIntoConstraints="NO" id="mrm-Lh-v4Q">
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="partsView" translatesAutoresizingMaskIntoConstraints="NO" id="mrm-Lh-v4Q">
                                 <rect key="frame" x="40" y="120" width="295" height="258"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16r-zm-oHM">
@@ -154,10 +154,16 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="0.63062685730000001" green="0.26636692880000001" blue="0.24186611180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="play.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="BAPlayButtonPressed:" destination="9AA-Pg-1kU" eventType="touchUpInside" id="RBm-V9-718"/>
+                                        </connections>
                                     </button>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="KDM-xP-tnd">
                                         <rect key="frame" x="57" y="129" width="233" height="31"/>
                                         <color key="tintColor" red="0.63062685730000001" green="0.26636692880000001" blue="0.24186611180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="BASliderChanged:" destination="9AA-Pg-1kU" eventType="valueChanged" id="lA2-DQ-3IR"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bass &amp; Alto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKy-9r-PxI">
                                         <rect key="frame" x="105" y="100" width="83" height="19.5"/>

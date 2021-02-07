@@ -34,7 +34,9 @@ class secondViewController: UIViewController, PDFViewDelegate{
     @IBOutlet var BASlider: UISlider!
     
     var player : AVAudioPlayer?
+    var player2 : AVAudioPlayer?
     var timer : Timer?
+    var timer2 : Timer?
     
     var favorites = [""]
     var checked = [""]
@@ -498,7 +500,7 @@ class secondViewController: UIViewController, PDFViewDelegate{
     @IBAction func partsButtonPressed(_ sender: Any) {
         //put this under longpress
         
-       
+        
         partsView.alpha = 1
         grayView.alpha = 1
         grayView.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
@@ -508,8 +510,10 @@ class secondViewController: UIViewController, PDFViewDelegate{
         
         //initialize sliders
         TSSlider.value = 0.0
+        BASlider.value = 0.0
         player = AVAudioPlayer()
-      
+        player2 = AVAudioPlayer()
+        
         
         
     }
@@ -519,17 +523,18 @@ class secondViewController: UIViewController, PDFViewDelegate{
         //change image when song done
         DispatchQueue.main.async {
             self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (Timer) in
-            self.updateSliders()
+                self.updateSliders()
+            }
         }
-        }
-      
+        
         
         
         if TSPlayButton.accessibilityIdentifier == "play"{
             //play player at time ot slider
             
             TSPlayButton.accessibilityIdentifier = "pause"// .setTitle("pause", for: .normal)
-            let songTSPart = secondView.currentPage?.accessibilityValue ?? "" + "_TS"
+            var songTSPart = secondView.currentPage?.accessibilityValue ?? ""
+            songTSPart.append("_TS")
             if let path = Bundle.main.url(forResource: songTSPart, withExtension: "mp3", subdirectory: "PartsAudios") {
                 player = try! AVAudioPlayer(contentsOf: path)
                 
@@ -550,13 +555,13 @@ class secondViewController: UIViewController, PDFViewDelegate{
         }
         else {
             
-//            DispatchQueue.main.async {
-//                if let timer = self.timer {
-//              timer.invalidate()
-//              }
-//            }
-           // perform(Selector("inactivate"), on: Thread., with: nil, waitUntilDone: false)
-                       
+            //            DispatchQueue.main.async {
+            //                if let timer = self.timer {
+            //              timer.invalidate()
+            //              }
+            //            }
+            // perform(Selector("inactivate"), on: Thread., with: nil, waitUntilDone: false)
+            
             TSPlayButton.accessibilityIdentifier = "play"
             player?.pause()
             if #available(iOS 13.0, *) {
@@ -569,38 +574,155 @@ class secondViewController: UIViewController, PDFViewDelegate{
         
     }
     
+    //BAAction TSPlayButtonPressed
+    @IBAction func BAPlayButtonPressed(_ sender: Any) {
+        
+        //!!!change image when song done
+        DispatchQueue.main.async {
+            self.timer2 = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (Timer) in
+                self.updateSliders()
+            }
+        }
+        
+        
+        
+        if BAPlayButton.accessibilityIdentifier == "play"{
+            //play player at time ot slider
+            
+            BAPlayButton.accessibilityIdentifier = "pause"// .setTitle("pause", for: .normal)
+            var songBAPart = secondView.currentPage?.accessibilityValue ?? ""
+            songBAPart.append("_BA")
+            
+            if let path = Bundle.main.url(forResource: songBAPart, withExtension: "mp3", subdirectory: "PartsAudios") {
+                player2 = try! AVAudioPlayer(contentsOf: path)
+                
+                
+                BASlider.maximumValue = Float(player2!.duration)
+                
+                player2?.currentTime = TimeInterval(BASlider.value)
+                player2?.play()
+                if #available(iOS 13.0, *) {
+                    BAPlayButton.setImage(UIImage.init(systemName: "pause.circle.fill"), for: .normal)
+                } else {
+                    // Fallback on earlier versions
+                }
+            }
+            else{
+                //toast go to start of song page
+                print("go to start of song page")
+            }
+        }
+        else {
+            
+            //            DispatchQueue.main.async {
+            //                if let timer = self.timer {
+            //              timer.invalidate()
+            //              }
+            //            }
+            // perform(Selector("inactivate"), on: Thread., with: nil, waitUntilDone: false)
+            
+            BAPlayButton.accessibilityIdentifier = "play"
+            player2?.pause()
+            if #available(iOS 13.0, *) {
+                BAPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+        
+    }
+    
+    
     @IBAction func TSSliderChanged(_ sender: Any) {
         
         //if it was on pause then move slider without playing
         if (TSPlayButton.accessibilityIdentifier == "play"){
             
-                   player?.currentTime = TimeInterval(TSSlider.value)
-                   player?.prepareToPlay()
+            player?.currentTime = TimeInterval(TSSlider.value)
+            player?.prepareToPlay()
         }
-        
+            
         else{
-        player?.pause()
-        player?.currentTime = TimeInterval(TSSlider.value)
-        player?.prepareToPlay()
-        player?.play()
+            player?.pause()
+            player?.currentTime = TimeInterval(TSSlider.value)
+            player?.prepareToPlay()
+            player?.play()
         }
         //TSPlayButton.accessibilityIdentifier = "play"
-
-       // if #available(iOS 13.0, *) {
-            //TSPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)}
-       
+        
+        // if #available(iOS 13.0, *) {
+        //TSPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)}
+        
     }
+    
+    @IBAction func BASliderChanged(_ sender: Any) {
+        //if it was on pause then move slider without playing
+        if (BAPlayButton.accessibilityIdentifier == "play"){
+            
+            player2?.currentTime = TimeInterval(BASlider.value)
+            player2?.prepareToPlay()
+        }
+            
+        else{
+            player2?.pause()
+            player2?.currentTime = TimeInterval(BASlider.value)
+            player2?.prepareToPlay()
+            player2?.play()
+        }
+    }
+    
     
     func updateSliders(){
         
+       
+        if let player = player {
+            TSSlider.value = Float( player.currentTime)
+            if !(player.isPlaying){
+                    if #available(iOS 13.0, *) {
+                                   TSPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)
+                               }
+                TSPlayButton.accessibilityIdentifier = "play"
+                }
             
-            if let player = player {
-                TSSlider.value = Float( player.currentTime)
-                
-            }
+        }
+        
+        if let player2 = player2 {
+            BASlider.value = Float( player2.currentTime)
+            if !(player2.isPlaying){
+                        
+                                  if #available(iOS 13.0, *) {
+                                      BAPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)
+                                  }
+                BAPlayButton.accessibilityIdentifier = "play"
+                  }
+        }
+        
+    
+        
+      
+//        if TSSlider.value.isEqual(to: TSSlider.minimumValue) {
+//            if #available(iOS 13.0, *) {
+//                TSPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)
+//            }
+//        }
+//        else{
+//            if #available(iOS 13.0, *) {
+//            TSPlayButton.setImage(UIImage.init(systemName: "pause.circle.fill"), for: .normal)
+//        }
+//        }
+//        if BASlider.value.isEqual(to: BASlider.minimumValue){
+//            if #available(iOS 13.0, *) {
+//                BAPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)
+//            }
+//        }
+//        else{
+//            if #available(iOS 13.0, *) {
+//                           BAPlayButton.setImage(UIImage.init(systemName: "pause.circle.fill"), for: .normal)
+//                       }
+//            }
         
     }
-   
+    
     
     
     
@@ -616,19 +738,22 @@ class secondViewController: UIViewController, PDFViewDelegate{
         TSPlayButton.accessibilityIdentifier = "play"
         BAPlayButton.accessibilityIdentifier = "play"
         player?.stop()
+        player2?.stop()
         if #available(iOS 13.0, *) {
             TSPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)}
-        
-//        timer!.invalidate()
-//        DispatchQueue.main.async {
-//                   self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false) { (Timer) in
-//
-//               }
-//               }
+        if #available(iOS 13.0, *) {
+            BAPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)}
+        //        timer!.invalidate()
+        //        DispatchQueue.main.async {
+        //                   self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false) { (Timer) in
+        //
+        //               }
+        //               }
         //reset slider and player
         timer?.invalidate()
-      
-       
+        timer2?.invalidate()
+        
+        
         
     }
     
