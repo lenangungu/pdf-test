@@ -497,9 +497,8 @@ class secondViewController: UIViewController, PDFViewDelegate{
     
     @IBAction func partsButtonPressed(_ sender: Any) {
         //put this under longpress
-        if let timer = timer {
-            timer.invalidate()}
         
+       
         partsView.alpha = 1
         grayView.alpha = 1
         grayView.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
@@ -518,9 +517,10 @@ class secondViewController: UIViewController, PDFViewDelegate{
     @IBAction func TSPlayButtonPressed(_ sender: Any) {
         //check if other parts playing? also, are we allowing both parts to play at the same or one at a time??
         //change image when song done
-    
-        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (Timer) in
+        DispatchQueue.main.async {
+            self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (Timer) in
             self.updateSliders()
+        }
         }
       
         
@@ -549,6 +549,14 @@ class secondViewController: UIViewController, PDFViewDelegate{
             }
         }
         else {
+            
+//            DispatchQueue.main.async {
+//                if let timer = self.timer {
+//              timer.invalidate()
+//              }
+//            }
+           // perform(Selector("inactivate"), on: Thread., with: nil, waitUntilDone: false)
+                       
             TSPlayButton.accessibilityIdentifier = "play"
             player?.pause()
             if #available(iOS 13.0, *) {
@@ -584,9 +592,15 @@ class secondViewController: UIViewController, PDFViewDelegate{
     }
     
     func updateSliders(){
-        TSSlider.value = Float( player!.currentTime)
+        
+            
+            if let player = player {
+                TSSlider.value = Float( player.currentTime)
+                
+            }
+        
     }
-    
+   
     
     
     
@@ -601,12 +615,18 @@ class secondViewController: UIViewController, PDFViewDelegate{
         
         TSPlayButton.accessibilityIdentifier = "play"
         BAPlayButton.accessibilityIdentifier = "play"
-        player?.pause()
+        player?.stop()
         if #available(iOS 13.0, *) {
             TSPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)}
         
-        timer!.invalidate()
+//        timer!.invalidate()
+//        DispatchQueue.main.async {
+//                   self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: false) { (Timer) in
+//
+//               }
+//               }
         //reset slider and player
+        timer?.invalidate()
       
        
         
