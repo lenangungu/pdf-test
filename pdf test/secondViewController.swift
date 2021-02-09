@@ -70,12 +70,13 @@ class secondViewController: UIViewController, PDFViewDelegate{
             checked = checkedDefaults
         }
         searchBar.alpha = 0
-        setPages()
+        //setPages()
         
         // UIgraphicsEndImageContext()
         //  UIgraphicsPopContext()
         
     }
+    
     
     
     
@@ -336,17 +337,17 @@ class secondViewController: UIViewController, PDFViewDelegate{
         secondView.document?.page(at: 320)?.accessibilityValue = "his banner over me is love (905)"
         
         secondView.document?.page(at: 321)?.accessibilityValue = "i tried and i tried (906); i’m happy today (907)"
-        secondView.document?.page(at: 322)?.accessibilityValue = "this little light of mine (908); i’m gonna view that holy city (909)"
+        secondView.document?.page(at: 322)?.accessibilityValue = "this little light of mine (908) ; i’m gonna view that holy city (909)"
         secondView.document?.page(at: 323)?.accessibilityValue = "jesus loves the little children (910); in my father’s house (911)"
-        secondView.document?.page(at: 324)?.accessibilityValue = "i’ve got the joy joy joy (912); love love love (913)"
-        secondView.document?.page(at: 325)?.accessibilityValue = "the christian jubilee (914); oh be careful (915)"
-        secondView.document?.page(at: 326)?.accessibilityValue = "my god is so great (916); roll the gospel chariot (917)"
+        secondView.document?.page(at: 324)?.accessibilityValue = "i’ve got the joy joy joy (912) ; love love love (913)"
+        secondView.document?.page(at: 325)?.accessibilityValue = "the christian jubilee (914) ; oh be careful (915)"
+        secondView.document?.page(at: 326)?.accessibilityValue = "my god is so great (916) ; roll the gospel chariot (917)"
         secondView.document?.page(at: 327)?.accessibilityValue = "rejoice in the lord always (918) ; praise him praise him (919)"
         secondView.document?.page(at: 328)?.accessibilityValue = "peace like a river (920) ; whose side are you fighting on (921)"
         secondView.document?.page(at: 329)?.accessibilityValue = "rise and shine (922)"
         secondView.document?.page(at: 330)?.accessibilityValue = "standing in the need of prayer (923)"
         secondView.document?.page(at: 331)?.accessibilityValue = "the new testament song (924)"
-        secondView.document?.page(at: 332)?.accessibilityValue = "show me the way (925); the sea of galilee (926)"
+        secondView.document?.page(at: 332)?.accessibilityValue = "show me the way (925) ; the sea of galilee (926)"
         secondView.document?.page(at: 333)?.accessibilityValue = "this is the day (927) ; this is my commandment (928)"
         secondView.document?.page(at: 334)?.accessibilityValue = "the wise man (929)"
         secondView.document?.page(at: 335)?.accessibilityValue = "king of the jungle (930)"
@@ -357,9 +358,8 @@ class secondViewController: UIViewController, PDFViewDelegate{
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         setPages()
-        
         if (favTitle != nil)
         {
             favTitle = favTitle?.lowercased()
@@ -383,6 +383,33 @@ class secondViewController: UIViewController, PDFViewDelegate{
             
         }
         UIGraphicsEndImageContext()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        //        setPages()
+        //
+        //        if (favTitle != nil)
+        //        {
+        //            favTitle = favTitle?.lowercased()
+        //
+        //            var pages = 0
+        //            var myPage = secondView.document?.page(at: 0)
+        //
+        //
+        //
+        //            while ((myPage!.accessibilityValue != favTitle) && (pages != 339)) {
+        //
+        //                secondView.goToNextPage(self)
+        //                myPage = secondView.currentPage
+        //                pages += 1
+        //            }
+        //
+        //        }
+        //        else
+        //        {
+        //            secondView.go(to: secondView.document!.page(at: 18)!)
+        //
+        //        }
+        //        UIGraphicsEndImageContext()
     }
     
     
@@ -500,7 +527,8 @@ class secondViewController: UIViewController, PDFViewDelegate{
     @IBAction func partsButtonPressed(_ sender: Any) {
         //put this under longpress
         
-        
+        player = nil
+        player2 = nil
         partsView.alpha = 1
         grayView.alpha = 1
         grayView.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
@@ -511,8 +539,19 @@ class secondViewController: UIViewController, PDFViewDelegate{
         //initialize sliders
         TSSlider.value = 0.0
         BASlider.value = 0.0
-        player = AVAudioPlayer()
-        player2 = AVAudioPlayer()
+        
+        var songTSPart = secondView.currentPage?.accessibilityValue ?? ""
+        songTSPart.append("_TS")
+        if let path = Bundle.main.url(forResource: songTSPart, withExtension: "mp3", subdirectory: "PartsAudios") {
+            player = try! AVAudioPlayer(contentsOf: path)
+        }
+        
+        var songBAPart = secondView.currentPage?.accessibilityValue ?? ""
+        songBAPart.append("_BA")
+        
+        if let path = Bundle.main.url(forResource: songBAPart, withExtension: "mp3", subdirectory: "PartsAudios") {
+            player2 = try! AVAudioPlayer(contentsOf: path)
+        }
         
         
         
@@ -533,15 +572,11 @@ class secondViewController: UIViewController, PDFViewDelegate{
             //play player at time ot slider
             
             TSPlayButton.accessibilityIdentifier = "pause"// .setTitle("pause", for: .normal)
-            var songTSPart = secondView.currentPage?.accessibilityValue ?? ""
-            songTSPart.append("_TS")
-            if let path = Bundle.main.url(forResource: songTSPart, withExtension: "mp3", subdirectory: "PartsAudios") {
-                player = try! AVAudioPlayer(contentsOf: path)
+            if let player = player {
+                TSSlider.maximumValue = Float(player.duration)
                 
-                TSSlider.maximumValue = Float(player!.duration)
-                
-                player?.currentTime = TimeInterval(TSSlider.value)
-                player?.play()
+                player.currentTime = TimeInterval(TSSlider.value)
+                player.play()
                 if #available(iOS 13.0, *) {
                     TSPlayButton.setImage(UIImage.init(systemName: "pause.circle.fill"), for: .normal)
                 } else {
@@ -590,17 +625,12 @@ class secondViewController: UIViewController, PDFViewDelegate{
             //play player at time ot slider
             
             BAPlayButton.accessibilityIdentifier = "pause"// .setTitle("pause", for: .normal)
-            var songBAPart = secondView.currentPage?.accessibilityValue ?? ""
-            songBAPart.append("_BA")
             
-            if let path = Bundle.main.url(forResource: songBAPart, withExtension: "mp3", subdirectory: "PartsAudios") {
-                player2 = try! AVAudioPlayer(contentsOf: path)
+            if let player2 = player2{
+                BASlider.maximumValue = Float(player2.duration)
                 
-                
-                BASlider.maximumValue = Float(player2!.duration)
-                
-                player2?.currentTime = TimeInterval(BASlider.value)
-                player2?.play()
+                player2.currentTime = TimeInterval(BASlider.value)
+                player2.play()
                 if #available(iOS 13.0, *) {
                     BAPlayButton.setImage(UIImage.init(systemName: "pause.circle.fill"), for: .normal)
                 } else {
@@ -635,91 +665,97 @@ class secondViewController: UIViewController, PDFViewDelegate{
     
     @IBAction func TSSliderChanged(_ sender: Any) {
         
-        //if it was on pause then move slider without playing
-        if (TSPlayButton.accessibilityIdentifier == "play"){
+        if let player = player {
+            //if it was on pause then move slider without playing
+            if (TSPlayButton.accessibilityIdentifier == "play"){
+                
+                player.currentTime = TimeInterval(TSSlider.value)
+                player.prepareToPlay()
+            }
+                
+            else{
+                player.pause()
+                player.currentTime = TimeInterval(TSSlider.value)
+                player.prepareToPlay()
+                player.play()
+            }
+            //TSPlayButton.accessibilityIdentifier = "play"
             
-            player?.currentTime = TimeInterval(TSSlider.value)
-            player?.prepareToPlay()
+            // if #available(iOS 13.0, *) {
+            //TSPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)}
         }
-            
-        else{
-            player?.pause()
-            player?.currentTime = TimeInterval(TSSlider.value)
-            player?.prepareToPlay()
-            player?.play()
-        }
-        //TSPlayButton.accessibilityIdentifier = "play"
-        
-        // if #available(iOS 13.0, *) {
-        //TSPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)}
         
     }
     
     @IBAction func BASliderChanged(_ sender: Any) {
         //if it was on pause then move slider without playing
-        if (BAPlayButton.accessibilityIdentifier == "play"){
+        if let player2 = player2 {
             
-            player2?.currentTime = TimeInterval(BASlider.value)
-            player2?.prepareToPlay()
-        }
-            
-        else{
-            player2?.pause()
-            player2?.currentTime = TimeInterval(BASlider.value)
-            player2?.prepareToPlay()
-            player2?.play()
+        
+            if (BAPlayButton.accessibilityIdentifier == "play"){
+                
+                player2.currentTime = TimeInterval(BASlider.value)
+                player2.prepareToPlay()
+            }
+                
+            else{
+                player2.pause()
+                player2.currentTime = TimeInterval(BASlider.value)
+                player2.prepareToPlay()
+                player2.play()
+            }
         }
     }
     
     
     func updateSliders(){
         
-       
+        
         if let player = player {
             TSSlider.value = Float( player.currentTime)
             if !(player.isPlaying){
-                    if #available(iOS 13.0, *) {
-                                   TSPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)
-                               }
-                TSPlayButton.accessibilityIdentifier = "play"
+                if #available(iOS 13.0, *) {
+                    TSPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)
                 }
+                TSPlayButton.accessibilityIdentifier = "play"
+            }
             
         }
         
         if let player2 = player2 {
             BASlider.value = Float( player2.currentTime)
             if !(player2.isPlaying){
-                        
-                                  if #available(iOS 13.0, *) {
-                                      BAPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)
-                                  }
+                
+                if #available(iOS 13.0, *) {
+                    BAPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)
+                }
                 BAPlayButton.accessibilityIdentifier = "play"
-                  }
+            }
         }
         
-    
         
-      
-//        if TSSlider.value.isEqual(to: TSSlider.minimumValue) {
-//            if #available(iOS 13.0, *) {
-//                TSPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)
-//            }
-//        }
-//        else{
-//            if #available(iOS 13.0, *) {
-//            TSPlayButton.setImage(UIImage.init(systemName: "pause.circle.fill"), for: .normal)
-//        }
-//        }
-//        if BASlider.value.isEqual(to: BASlider.minimumValue){
-//            if #available(iOS 13.0, *) {
-//                BAPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)
-//            }
-//        }
-//        else{
-//            if #available(iOS 13.0, *) {
-//                           BAPlayButton.setImage(UIImage.init(systemName: "pause.circle.fill"), for: .normal)
-//                       }
-//            }
+        
+        
+        //        if TSSlider.value.isEqual(to: TSSlider.minimumValue) {
+        //            if #available(iOS 13.0, *) {
+        //                TSPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)
+        //            }
+        //        }
+        //        else{
+        //            if #available(iOS 13.0, *) {
+        //            TSPlayButton.setImage(UIImage.init(systemName: "pause.circle.fill"), for: .normal)
+        //        }
+        //        }
+        //        if BASlider.value.isEqual(to: BASlider.minimumValue){
+        //            if #available(iOS 13.0, *) {
+        //                BAPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)
+        //            }
+        //        }
+        //        else{
+        //            if #available(iOS 13.0, *) {
+        //                           BAPlayButton.setImage(UIImage.init(systemName: "pause.circle.fill"), for: .normal)
+        //                       }
+        //            }
         
     }
     
@@ -737,8 +773,10 @@ class secondViewController: UIViewController, PDFViewDelegate{
         
         TSPlayButton.accessibilityIdentifier = "play"
         BAPlayButton.accessibilityIdentifier = "play"
-        player?.stop()
-        player2?.stop()
+        if let player = player{
+            player.stop()
+            player2?.stop()
+        }
         if #available(iOS 13.0, *) {
             TSPlayButton.setImage(UIImage.init(systemName: "play.circle.fill"), for: .normal)}
         if #available(iOS 13.0, *) {

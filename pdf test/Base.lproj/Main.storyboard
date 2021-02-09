@@ -21,7 +21,7 @@
                                 <color key="color" red="0.60392156860000001" green="0.1333333333" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XrJ-Hy-cOc" customClass="PDFView">
-                                <rect key="frame" x="3" y="25" width="375" height="667"/>
+                                <rect key="frame" x="3" y="60" width="375" height="667"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="PF4-9C-Qqq" appends="YES" id="XfC-Xf-dxP"/>
@@ -185,7 +185,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="JF8-ny-0ee" firstAttribute="top" secondItem="mrm-Lh-v4Q" secondAttribute="top" constant="195" id="30H-xT-Vcp"/>
-                                    <constraint firstItem="JVF-eY-IFT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mrm-Lh-v4Q" secondAttribute="leading" symbolic="YES" id="336-nc-Dbd"/>
+                                    <constraint firstItem="JVF-eY-IFT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mrm-Lh-v4Q" secondAttribute="leading" constant="20" symbolic="YES" id="336-nc-Dbd"/>
                                     <constraint firstAttribute="trailing" secondItem="Q5N-MH-1Dw" secondAttribute="trailing" constant="8" id="5eN-3K-zft"/>
                                     <constraint firstItem="Q5N-MH-1Dw" firstAttribute="top" secondItem="mrm-Lh-v4Q" secondAttribute="top" constant="44" id="675-0m-xnX"/>
                                     <constraint firstAttribute="trailing" secondItem="JF8-ny-0ee" secondAttribute="trailing" constant="129" id="7gw-Tm-Emr"/>
@@ -195,7 +195,7 @@
                                     <constraint firstItem="16r-zm-oHM" firstAttribute="leading" secondItem="mrm-Lh-v4Q" secondAttribute="leading" constant="17" id="JWy-pG-uMT"/>
                                     <constraint firstItem="JF8-ny-0ee" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mrm-Lh-v4Q" secondAttribute="leading" constant="20" symbolic="YES" id="JXv-OE-oSC"/>
                                     <constraint firstItem="16r-zm-oHM" firstAttribute="top" secondItem="mrm-Lh-v4Q" secondAttribute="top" constant="44" id="NoD-F9-684"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oKy-9r-PxI" secondAttribute="trailing" symbolic="YES" id="OgV-KZ-Ros"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oKy-9r-PxI" secondAttribute="trailing" constant="20" symbolic="YES" id="OgV-KZ-Ros"/>
                                     <constraint firstItem="JVF-eY-IFT" firstAttribute="top" secondItem="mrm-Lh-v4Q" secondAttribute="top" constant="15" id="Sbo-e6-mng"/>
                                     <constraint firstAttribute="trailing" secondItem="JVF-eY-IFT" secondAttribute="trailing" constant="84" id="ZMp-FY-eNf"/>
                                     <constraint firstItem="KDM-xP-tnd" firstAttribute="leading" secondItem="KRd-iz-jBH" secondAttribute="trailing" constant="22" id="fbB-4q-h6E"/>
@@ -228,7 +228,7 @@
                             <constraint firstItem="XrJ-Hy-cOc" firstAttribute="width" secondItem="cPA-dC-MHv" secondAttribute="width" id="qYe-ju-pdg"/>
                             <constraint firstItem="EBK-1K-LPy" firstAttribute="bottom" secondItem="h3m-5R-owg" secondAttribute="bottom" constant="330" id="qc5-lK-JA4"/>
                             <constraint firstItem="mrm-Lh-v4Q" firstAttribute="top" secondItem="wzj-Uz-Dbr" secondAttribute="bottom" constant="60" id="uyr-kl-HVf"/>
-                            <constraint firstItem="EBK-1K-LPy" firstAttribute="top" secondItem="XrJ-Hy-cOc" secondAttribute="top" constant="-25" id="w2c-4a-izs"/>
+                            <constraint firstItem="EBK-1K-LPy" firstAttribute="top" secondItem="XrJ-Hy-cOc" secondAttribute="top" constant="-60" id="w2c-4a-izs"/>
                             <constraint firstItem="XrJ-Hy-cOc" firstAttribute="trailing" secondItem="EBK-1K-LPy" secondAttribute="trailing" constant="3" id="zyo-rw-53D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EBK-1K-LPy"/>
@@ -382,9 +382,9 @@
         <!--Favorites View Controller-->
         <scene sceneID="VGK-50-E2G">
             <objects>
-                <viewController id="c2d-rx-eYC" customClass="FavoritesViewController" customModule="pdf_test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="c2d-rx-eYC" customClass="FavoritesViewController" customModule="pdf_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ffp-B9-sRo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGX-mC-kEB">
@@ -407,7 +407,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RI9-bL-Zru">
-                                <rect key="frame" x="0.0" y="70" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favCell" editingAccessoryType="checkmark" id="5BY-CF-tKf" customClass="FavoritwCellTableViewCell" customModule="pdf_test" customModuleProvider="target">
@@ -452,6 +452,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kp9-PX-pus"/>
                     </view>
+                    <navigationItem key="navigationItem" id="0xJ-38-D4Y"/>
                     <connections>
                         <outlet property="backToMainButton" destination="kCa-Qv-6nV" id="25P-NH-kRZ"/>
                         <outlet property="backToSongsButton" destination="kCa-Qv-6nV" id="abN-9m-gnj"/>
